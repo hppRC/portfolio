@@ -6,28 +6,6 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-const Meta = ({ post }) => {
-	const origin = 'http://hpprc.com';
-
-	return (
-		<Helmet
-			title={`${post.frontmatter.title} | Blog`}
-			meta={[
-				{ name: 'description', content: post.frontmatter.description },
-				{ property: 'og:title', content: post.frontmatter.title },
-				{
-					property: 'og:description',
-					content: post.frontmatter.description
-				},
-				{
-					property: 'og:image',
-					content: `${origin}${post.frontmatter.image}`
-				}
-			]}
-		/>
-	);
-};
-
 export const BlogPostTemplate = ({
 	content,
 	contentComponent,
@@ -72,18 +50,32 @@ export const BlogPostTemplate = ({
 	);
 };
 
+const Meta = ({ post }) => {
+	let meta = [
+		{ name: 'description', content: post.frontmatter.description },
+		{ property: 'og:title', content: post.frontmatter.title },
+		{ property: 'og:description', content: post.frontmatter.description }
+	];
+	if (post.frontmatter.featuredimage) {
+		const image = `http://hpprc.com/img/${post.frontmatter.featuredimage.relativePath}`;
+		meta.push({
+			property: 'og:image',
+			content: image
+		});
+	}
+
+	return <Helmet title={`${post.frontmatter.title} | Blog`} meta={meta} />;
+};
+
 BlogPostTemplate.propTypes = {
-	content: PropTypes.node.isRequired,
+	content: PropTypes.string.isRequired,
 	contentComponent: PropTypes.func,
 	description: PropTypes.string,
-	title: PropTypes.string,
-	helmet: PropTypes.object
+	title: PropTypes.string
 };
 
 const BlogPost = ({ data }) => {
 	const { markdownRemark: post } = data;
-	console.log(data);
-	console.log(post);
 
 	return (
 		<Layout>
@@ -117,6 +109,9 @@ export const pageQuery = graphql`
 				title
 				description
 				tags
+				featuredimage {
+					relativePath
+				}
 			}
 		}
 	}
