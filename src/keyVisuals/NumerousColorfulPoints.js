@@ -56,14 +56,14 @@ const Thing = () => {
 		let positions = [];
 		let colors = [];
 		let x, y, z;
-		for (let i = 0; i < 10000; i++) {
+		for (let i = 0; i < 30000; i++) {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
 			z = Math.random() * 2.0 - 1.0;
 
-			positions.push(x);
-			positions.push(y);
-			positions.push(z);
+			positions.push(x * 0.4);
+			positions.push(y * 0.4);
+			positions.push(z * 0.4);
 			colors.push(Math.random() * 255.0);
 			colors.push(Math.random() * 255.0);
 			colors.push(Math.random() * 255.0);
@@ -108,14 +108,14 @@ const Thing = () => {
 	);
 };
 
-const KeyVisual = () => (
+const NumerousColorfulPoints = () => (
 	<Canvas
 		camera={{
-			position: [0, 0, 0.5 + window.innerHeight / window.innerWidth]
+			position: [0, 0, window.innerHeight / window.innerWidth]
 		}}
 		style={style}
 	>
 		<Thing />
 	</Canvas>
 );
-export default KeyVisual;
+export default NumerousColorfulPoints;

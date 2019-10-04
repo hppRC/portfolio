@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
-import KeyVisual from '../components/KeyVisual';
+import NumerousColorfulPoints from '../keyVisuals/NumerousColorfulPoints';
 
 export const IndexPageTemplate = ({
 	image,
@@ -16,7 +16,7 @@ export const IndexPageTemplate = ({
 	intro
 }) => (
 	<>
-		<KeyVisual />
+		<NumerousColorfulPoints />
 		<div
 			style={{
 				display: 'flex',
