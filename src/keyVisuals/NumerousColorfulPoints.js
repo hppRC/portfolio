@@ -113,7 +113,12 @@ const Thing = () => {
 const NumerousColorfulPoints = () => (
 	<Canvas
 		camera={{
-			position: [0, 0, window.innerHeight / window.innerWidth]
+			position: [
+				0,
+				0,
+				typeof window !== 'undefined' &&
+					window.innerHeight / window.innerWidth
+			]
 		}}
 		style={style}
 	>
