@@ -11,6 +11,9 @@ module.exports = {
 		twitterUsername: '@osaremochi'
 	},
 	plugins: [
+		//後から入れたもの
+
+		//もともとはいってたもの
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
 		{
