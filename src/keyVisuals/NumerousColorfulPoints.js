@@ -14,6 +14,7 @@ const style = {
 const vertexSource = `
 precision mediump float;
 uniform float time;
+uniform float point_size;
 attribute vec4 color;
 varying vec4 vColor;
 varying vec3 pos;
@@ -21,7 +22,7 @@ varying vec3 pos;
 void main() {
 	vColor = color;
 	pos = vec3(position);
-	gl_PointSize = 1.5;
+	gl_PointSize = point_size;
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `;
@@ -49,6 +50,11 @@ const Thing = () => {
 	const uniforms = {
 		time: {
 			value: 0.0
+		},
+		point_size: {
+			value:
+				typeof window !== 'undefined' &&
+				window.innerWidth / window.innerHeight
 		}
 	};
 
