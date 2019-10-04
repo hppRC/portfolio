@@ -56,18 +56,20 @@ const Thing = () => {
 		let positions = [];
 		let colors = [];
 		let x, y, z;
-		for (let i = 0; i < 30000; i++) {
+		for (let i = 0; i < 50000; i++) {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
 			z = Math.random() * 2.0 - 1.0;
 
-			positions.push(x * 0.4);
-			positions.push(y * 0.4);
-			positions.push(z * 0.4);
-			colors.push(Math.random() * 255.0);
-			colors.push(Math.random() * 255.0);
-			colors.push(Math.random() * 255.0);
-			colors.push(Math.random() * 255.0);
+			if (x ** 2 + y ** 2 + z ** 2 <= 1) {
+				positions.push(x * 0.4);
+				positions.push(y * 0.4);
+				positions.push(z * 0.4);
+				colors.push(Math.random() * 255.0);
+				colors.push(Math.random() * 255.0);
+				colors.push(Math.random() * 255.0);
+				colors.push(Math.random() * 255.0);
+			}
 		}
 		return [positions, colors];
 	}, []);
