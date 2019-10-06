@@ -8,7 +8,7 @@ localhost_development:
     name: file-system
     api_root: /api
 
-display_url: http://localhost:8000
+display_url: https://hpprc.com
 media_folder: static/assets
 public_folder: assets
 publish_mode: editorial_workflow
