@@ -62,7 +62,7 @@ const Thing = () => {
 		let positions = [];
 		let colors = [];
 		let x, y, z;
-		for (let i = 0; i < 50000; i++) {
+		for (let i = 0; i < 500; i++) {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
 			z = Math.random() * 2.0 - 1.0;
