@@ -1,18 +1,17 @@
 # Netlify "kitchen sink" example: https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml
+backend:
+  name: git-gateway
+  branch: master
 
 localhost_development:
   backend:
     name: file-system
     api_root: /api
 
-backend:
-  name: github
-  repo: damassi/gatsby-typescript-netlify-starter
-  branch: master
-
 display_url: http://localhost:8000
 media_folder: static/assets
 public_folder: assets
+publish_mode: editorial_workflow
 
 collections:
   - name: mdx
