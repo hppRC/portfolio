@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
-import NumerousColorfulPoints from '../keyVisuals/NumerousColorfulPoints';
+/*import NumerousColorfulPoints from '../keyVisuals/NumerousColorfulPoints';*/
 
 export const IndexPageTemplate = ({
 	image,
@@ -16,7 +16,7 @@ export const IndexPageTemplate = ({
 	intro
 }) => (
 	<>
-		<NumerousColorfulPoints />
+		{/*<NumerousColorfulPoints />*/}
 		<div>
 			<h1>{title}</h1>
 			<h3>{subheading}</h3>
@@ -46,6 +46,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
 	const { frontmatter } = data.markdownRemark;
+	console.log(data);
 
 	return (
 		<Layout>
