@@ -1,99 +1,85 @@
-var proxy = require('http-proxy-middleware');
+// @ts-check
+
+const playgroundHastPlugin = require("./src/utils/playgroundHastPlugin")
+const proxy = require("http-proxy-middleware")
 
 module.exports = {
-	siteMetadata: {
-		title: 'hpp portofolio',
-		description:
-			'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
-		titleTemplate: '%s · hpp',
-		url: 'https://hpprc.com', // No trailing slash allowed!
-		image: '/img/og-image.jpg', // Path to your image you placed in the 'static' folder
-		twitterUsername: '@osaremochi'
-	},
-	plugins: [
-		//後から入れたもの
-		`gatsby-plugin-typescript`,
-		//もともとはいってたもの
-		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sass',
-		{
-			// keep as first gatsby-source-filesystem plugin for gatsby image support
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				path: `${__dirname}/static/img`,
-				name: 'uploads'
-			}
-		},
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				path: `${__dirname}/src/pages`,
-				name: 'pages'
-			}
-		},
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				path: `${__dirname}/src/img`,
-				name: 'images'
-			}
-		},
-		'gatsby-plugin-sharp',
-		'gatsby-transformer-sharp',
-		{
-			resolve: 'gatsby-transformer-remark',
-			options: {
-				plugins: [
-					{
-						resolve: 'gatsby-remark-relative-images',
-						options: {
-							name: 'uploads'
-						}
-					},
-					{
-						resolve: 'gatsby-remark-images',
-						options: {
-							// It's important to specify the maxWidth (in pixels) of
-							// the content container as this plugin uses this as the
-							// base for generating different widths of each image.
-							maxWidth: 2048
-						}
-					},
-					{
-						resolve: 'gatsby-remark-copy-linked-files',
-						options: {
-							destinationDir: 'static'
-						}
-					}
-				]
-			}
-		},
-		{
-			resolve: 'gatsby-plugin-netlify-cms',
-			options: {
-				modulePath: `${__dirname}/src/cms/cms.js`
-			}
-		},
-		{
-			resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-			options: {
-				develop: true, // Activates purging in npm run develop
-				purgeOnly: ['/all.sass'] // applies purging only on the bulma css file
-			}
-		}, // must be after other CSS plugins
-		'gatsby-plugin-netlify' // make sure to keep it last in the array
-	],
-	// for avoiding CORS while developing Netlify Functions locally
-	// read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
-	developMiddleware: app => {
-		app.use(
-			'/.netlify/functions/',
-			proxy({
-				target: 'http://localhost:9000',
-				pathRewrite: {
-					'/.netlify/functions/': ''
-				}
-			})
-		);
-	}
-};
+  siteMetadata: {
+    title: "hpp Portfolio",
+    description: "this is description",
+    author: "hpp.ricecake@gmail.com",
+  },
+  plugins: [
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+
+    {
+      resolve: "gatsby-mdx",
+      options: {
+        extensions: [".mdx", ".md"],
+
+        // Default layouts are meta wrappers around .mdx pages. Can be useful to
+        // share queries across different types of pages.
+        defaultLayouts: {
+          default: require.resolve("./src/layouts/DefaultLayout.tsx"),
+        },
+
+        // MDX AST transformers
+        hastPlugins: [playgroundHastPlugin],
+
+        // Imports here are available globally to .mdx files, with the exception
+        // of automatically created pages located in /pages. This is a bug in
+        // gatsby-mdx. See https://github.com/ChristopherBiscardi/gatsby-mdx/issues/243
+        //
+        // Also note: For mdx to work in NetlifyCMS, global scope passed in here
+        // also be passed into `cms.js`, under the `scope` key.
+        //
+        globalScope: `
+          import { UIComponents } from './src/Theme'
+          export default {
+            ...UIComponents
+          }
+        `,
+
+        preloadedMDXScope: `import { UIComponents } from './src/Theme'`,
+
+        // mdPlugins: [],
+        // gatsbyRemarkPlugins: [{}],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.jsx`,
+        enableIdentityWidget: false,
+        publicPath: "admin",
+        htmlTitle: "Admin",
+        manualInit: true,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        path: `${__dirname}/content/blog/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "mdx",
+        path: `${__dirname}/content/mdx/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/mdx/`,
+      },
+    },
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-mdx",
+  ],
+}

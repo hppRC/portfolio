@@ -1,87 +1,156 @@
-const _ = require('lodash')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+// @ts-check
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
 
-  return graphql(`
-    {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              tags
-              templateKey
+const write = require("write")
+const WebpackNotifierPlugin = require("webpack-notifier")
+const path = require("path")
+const { toLower } = require("lodash")
+const { introspectionQuery, graphql, printSchema } = require("gatsby/graphql")
+const { createFilePath } = require("gatsby-source-filesystem")
+
+// TODO: Fix apollo type generation
+// const WebpackShellPlugin = require("webpack-shell-plugin")
+
+/**
+ * Intercept and modify the GraphQL schema
+ */
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  if (node.internal.type === "Mdx") {
+    const route = toLower(
+      createFilePath({
+        node,
+        getNode,
+        trailingSlash: false,
+      })
+    )
+
+    // Add a new field -- route -- which can be accessed from the schema under
+    // fields { route }.
+    actions.createNodeField({
+      node,
+      name: "route",
+      value: route,
+    })
+  }
+}
+
+/**
+ * Dynamically create pages for all .mdx content.
+ *
+ * NOTE: Content located in /pages is created automatically but should be limited
+ * to static pages like "About" or "Home", etc, and is subject data limitations
+ * since query data resolved below cannot be injected in at build time.
+ */
+exports.createPages = ({ graphql, actions }) => {
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(`
+        query CreatePagesQuery {
+          allMdx {
+            edges {
+              node {
+                id
+                fields {
+                  route
+                }
+              }
             }
           }
         }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
-      return Promise.reject(result.errors)
-    }
+      `).then(result => {
+        if (result.errors) {
+          console.error(result.errors)
+          reject(result.errors)
+        }
 
-    const posts = result.data.allMarkdownRemark.edges
-
-    posts.forEach(edge => {
-      const id = edge.node.id
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
+        result.data.allMdx.edges.forEach(({ node }) => {
+          actions.createPage({
+            // Encode the route
+            path: node.fields.route,
+            // Layout for the page
+            component: path.resolve("./src/layouts/DefaultLayout.tsx"),
+            // Values defined here are injected into the page as props and can
+            // be passed to a GraphQL query as arguments
+            context: {
+              id: node.id,
+            },
+          })
+        })
       })
-    })
-
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
-
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
-
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      })
-    })
+    )
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+      type Mdx implements Node {
+          frontmatter: MdxFrontmatter
+      }
+      type MdxFrontmatter {
+          author: String!
+          date: Date
+          tags: [String!]!
+      }
+  `
+  createTypes(typeDefs)
+}
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
+/**
+ * Add the file-system as an api proxy:
+ * https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
+ */
+exports.onCreateDevServer = ({ app }) => {
+  const fsMiddlewareAPI = require("netlify-cms-backend-fs/dist/fs")
+  fsMiddlewareAPI(app)
+}
+
+/**
+ * Update default Webpack configuration
+ */
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      new WebpackNotifierPlugin({
+        skipFirstNotification: true,
+      }),
+
+      // FIXME: Investigate Apollo error
+      // new WebpackShellPlugin({
+      //   onBuildEnd: ["yarn emit-graphql-types"],
+      // }),
+    ],
+    resolve: {
+      // Enable absolute import paths
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
+  })
+}
+
+/**
+ * Generate GraphQL schema.json file to be read by tslint
+ * Thanks: https://gist.github.com/kkemple/6169e8dc16369b7c01ad7408fc7917a9
+ */
+exports.onPostBootstrap = async ({ store }) => {
+  try {
+    const { schema } = store.getState()
+    const jsonSchema = await graphql(schema, introspectionQuery)
+    const sdlSchema = printSchema(schema)
+
+    write.sync("schema.json", JSON.stringify(jsonSchema.data), {})
+    write.sync("schema.graphql", sdlSchema, {})
+
+    console.log("\n\n[gatsby-plugin-extract-schema] Wrote schema\n") // eslint-disable-line
+  } catch (error) {
+    console.error(
+      "\n\n[gatsby-plugin-extract-schema] Failed to write schema: ",
+      error,
+      "\n"
+    )
   }
 }
