@@ -8,6 +8,8 @@ module.exports = {
     title: "hpp Portfolio",
     description: "this is description",
     author: "hpp.ricecake@gmail.com",
+    url: "https://hpprc.com",
+    twitterUsername: "@osaremochi",
   },
   plugins: [
     "gatsby-plugin-sharp",

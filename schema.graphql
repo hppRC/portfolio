@@ -1820,6 +1820,8 @@ enum SiteFieldsEnum {
   siteMetadata___title
   siteMetadata___description
   siteMetadata___author
+  siteMetadata___url
+  siteMetadata___twitterUsername
   port
   host
   polyfill
@@ -2403,12 +2405,16 @@ type SiteSiteMetadata {
   title: String
   description: String
   author: String
+  url: String
+  twitterUsername: String
 }
 
 input SiteSiteMetadataFilterInput {
   title: StringQueryOperatorInput
   description: StringQueryOperatorInput
   author: StringQueryOperatorInput
+  url: StringQueryOperatorInput
+  twitterUsername: StringQueryOperatorInput
 }
 
 input SiteSortInput {
