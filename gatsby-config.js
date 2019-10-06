@@ -12,7 +12,7 @@ module.exports = {
 	},
 	plugins: [
 		//後から入れたもの
-
+		`gatsby-plugin-typescript`,
 		//もともとはいってたもの
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
