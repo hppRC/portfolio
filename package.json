@@ -3,8 +3,10 @@
   "description": "hpp portfolio",
   "version": "0.1.0",
   "scripts": {
-    "build": "gatsby build",
-    "clean": "rm -rf .cache && yarn start",
+    "build:app": "yarn clean && gatsby build",
+    "build:lambda": "netlify-lambda build src/lambda",
+    "build": "run-p build:**",
+    "clean": "gatsby clean",
     "develop": "nodemon --exec \"gatsby develop\"",
     "debug": "nodemon --exec \"node --inspect-brk --no-lazy node_modules/.bin/gatsby develop\"",
     "lint": "eslint . --ext ts --ext tsx",
@@ -69,7 +71,8 @@
     "typescript": "^3.6.3",
     "typescript-styled-plugin": "^0.14.0",
     "webpack-notifier": "^1.8.0",
-    "webpack-shell-plugin": "^0.5.0"
+    "webpack-shell-plugin": "^0.5.0",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "@babel/core": "^7.6.2",

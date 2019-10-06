@@ -1,7 +1,6 @@
 // @ts-check
 
 const playgroundHastPlugin = require("./src/utils/playgroundHastPlugin")
-const proxy = require("http-proxy-middleware")
 
 module.exports = {
   siteMetadata: {
