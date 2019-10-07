@@ -1,12 +1,8 @@
 # Netlify "kitchen sink" example: https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml
 backend:
-  name: git-gateway
+  name: github
+  repo: hppRC/hppPortfolio
   branch: master
-
-localhost_development:
-  backend:
-    name: file-system
-    api_root: /api
 
 display_url: https://hpprc.com
 media_folder: static/assets
@@ -31,6 +27,7 @@ collections:
     folder: content/blog
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    widget: mdx
     fields:
       - {
           label: Template Key,

@@ -4,6 +4,7 @@ import { StyleSheetManager } from "styled-components"
 import { Theme, LayoutComponents, UIComponents } from "../Theme"
 import { FileSystemBackend } from "netlify-cms-backend-fs"
 import CMS, { init } from "netlify-cms"
+import * as Components from "rebass"
 
 const isClient = typeof window !== "undefined"
 const isDevelopment = process.env.NODE_ENV === "development"
@@ -47,7 +48,7 @@ const PreviewWindow = props => {
     // This key represents html elements used in markdown; h1, p, etc
     components: LayoutComponents,
     // Pass components used in the editor (and shared throughout mdx) here:
-    scope: UIComponents,
+    scope: Components,
 
     mdPlugins: [],
   }

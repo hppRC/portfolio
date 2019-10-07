@@ -29,9 +29,7 @@ export default function DocsLayout(props) {
       </Box>
       <Box p={2}>
         <Serif size="8">{title}</Serif>
-        <MDXProvider components={{ ...UIComponents }}>
-          <MDXRenderer>{body}</MDXRenderer>
-        </MDXProvider>
+        <MDXRenderer>{body}</MDXRenderer>
       </Box>
     </Flex>
   )

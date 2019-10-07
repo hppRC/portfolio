@@ -2029,6 +2029,7 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___globalScope
   pluginCreator___pluginOptions___gatsbyRemarkPlugins
   pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve
+  pluginCreator___pluginOptions___mediaTypes
   pluginCreator___pluginOptions___modulePath
   pluginCreator___pluginOptions___enableIdentityWidget
   pluginCreator___pluginOptions___publicPath
@@ -2220,7 +2221,7 @@ enum SitePluginFieldsEnum {
   pluginOptions___gatsbyRemarkPlugins___options___name
   pluginOptions___gatsbyRemarkPlugins___options___maxWidth
   pluginOptions___gatsbyRemarkPlugins___options___destinationDir
-  pluginOptions___gatsbyRemarkPlugins___options___wrapperStyle
+  pluginOptions___mediaTypes
   pluginOptions___modulePath
   pluginOptions___enableIdentityWidget
   pluginOptions___publicPath
@@ -2349,6 +2350,7 @@ type SitePluginPluginOptions {
   defaultLayouts: SitePluginPluginOptionsDefaultLayouts
   globalScope: String
   gatsbyRemarkPlugins: [SitePluginPluginOptionsGatsbyRemarkPlugins]
+  mediaTypes: [String]
   modulePath: String
   enableIdentityWidget: Boolean
   publicPath: String
@@ -2372,6 +2374,7 @@ input SitePluginPluginOptionsFilterInput {
   defaultLayouts: SitePluginPluginOptionsDefaultLayoutsFilterInput
   globalScope: StringQueryOperatorInput
   gatsbyRemarkPlugins: SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput
+  mediaTypes: StringQueryOperatorInput
   modulePath: StringQueryOperatorInput
   enableIdentityWidget: BooleanQueryOperatorInput
   publicPath: StringQueryOperatorInput
@@ -2400,14 +2403,12 @@ type SitePluginPluginOptionsGatsbyRemarkPluginsOptions {
   name: String
   maxWidth: Int
   destinationDir: String
-  wrapperStyle: String
 }
 
 input SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput {
   name: StringQueryOperatorInput
   maxWidth: IntQueryOperatorInput
   destinationDir: StringQueryOperatorInput
-  wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginSortInput {

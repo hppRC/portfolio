@@ -11,11 +11,11 @@ module.exports = {
     twitterUsername: "@osaremochi",
   },
   plugins: [
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
 
     {
-      resolve: "gatsby-mdx",
+      resolve: `gatsby-mdx-fix`,
       options: {
         extensions: [".mdx", ".md"],
 
@@ -36,21 +36,21 @@ module.exports = {
         // also be passed into `cms.js`, under the `scope` key.
         //
         globalScope: `
-          import { UIComponents } from './src/Theme'
+          import *  as Components from 'rebass'
           export default {
-            ...UIComponents
+            ...Components
           }
         `,
         // mdPlugins: [],
         gatsbyRemarkPlugins: [
           {
-            resolve: "gatsby-remark-relative-images",
+            resolve: `gatsby-remark-relative-images`,
             options: {
               name: "uploads",
             },
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: `gatsby-remark-images`,
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
@@ -59,25 +59,25 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-copy-linked-files",
+            resolve: `gatsby-remark-copy-linked-files`,
             options: {
               destinationDir: "static",
             },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+            options: {},
           },
           {
             resolve: `gatsby-remark-smartypants`,
           },
         ],
+
+        mediaTypes: [`text/markdown`, `text/x-markdown`],
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.jsx`,
         enableIdentityWidget: false,
@@ -87,14 +87,14 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: "blog",
         path: `${__dirname}/content/blog/`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: "mdx",
         path: `${__dirname}/content/mdx/`,
@@ -106,9 +106,9 @@ module.exports = {
     //     path: `${__dirname}/content/blog/`,
     //   },
     // },
-    "gatsby-plugin-catch-links",
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-typescript",
-    "gatsby-plugin-mdx",
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-typescript`,
+    // `gatsby-plugin-mdx`,
   ],
 }
