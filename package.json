@@ -59,7 +59,6 @@
     "eslint-plugin-react": "^7.16.0",
     "gatsby-plugin-typescript": "^2.1.11",
     "graphql-typescript-definitions": "^0.17.3",
-    "husky": "^3.0.8",
     "jest": "^24.9.0",
     "lint-staged": "^9.4.1",
     "multer": "^1.4.2",

@@ -36,7 +36,7 @@ export const NavTree = _props => {
   )
 }
 
-function renderNavTree(tree: TreeNode[], treeDepth: number = 0) {
+function renderNavTree(tree: TreeNode[], treeDepth = 0) {
   const getTreeLayout = () => {
     if (treeDepth > 0) {
       return {
