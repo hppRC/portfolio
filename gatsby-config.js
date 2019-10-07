@@ -15,7 +15,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
 
     {
-      resolve: `gatsby-mdx-fix`,
+      resolve: `gatsby-mdx`,
       options: {
         extensions: [".mdx", ".md"],
 
@@ -109,6 +109,6 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
-    // `gatsby-plugin-mdx`,
+    `gatsby-plugin-mdx`,
   ],
 }
