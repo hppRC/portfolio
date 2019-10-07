@@ -10,7 +10,8 @@ import { Link as GatsbyLink } from 'gatsby';
 interface Props {
 	children?: any;
 	to: string;
-	activeClassName: string;
+	style?: object;
+	activeClassName?: string;
 }
 
 export const SmartLink = ({
