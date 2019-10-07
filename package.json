@@ -8,6 +8,7 @@
 		"@mdx-js/mdx": "^0.18.2",
 		"@mdx-js/runtime": "^0.18.2",
 		"@mdx-js/tag": "^0.18.0",
+		"@types/react-helmet": "^5.0.11",
 		"gatsby": "^2.13.14",
 		"gatsby-image": "^2.2.5",
 		"gatsby-mdx": "^0.4.5",
