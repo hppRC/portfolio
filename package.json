@@ -2,8 +2,8 @@
 	"name": "gatsby-mdx-netlify-cms-starter",
 	"private": true,
 	"description": "Extension of the default Gatsby starter to add MDX and Netlify CMS",
-	"version": "0.2.0",
-	"author": "Renee Blackburn <rvrant@gmail.com>",
+	"version": "0.1.0",
+	"author": "hppRC <hpp.ricecake@gmail.com>",
 	"dependencies": {
 		"@mdx-js/mdx": "^0.18.2",
 		"@mdx-js/runtime": "^0.18.2",
@@ -41,7 +41,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/renvrant/gatsby-mdx-netlify-cms-starter"
+		"url": "https://github.com/hppRC/hppPortfolio"
 	},
 	"bugs": {
 		"url": "https://github.com/gatsbyjs/gatsby/issues"
