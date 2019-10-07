@@ -5,7 +5,7 @@ module.exports = {
 		author: `hpp`,
 		siteUrl: `https://hpprc.com/`,
 		social: {
-			twitter: `osaremochi`
+			twitter: `@osaremochi`
 		}
 	},
 	plugins: [

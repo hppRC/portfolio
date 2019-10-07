@@ -8,14 +8,16 @@ interface Props {
 	meta: [];
 	keywords: string[];
 	title: string;
+	locale: string;
 }
 
 export function SEO({
 	description,
-	lang = `jas`,
+	lang = `ja`,
 	meta = [],
 	keywords = [],
-	title
+	title,
+	locale = `ja_JP`
 }: Props) {
 	return (
 		<StaticQuery
@@ -36,6 +38,10 @@ export function SEO({
 								content: metaDescription
 							},
 							{
+								property: `og:url`,
+								content: data.site.siteMetadata.siteUrl
+							},
+							{
 								property: `og:title`,
 								content: title
 							},
@@ -46,6 +52,10 @@ export function SEO({
 							{
 								property: `og:type`,
 								content: `website`
+							},
+							{
+								property: `og:locale`,
+								content: locale
 							},
 							{
 								name: `twitter:card`,
@@ -62,6 +72,10 @@ export function SEO({
 							{
 								name: `twitter:description`,
 								content: metaDescription
+							},
+							{
+								name: `twitter:site`,
+								content: data.site.siteMetadata.social.twitter
 							}
 						]
 							.concat(
@@ -87,6 +101,10 @@ const detailsQuery = graphql`
 				title
 				description
 				author
+				siteUrl
+				social {
+					twitter
+				}
 			}
 		}
 	}
