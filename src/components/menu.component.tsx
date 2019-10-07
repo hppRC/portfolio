@@ -17,6 +17,11 @@ export const query = graphql`
 	}
 `;
 
+interface Item {
+	url: string;
+	text: string;
+}
+
 export const Menu = () => (
 	<StaticQuery
 		query={query}
@@ -24,7 +29,7 @@ export const Menu = () => (
 			const menu = safelyGetSiteConfig(data.sitePage).menu_nav || [];
 			return (
 				<ul>
-					{menu.map((item, i) => (
+					{menu.map((item: Item, i: number) => (
 						<li key={i}>
 							<Link to={item.url}>{item.text}</Link>
 						</li>
