@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: renvrant/gatsby-mdx-netlify-cms-starter
+  repo: hppRC/hppPortfolio
   branch: master
 
 media_folder: uploads/img
