@@ -4,11 +4,11 @@ import { StaticQuery, graphql } from 'gatsby';
 
 interface Props {
 	description: string;
-	lang: string;
-	meta: [];
-	keywords: string[];
+	lang?: string;
+	meta?: [];
+	keywords?: string[];
 	title: string;
-	locale: string;
+	locale?: string;
 }
 
 export function SEO({

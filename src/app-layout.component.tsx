@@ -1,11 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import { Header, Menu } from './components';
 
+interface Props {
+	children?: any;
+	pageContext?: any;
+}
+
 // Global application wrapper
-export const AppLayout = ({ children, pageContext }) => (
+export const AppLayout = ({ children, pageContext }: Props) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {
@@ -34,9 +38,5 @@ export const AppLayout = ({ children, pageContext }) => (
 		}}
 	/>
 );
-
-AppLayout.propTypes = {
-	children: PropTypes.node.isRequired
-};
 
 export default AppLayout;
