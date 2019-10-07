@@ -1,7 +1,7 @@
 import { MdxControl, MdxPreview } from "netlify-cms-widget-mdx"
 import React, { Component } from "react"
 import { StyleSheetManager } from "styled-components"
-import { Theme, LayoutComponents, UIComponents } from "../Theme"
+import { Theme, LayoutComponents } from "../Theme"
 import { FileSystemBackend } from "netlify-cms-backend-fs"
 import CMS, { init } from "netlify-cms"
 import * as Components from "rebass"

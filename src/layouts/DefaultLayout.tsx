@@ -1,11 +1,10 @@
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { MDXProvider } from "@mdx-js/react"
 import React from "react"
 import { Box, Flex } from "rebass"
 import { Link, graphql } from "gatsby"
 import { Sans, Serif } from "components/ui/Typography"
 import { NavTree } from "components/NavTree"
-import { UIComponents } from "../Theme"
+import { MDXWrapper } from "../components/MDXWrapper"
 
 export default function DocsLayout(props) {
   const {
@@ -29,7 +28,9 @@ export default function DocsLayout(props) {
       </Box>
       <Box p={2}>
         <Serif size="8">{title}</Serif>
-        <MDXRenderer>{body}</MDXRenderer>
+        <MDXWrapper>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXWrapper>
       </Box>
     </Flex>
   )
