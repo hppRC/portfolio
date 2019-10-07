@@ -64,6 +64,15 @@ module.exports = {
               destinationDir: "static",
             },
           },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-smartypants`,
+          },
         ],
       },
     },
@@ -91,12 +100,12 @@ module.exports = {
         path: `${__dirname}/content/mdx/`,
       },
     },
-    {
-      resolve: "gatsby-plugin-page-creator",
-      options: {
-        path: `${__dirname}/content/mdx/`,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-page-creator",
+    //   options: {
+    //     path: `${__dirname}/content/blog/`,
+    //   },
+    // },
     "gatsby-plugin-catch-links",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-typescript",

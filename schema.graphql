@@ -1676,7 +1676,7 @@ type Query {
   allSitePage(filter: SitePageFilterInput, sort: SitePageSortInput, skip: Int, limit: Int): SitePageConnection!
   sitePlugin(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, resolve: StringQueryOperatorInput, name: StringQueryOperatorInput, version: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, nodeAPIs: StringQueryOperatorInput, browserAPIs: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, pluginFilepath: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput): SitePlugin
   allSitePlugin(filter: SitePluginFilterInput, sort: SitePluginSortInput, skip: Int, limit: Int): SitePluginConnection!
-  site(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, siteMetadata: SiteSiteMetadataFilterInput, polyfill: BooleanQueryOperatorInput, pathPrefix: StringQueryOperatorInput, buildTime: DateQueryOperatorInput): Site
+  site(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, siteMetadata: SiteSiteMetadataFilterInput, port: IntQueryOperatorInput, host: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, pathPrefix: StringQueryOperatorInput, buildTime: DateQueryOperatorInput): Site
   allSite(filter: SiteFilterInput, sort: SiteSortInput, skip: Int, limit: Int): SiteConnection!
   directory(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, blksize: IntQueryOperatorInput, ino: IntQueryOperatorInput, blocks: IntQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput): Directory
   allDirectory(filter: DirectoryFilterInput, sort: DirectorySortInput, skip: Int, limit: Int): DirectoryConnection!
@@ -1688,6 +1688,8 @@ type Site implements Node {
   children: [Node!]!
   internal: Internal!
   siteMetadata: SiteSiteMetadata
+  port: Int
+  host: String
   polyfill: Boolean
   pathPrefix: String
   buildTime(
@@ -1820,6 +1822,8 @@ enum SiteFieldsEnum {
   siteMetadata___author
   siteMetadata___url
   siteMetadata___twitterUsername
+  port
+  host
   polyfill
   pathPrefix
   buildTime
@@ -1831,6 +1835,8 @@ input SiteFilterInput {
   children: NodeFilterListInput
   internal: InternalFilterInput
   siteMetadata: SiteSiteMetadataFilterInput
+  port: IntQueryOperatorInput
+  host: StringQueryOperatorInput
   polyfill: BooleanQueryOperatorInput
   pathPrefix: StringQueryOperatorInput
   buildTime: DateQueryOperatorInput
@@ -1872,26 +1878,10 @@ type SitePageConnection {
 
 type SitePageContext {
   id: String
-  frontmatter: SitePageContextFrontmatter
 }
 
 input SitePageContextFilterInput {
   id: StringQueryOperatorInput
-  frontmatter: SitePageContextFrontmatterFilterInput
-}
-
-type SitePageContextFrontmatter {
-  title: String
-  author: String
-  date: String
-  tags: [String]
-}
-
-input SitePageContextFrontmatterFilterInput {
-  title: StringQueryOperatorInput
-  author: StringQueryOperatorInput
-  date: StringQueryOperatorInput
-  tags: StringQueryOperatorInput
 }
 
 type SitePageEdge {
@@ -1993,10 +1983,6 @@ enum SitePageFieldsEnum {
   componentChunkName
   isCreatedByStatefulCreatePages
   context___id
-  context___frontmatter___title
-  context___frontmatter___author
-  context___frontmatter___date
-  context___frontmatter___tags
   pluginCreator___id
   pluginCreator___parent___id
   pluginCreator___parent___parent___id
@@ -2041,7 +2027,8 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___extensions
   pluginCreator___pluginOptions___defaultLayouts___default
   pluginCreator___pluginOptions___globalScope
-  pluginCreator___pluginOptions___preloadedMDXScope
+  pluginCreator___pluginOptions___gatsbyRemarkPlugins
+  pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve
   pluginCreator___pluginOptions___modulePath
   pluginCreator___pluginOptions___enableIdentityWidget
   pluginCreator___pluginOptions___publicPath
@@ -2228,7 +2215,12 @@ enum SitePluginFieldsEnum {
   pluginOptions___extensions
   pluginOptions___defaultLayouts___default
   pluginOptions___globalScope
-  pluginOptions___preloadedMDXScope
+  pluginOptions___gatsbyRemarkPlugins
+  pluginOptions___gatsbyRemarkPlugins___resolve
+  pluginOptions___gatsbyRemarkPlugins___options___name
+  pluginOptions___gatsbyRemarkPlugins___options___maxWidth
+  pluginOptions___gatsbyRemarkPlugins___options___destinationDir
+  pluginOptions___gatsbyRemarkPlugins___options___wrapperStyle
   pluginOptions___modulePath
   pluginOptions___enableIdentityWidget
   pluginOptions___publicPath
@@ -2356,7 +2348,7 @@ type SitePluginPluginOptions {
   extensions: [String]
   defaultLayouts: SitePluginPluginOptionsDefaultLayouts
   globalScope: String
-  preloadedMDXScope: String
+  gatsbyRemarkPlugins: [SitePluginPluginOptionsGatsbyRemarkPlugins]
   modulePath: String
   enableIdentityWidget: Boolean
   publicPath: String
@@ -2379,7 +2371,7 @@ input SitePluginPluginOptionsFilterInput {
   extensions: StringQueryOperatorInput
   defaultLayouts: SitePluginPluginOptionsDefaultLayoutsFilterInput
   globalScope: StringQueryOperatorInput
-  preloadedMDXScope: StringQueryOperatorInput
+  gatsbyRemarkPlugins: SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput
   modulePath: StringQueryOperatorInput
   enableIdentityWidget: BooleanQueryOperatorInput
   publicPath: StringQueryOperatorInput
@@ -2388,6 +2380,34 @@ input SitePluginPluginOptionsFilterInput {
   name: StringQueryOperatorInput
   path: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
+}
+
+type SitePluginPluginOptionsGatsbyRemarkPlugins {
+  resolve: String
+  options: SitePluginPluginOptionsGatsbyRemarkPluginsOptions
+}
+
+input SitePluginPluginOptionsGatsbyRemarkPluginsFilterInput {
+  resolve: StringQueryOperatorInput
+  options: SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput
+}
+
+input SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput {
+  elemMatch: SitePluginPluginOptionsGatsbyRemarkPluginsFilterInput
+}
+
+type SitePluginPluginOptionsGatsbyRemarkPluginsOptions {
+  name: String
+  maxWidth: Int
+  destinationDir: String
+  wrapperStyle: String
+}
+
+input SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput {
+  name: StringQueryOperatorInput
+  maxWidth: IntQueryOperatorInput
+  destinationDir: StringQueryOperatorInput
+  wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginSortInput {
