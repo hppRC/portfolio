@@ -2,10 +2,15 @@ module.exports = {
 	siteMetadata: {
 		title: `Gatsby-MDX + Netlify-CMS Starter`,
 		description: `Starter for Gatsby-MDX + Netlify CMS`,
-		author: `@osaremochi`
+		author: `hpp`,
+		siteUrl: `https://hpprc.com/`,
+		social: {
+			twitter: `osaremochi`
+		}
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-typescript`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
