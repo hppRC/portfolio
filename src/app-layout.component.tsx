@@ -20,9 +20,7 @@ export const AppLayout: React.FC<React.Props<{}>> = ({ children }) => (
 				<>
 					<Header siteTitle={data.site.siteMetadata.title} />
 					<Menu />
-					<div>
-						<main>{children}</main>
-					</div>
+					<main>{children}</main>
 					<Footer siteTitle={data.site.siteMetadata.title} />
 				</>
 			);
