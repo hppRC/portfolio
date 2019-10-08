@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Heading, SEO } from '../components';
+import { SEO } from '../components/web';
+import { Heading } from '../components/mdx';
 import { RenderMarkdown } from '../core';
 import {
 	safelyGetFrontMatter,

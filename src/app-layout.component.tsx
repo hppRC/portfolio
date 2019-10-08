@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { Header, Menu, Footer } from './components';
+import { Header, Menu, Footer } from './components/layouts';
 
 // Global application wrapper
 export const AppLayout: React.FC<React.Props<{}>> = ({ children }) => (

@@ -2,7 +2,7 @@ import MDX from '@mdx-js/runtime';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CatchError } from './catch-error.component';
+import { CatchError } from './catch-error';
 
 /* Use this component to parse markdown using MDX. See MDX runtime for details.
  *

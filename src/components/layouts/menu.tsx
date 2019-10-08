@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import { safelyGetSiteConfig } from '../cms';
-import { SmartLink } from './smart-link.component';
+import { safelyGetSiteConfig } from '../../cms';
+import { SmartLink } from '../mdx/smart-link';
 
 interface Props {}
 

@@ -13,7 +13,10 @@
 		"allowJs": true,
 		"noImplicitAny": true,
 		"strictNullChecks": true,
-		"noImplicitReturns": true
+		"noImplicitReturns": true,
+		"baseUrl": "./",
+		"paths": { "*": ["types/*"] },
+		"typeRoots": ["types", "node_modules/@types"]
 	},
 	"exclude": ["node_modules", "public", ".cache"]
 }

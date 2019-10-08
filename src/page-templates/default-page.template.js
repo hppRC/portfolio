@@ -7,7 +7,8 @@ import {
 	CMS_COMPONENTS,
 	CMS_SCOPE
 } from '../cms';
-import { SEO, Heading } from '../components';
+import { SEO } from '../components/web';
+import { Heading } from '../components/mdx';
 import { RenderMarkdown } from '../core';
 
 export const DefaultPageTemplate = ({ title, body, children }) => {

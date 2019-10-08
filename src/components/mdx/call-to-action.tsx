@@ -1,5 +1,5 @@
 import React from 'react';
-import { SmartLink } from './smart-link.component';
+import { SmartLink } from '../mdx/smart-link';
 
 interface Props {
 	url: string;
