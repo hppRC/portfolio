@@ -1,5 +1,5 @@
-import MDX from '@mdx-js/runtime';
 import React from 'react';
+import MDX from '@mdx-js/runtime';
 
 import { CatchError } from './catch-error.component';
 
