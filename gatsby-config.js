@@ -30,7 +30,7 @@ module.exports = {
 					// a frontmatter value provided in the CMS, allowing users to
 					// choose different template layouts.
 					default: require.resolve(
-						`${__dirname}/src/page-templates/cms-entry.template.js`
+						`${__dirname}/src/page-templates/cms-entry.template.tsx`
 					)
 				}
 			}
