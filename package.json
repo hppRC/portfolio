@@ -12,6 +12,7 @@
 		"@mdx-js/runtime": "^0.18.2",
 		"@mdx-js/tag": "^0.18.0",
 		"@types/react-helmet": "^5.0.11",
+		"emotion-reset": "^2.0.3",
 		"gatsby": "^2.13.14",
 		"gatsby-image": "^2.2.5",
 		"gatsby-mdx": "^0.4.5",
@@ -28,7 +29,8 @@
 		"prop-types": "^15.7.2",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
-		"react-helmet": "^5.2.1"
+		"react-helmet": "^5.2.1",
+		"styled-reset": "^4.0.2"
 	},
 	"devDependencies": {
 		"eslint-config-react-app": "^5.0.2",

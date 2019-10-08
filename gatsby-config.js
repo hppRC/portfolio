@@ -12,6 +12,7 @@ module.exports = {
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-typescript`,
+		`gatsby-plugin-emotion`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
