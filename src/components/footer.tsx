@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { FC } from 'react';
 
 interface Props {
 	siteTitle: string;
 }
 
-export const Footer = ({ siteTitle = `` }: Props) => (
+export const Footer: FC<Props> = ({ siteTitle = `` }) => (
 	<footer>
 		<div>
 			<h3>

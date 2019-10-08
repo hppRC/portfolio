@@ -1,15 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import { Header, Menu, Footer } from './components';
 
-interface Props {
-	children?: any;
-	pageContext?: any;
-}
-
 // Global application wrapper
-export const AppLayout = ({ children, pageContext }: Props) => (
+export const AppLayout: FC<React.Props<{}>> = ({ children }) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {

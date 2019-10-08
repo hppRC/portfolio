@@ -1,21 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { SmartLink } from './smart-link.component';
 
 interface Props {
 	url: string;
-	children?: any;
 	align?: string;
 	bgColor?: string;
 }
 
-export const CallToAction = ({
+export const CallToAction: FC<Props> = ({
 	url,
 	children,
 	align,
 	bgColor,
 	...other
-}: Props) => {
+}) => {
 	const style = {
 		borderRadius: '5px',
 		textDecoration: 'none',
