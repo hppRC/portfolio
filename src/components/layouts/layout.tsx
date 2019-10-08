@@ -21,6 +21,7 @@ export const Layout: React.FC<{}> = ({ children }) => (
 					<Header siteTitle={data.site.siteMetadata.title} />
 					<Menu />
 					<main>{children}</main>
+
 					<Footer siteTitle={data.site.siteMetadata.title} />
 				</>
 			);
