@@ -10,7 +10,10 @@
 		"isolatedModules": true,
 		"esModuleInterop": true,
 		"noUnusedLocals": false,
-		"allowJs": true
+		"allowJs": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noImplicitReturns": true
 	},
 	"exclude": ["node_modules", "public", ".cache"]
 }

@@ -11,9 +11,9 @@ export const Footer = ({ siteTitle = `` }: Props) => (
 			<h3>
 				<Link to='/'>{siteTitle}</Link>© {new Date().getFullYear()},
 			</h3>
-			Built <sub>with</sub>
-			{` `}
-			<a href='https://www.gatsbyjs.org'>Gatsby</a>
+			<p>
+				Built with <a href='https://www.gatsbyjs.org'>Gatsby</a>
+			</p>
 		</div>
 	</footer>
 );
