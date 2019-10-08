@@ -1,6 +1,7 @@
 import React from 'react';
-import { graphql, StaticQuery, Link } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import { safelyGetSiteConfig } from '../cms';
+import { SmartLink } from './smart-link.component';
 
 export const query = graphql`
 	query {
@@ -31,7 +32,7 @@ export const Menu = () => (
 				<ul>
 					{menu.map((item: Item, i: number) => (
 						<li key={i}>
-							<Link to={item.url}>{item.text}</Link>
+							<SmartLink to={item.url}>{item.text}</SmartLink>
 						</li>
 					))}
 				</ul>
