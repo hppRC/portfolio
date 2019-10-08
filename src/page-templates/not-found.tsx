@@ -8,7 +8,7 @@ interface Props {
 
 type TemplateType = ({ pageContext }: Props) => JSX.Element;
 
-const NotFoundTemplate: TemplateType = () => (
+export const NotFoundTemplate: TemplateType = () => (
 	<>
 		<SEO title='404: Not found' />
 		<h1>NOT FOUND</h1>
