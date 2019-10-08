@@ -8,18 +8,16 @@ import { Link as GatsbyLink } from 'gatsby';
  */
 
 interface Props {
-	children?: any;
 	to: string;
-	style?: object;
 	activeClassName?: string;
 }
 
-export const SmartLink = ({
+export const SmartLink: React.FC<Props> = ({
 	children,
 	to,
 	activeClassName,
 	...other
-}: Props) => {
+}) => {
 	// This assumes that any internal link (intended for Gatsby)
 	// will start with one slash or a hash tag
 	const internal = /^\/(?!\/|#)/.test(to);

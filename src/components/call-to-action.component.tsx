@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-
+import React from 'react';
 import { SmartLink } from './smart-link.component';
 
 interface Props {
@@ -8,23 +7,15 @@ interface Props {
 	bgColor?: string;
 }
 
-export const CallToAction: FC<Props> = ({
+export const CallToAction: React.FC<Props> = ({
 	url,
 	children,
 	align,
 	bgColor,
 	...other
 }) => {
-	const style = {
-		borderRadius: '5px',
-		textDecoration: 'none',
-		display: 'inline-block',
-		padding: '1.5em 2.5em',
-		backgroundColor: bgColor ? bgColor : 'rebeccaPurple',
-		color: 'white'
-	};
 	const link = (
-		<SmartLink to={url} style={style} {...other}>
+		<SmartLink to={url} {...other}>
 			{children}
 		</SmartLink>
 	);
