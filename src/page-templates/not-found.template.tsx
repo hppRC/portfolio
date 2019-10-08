@@ -2,7 +2,13 @@ import React from 'react';
 
 import { SEO } from '../components/web';
 
-const NotFoundTemplate: React.FC<{}> = () => (
+interface Props {
+	pageContext?: { frontmatter?: any };
+}
+
+type TemplateType = ({ pageContext }: Props) => JSX.Element;
+
+const NotFoundTemplate: TemplateType = () => (
 	<>
 		<SEO title='404: Not found' />
 		<h1>NOT FOUND</h1>

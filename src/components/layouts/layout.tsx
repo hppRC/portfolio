@@ -1,10 +1,10 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { Header, Menu, Footer } from './components/layouts';
+import { Header, Menu, Footer } from '.';
 
 // Global application wrapper
-export const AppLayout: React.FC<React.Props<{}>> = ({ children }) => (
+export const Layout: React.FC<{}> = ({ children }) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {
@@ -28,4 +28,4 @@ export const AppLayout: React.FC<React.Props<{}>> = ({ children }) => (
 	/>
 );
 
-export default AppLayout;
+export default Layout;
