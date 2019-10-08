@@ -6,6 +6,7 @@
 	"author": "hppRC <hpp.ricecake@gmail.com>",
 	"dependencies": {
 		"@mdx-js/mdx": "^0.18.2",
+		"@mdx-js/react": "^1.5.1",
 		"@mdx-js/runtime": "^0.18.2",
 		"@mdx-js/tag": "^0.18.0",
 		"@types/react-helmet": "^5.0.11",

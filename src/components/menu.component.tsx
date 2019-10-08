@@ -3,12 +3,14 @@ import { graphql, StaticQuery } from 'gatsby';
 import { safelyGetSiteConfig } from '../cms';
 import { SmartLink } from './smart-link.component';
 
+interface Props {}
+
 interface Item {
 	url: string;
 	text: string;
 }
 
-export const Menu: React.FC<{}> = () => (
+export const Menu: React.FC<Props> = () => (
 	<StaticQuery
 		query={query}
 		render={data => {

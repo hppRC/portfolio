@@ -3,7 +3,7 @@ import React, { ErrorInfo } from 'react';
 interface Props {}
 
 interface State {
-	hasError?: boolean;
+	hasError: boolean;
 }
 
 /*

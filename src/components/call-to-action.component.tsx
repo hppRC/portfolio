@@ -21,7 +21,13 @@ export const CallToAction: React.FC<Props> = ({
 	);
 
 	return align === 'center' ? (
-		<span style={{ display: 'flex', justifyContent: 'center' }}>
+		<span
+			style={{
+				display: 'flex',
+				justifyContent: 'center',
+				backgroundColor: 'red'
+			}}
+		>
 			{link}
 		</span>
 	) : (
