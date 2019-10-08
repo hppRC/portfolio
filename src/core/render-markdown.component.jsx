@@ -1,5 +1,6 @@
-import React from 'react';
 import MDX from '@mdx-js/runtime';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { CatchError } from './catch-error.component';
 
@@ -18,20 +19,16 @@ import { CatchError } from './catch-error.component';
  * eg. { h1: props => <Title ...props />
  */
 
-interface Props {
-	md: string;
-	scope?: object;
-	components?: object;
-}
-
-export const RenderMarkdown: React.FC<Props> = ({
-	md = '',
-	scope = {},
-	components = {}
-}) => (
+export const RenderMarkdown = ({ md = '', scope = {}, components = {} }) => (
 	<CatchError>
 		<MDX scope={scope} components={components}>
 			{md}
 		</MDX>
 	</CatchError>
 );
+
+RenderMarkdown.propTypes = {
+	md: PropTypes.string.isRequired,
+	scope: PropTypes.object,
+	components: PropTypes.object
+};
