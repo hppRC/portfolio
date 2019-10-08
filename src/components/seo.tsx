@@ -2,14 +2,16 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-interface Props {
+interface PropsBase {
 	description: string;
 	title: string;
-	lang?: string;
-	locale?: string;
-	meta?: [];
-	keywords?: string[];
+	lang: string;
+	locale: string;
+	meta: [];
+	keywords: string[];
 }
+
+type Props = Partial<PropsBase>;
 
 export const SEO: React.FC<Props> = ({
 	description,
