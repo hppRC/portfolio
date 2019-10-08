@@ -39,13 +39,56 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
-				start_url: `/`,
-				background_color: `#663399`,
-				theme_color: `#663399`,
-				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+				name: `hpp portfolio`,
+				short_name: `hppRC`,
+				theme_color: `#0b0b0b`,
+				background_color: `#0b0b0b`,
+				display: `standalone`,
+				Scope: `/`,
+				start_url: `/?utm_source=homescreen`,
+				icons: [
+					{
+						src: `src/images/icons/icon-72x72.png`,
+						sizes: `72x72`,
+						type: `image/png`
+					},
+					{
+						src: `src/images/icons/icon-96x96.png`,
+						sizes: `96x96`,
+						type: `image/png`
+					},
+					{
+						src: `src/images/icons/icon-128x128.png`,
+						sizes: `128x128`,
+						type: `image/png`
+					},
+					{
+						src: `src/images/icons/icon-144x144.png`,
+						sizes: `144x144`,
+						type: `image/png`
+					},
+					{
+						src: `src/images/icons/icon-152x152.png`,
+						sizes: `152x152`,
+						type: `image/png`
+					},
+					{
+						src: `src/images/icons/icon-192x192.png`,
+						sizes: `192x192`,
+						type: `image/png`
+					},
+					{
+						src: `src/images/icons/icon-384x384.png`,
+						sizes: `384x384`,
+						type: `image/png`
+					},
+					{
+						src: `src/images/icons/icon-512x512.png`,
+						sizes: `512x512`,
+						type: `image/png`
+					}
+				],
+				splash_pages: null
 			}
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
