@@ -3,7 +3,6 @@ title: Home Page
 templateKey: 'home-page'
 sections:
     - body: >-
-          import { CallToAction } from '../components/mdx';
           Extended from the Gatsby starter, this starter aims to provide an example for using Gatsby-MDX with Netlify.
 
           ## Features
