@@ -3,8 +3,8 @@ backend:
   repo: hppRC/hppPortfolio
   branch: master
 
-media_folder: public/img
-public_folder: /img
+media_folder: static/assets
+public_folder: assets
 
 collections:
 - name: "mainPages"
@@ -53,11 +53,13 @@ collections:
           { label: URL, name: url, widget: string },
           ]
       }
-- name: "content"
-  label: "Content Pages"
-  folder: "src/pages/content"
+- name: "blog"
+  label: "Blog"
+  folder: "src/pages/blog"
   create: true
   fields:
-  - { label: "Title", name: "title", widget: "string" }
-  - { label: "Description", name: "description", widget: "text" }
-  - { label: "Body", name: "body", widget: "markdown" }
+  - { name: "title", label: "Title", widget: "string" }
+  - { name: path, label: Path }
+  - { name: date, label: Date, widget: datetime }
+  - { name: "description", label: "Description", widget: "text" }
+  - { name: "body", label: "Body", widget: "markdown" }

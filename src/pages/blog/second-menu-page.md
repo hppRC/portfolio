@@ -8,4 +8,4 @@ Secondary example page.
 
 
 
-![](/img/img_2471.png)
+![](/assets/img_2471.png)
