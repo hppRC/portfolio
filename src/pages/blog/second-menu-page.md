@@ -7,5 +7,4 @@ Secondary example page.
 [Back Home](/)
 
 
-
 ![](/assets/img_2471.png)
