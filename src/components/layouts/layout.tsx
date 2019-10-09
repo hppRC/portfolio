@@ -2,7 +2,6 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import { Header, Menu, Footer } from '.';
-import { SEO } from '../web';
 
 // Global application wrapper
 export const Layout: React.FC<{}> = ({ children }) => (
@@ -10,7 +9,6 @@ export const Layout: React.FC<{}> = ({ children }) => (
 		query={query}
 		render={data => (
 			<>
-				<SEO />
 				<Header siteTitle={data.site.siteMetadata.title} />
 				<Menu />
 				<main>{children}</main>
