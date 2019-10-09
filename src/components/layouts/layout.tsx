@@ -10,7 +10,6 @@ export const Layout: React.FC<{}> = ({ children }) => (
 		query={query}
 		render={data => (
 			<>
-				<Reset />
 				<Header siteTitle={data.site.siteMetadata.title} />
 				<Menu />
 				<main>{children}</main>

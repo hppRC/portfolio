@@ -70,7 +70,7 @@ const Thing = () => {
 		let positions = [];
 		let colors = [];
 		let x, y, z;
-		for (let i = 0; i < 100000; i++) {
+		for (let i = 0; i < 75000; i++) {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
 			z = Math.random() * 2.0 - 1.0;
@@ -126,7 +126,12 @@ const TopArt = () => (
 	<div css={theme}>
 		<Canvas
 			camera={{
-				position: [0, 0, 1 + window.innerHeight / window.innerWidth]
+				position: [
+					0,
+					0,
+					1 + typeof window !== 'undefined' &&
+						window.innerHeight / window.innerWidth
+				]
 			}}
 			shadowMap
 		>
