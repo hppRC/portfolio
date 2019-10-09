@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby-MDX + Netlify-CMS Starter`,
-		description: `Starter for Gatsby-MDX + Netlify CMS`,
+		title: `hpp Portfolio`,
+		description: `hpp's Portfolio & blog`,
 		author: `hpp`,
 		siteUrl: `https://hpprc.com/`,
 		social: {
@@ -32,7 +32,47 @@ module.exports = {
 					default: require.resolve(
 						`${__dirname}/src/page-templates/cms-entry.tsx`
 					)
-				}
+				},
+				gatsbyRemarkPlugins: [
+					{
+						resolve: `gatsby-remark-relative-images`,
+						options: {
+							name: 'uploads'
+						}
+					},
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							// It's important to specify the maxWidth (in pixels) of
+							// the content container as this plugin uses this as the
+							// base for generating different widths of each image.
+							maxWidth: 2048
+						}
+					},
+					{
+						resolve: `gatsby-remark-copy-linked-files`,
+						options: {
+							destinationDir: 'static'
+						}
+					},
+					{
+						resolve: `gatsby-remark-responsive-iframe`,
+						options: {}
+					},
+					{
+						resolve: `gatsby-remark-smartypants`
+					},
+					{
+						resolve: `gatsby-remark-prismjs`,
+						options: {
+							classPrefix: 'language-',
+							inlineCodeMarker: null,
+							aliases: {},
+							showLineNumbers: true,
+							noInlineHighlight: false
+						}
+					}
+				]
 			}
 		},
 		{
@@ -54,6 +94,7 @@ module.exports = {
 		// To learn more, visit: https://gatsby.app/offline
 		//this modules should be used after `gatsby-plugin-manifest`.
 		`gatsby-plugin-offline`,
+
 		{
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {

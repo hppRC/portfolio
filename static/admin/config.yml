@@ -3,7 +3,7 @@ backend:
   repo: hppRC/hppPortfolio
   branch: master
 
-media_folder: uploads/img
+media_folder: public/img
 public_folder: /img
 
 collections:

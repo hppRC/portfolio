@@ -44,5 +44,4 @@ sections:
     - body: |-
           Due to the way Netlify CMS works, some CMS content is saved as Markdown `frontmatter` rather than actual markdown. Therefore, fields with a markdown editor will save a raw markdown string. It is up to our templates to correctly parse markdown. For this, we have the core component `<RenderMarkdown>` which will parse MDX upon receiving an MDX string and include supplied React components as appropriate. Under the hood, this uses [@mdx/runtime](https://mdxjs.com/advanced/runtime) so please look there fore configuration details.
       title: Frontmatter & Markdown
-
 ---
