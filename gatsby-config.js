@@ -45,19 +45,20 @@ module.exports = {
 				display: `standalone`,
 				Scope: `/`,
 				start_url: `/?utm_source=homescreen`,
-				icon: `src/images/icon.png` // This path is relative to the root of the site.
+				// This path is relative to the root of the site.
+				// gatsby-plugin-manifest generate icons(for PWA) based on the image(path is bellow)
+				icon: `src/images/icon.png`
 			}
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.app/offline
-		// 'gatsby-plugin-offline',
+		//this modules should be used after `gatsby-plugin-manifest`.
+		`gatsby-plugin-offline`,
 		{
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
 				modulePath: `${__dirname}/src/cms/cms.js` // for custom preview in the Netlify CMS
 			}
-		},
-		//this modules should be used after `gatsby-plugin-manifest`.
-		`gatsby-plugin-offline`
+		}
 	]
 };
