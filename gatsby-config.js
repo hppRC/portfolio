@@ -100,6 +100,26 @@ module.exports = {
 			options: {
 				modulePath: `${__dirname}/src/cms/cms.js` // for custom preview in the Netlify CMS
 			}
-		}
+		},
+
+		//seo plugins
+		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: `https://hpprc.com`
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+				host: 'https://hpprc.com',
+				sitemap: 'https://hpprc.com/sitemap.xml',
+				policy: [{ userAgent: '*', allow: '/' }]
+			}
+		},
+
+		//development assistants plugins
+		`gatsby-plugin-lodash`
 	]
 };
