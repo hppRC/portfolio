@@ -118,6 +118,13 @@ module.exports = {
 				policy: [{ userAgent: '*', allow: '/' }]
 			}
 		},
+		{
+			resolve: `gatsby-plugin-google-analytics`,
+			options: {
+				// replace "UA-XXXXXXXXX-X" with your own Tracking ID
+				trackingId: `UA-149661454-1`
+			}
+		},
 
 		//development assistants plugins
 		`gatsby-plugin-lodash`
