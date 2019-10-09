@@ -13,7 +13,9 @@ const theme = css`
 export const testIndex = () => (
 	<>
 		<TopArt />
-		<h1 css={theme}>hpp Portfolio</h1>
+		<Layout>
+			<h1 css={theme}>hpp Portfolio</h1>
+		</Layout>
 	</>
 );
 
