@@ -4,9 +4,13 @@ import { Canvas, useFrame } from 'react-three-fiber';
 import { css } from '@emotion/core';
 
 const theme = css`
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: #000;
+	background-color: #0b0b0b;
+	z-index: -9999;
 `;
 
 const vertexSource = `
