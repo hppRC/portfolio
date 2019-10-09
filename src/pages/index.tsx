@@ -12,10 +12,10 @@ const theme = css`
 
 export const testIndex = () => (
 	<>
-		<TopArt />
 		<Layout>
 			<h1 css={theme}>hpp Portfolio</h1>
 		</Layout>
+		<TopArt />
 	</>
 );
 
