@@ -9,10 +9,12 @@ import {
 	CMS_SCOPE,
 	CMS_COMPONENTS
 } from '../cms';
+import TopArt from '../keyVisuals/top';
 
 export const HomePageTemplate = ({ title, sections }) => (
 	<article>
 		<SEO title={title} />
+		<TopArt />
 		<Heading tag={1}>{title}</Heading>
 		{withFallback(sections, []).map((section, i) => {
 			return (
