@@ -19,6 +19,13 @@ module.exports = {
 				path: `${__dirname}/src/images`
 			}
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `posts`,
+				path: `${__dirname}/content/posts/`
+			}
+		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
@@ -94,7 +101,6 @@ module.exports = {
 		// To learn more, visit: https://gatsby.app/offline
 		//this modules should be used after `gatsby-plugin-manifest`.
 		`gatsby-plugin-offline`,
-
 		{
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
