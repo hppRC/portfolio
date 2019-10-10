@@ -10,25 +10,35 @@ import {
 	CMS_COMPONENTS
 } from '../cms';
 import TopArt from '../keyVisuals/top';
+import styled from '@emotion/styled';
+
+const Theme = styled.div`
+	color: #fbfbfb;
+	section a {
+		color: #fff;
+	}
+`;
 
 export const HomePageTemplate = ({ title, sections }) => (
 	<article>
 		<SEO title={title} />
 		<TopArt />
 		<Heading tag={1}>{title}</Heading>
-		{withFallback(sections, []).map((section, i) => {
-			return (
-				<section key={i}>
-					<h2>{section.title}</h2>
-					<RenderMarkdown
-						md={section.body}
-						scope={CMS_SCOPE}
-						components={CMS_COMPONENTS}
-					/>
-					<hr />
-				</section>
-			);
-		})}
+		<Theme>
+			{withFallback(sections, []).map((section, i) => {
+				return (
+					<section key={i}>
+						<h2>{section.title}</h2>
+						<RenderMarkdown
+							md={section.body}
+							scope={CMS_SCOPE}
+							components={CMS_COMPONENTS}
+						/>
+						<hr />
+					</section>
+				);
+			})}
+		</Theme>
 	</article>
 );
 

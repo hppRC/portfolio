@@ -172,6 +172,10 @@ select {
   vertical-align: middle;
 }
 
+/* ↑ reset.css end ↑ */
+
+/* ↓ user custom global css starts ↓ */
+
 *,
 *::before,
 *::after {
