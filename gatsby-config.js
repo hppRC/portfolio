@@ -3,5 +3,6 @@ module.exports = {
 		title: 'My Wonderful Website',
 		description: 'Welcome to your brilliant website.',
 		author: 'Super Cool Developer'
-	}
+	},
+	plugins: [`gatsby-plugin-typescript`]
 };
