@@ -6,8 +6,11 @@
   "author": "hppRC <hpp.ricecake@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/react": "^1.5.1",
     "gatsby": "^2.16.3",
     "gatsby-plugin-catch-links": "^2.1.15",
+    "gatsby-plugin-mdx": "^1.0.52",
     "gatsby-plugin-typescript": "^2.1.15",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-remark": "^2.6.30",
