@@ -19,7 +19,7 @@ const Theme = styled.div`
 	}
 `;
 
-export const HomePageTemplate = ({ title, sections }) => (
+export const HomePageTemplate = ({ title, sections, ...props }) => (
 	<article>
 		<SEO title={title} />
 		<TopArt />

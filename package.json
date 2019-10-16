@@ -1,5 +1,5 @@
 {
-	"name": "gatsby-mdx-netlify-cms-starter",
+	"name": "hpp_portfolio",
 	"private": true,
 	"description": "Extension of the default Gatsby starter to add MDX and Netlify CMS",
 	"version": "0.1.0",
