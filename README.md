@@ -1,3 +1,0 @@
-# hpp Portfolio
-
-ポートフォリオです。

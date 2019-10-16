@@ -1,9 +1,0 @@
-[build]
-  publish = "public"
-  command = "yarn build"
-  functions = "lambda"
-[build.environment]
-  YARN_VERSION = "1.17.3"
-  NODE_VERSION = "12.10.0"
-  YARN_FLAGS = "--no-ignore-optional"
-  NODE_OPTIONS = "--max_old_space_size=4096"
