@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../layouts';
 import TagList from '../components/TagList';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { MDXProvider } from '@mdx-js/react';
 
 interface Props {
 	data: {
@@ -28,6 +29,12 @@ interface Frontmatter {
 	tags: string[];
 }
 
+const Test = () => <h1>Test transferd</h1>;
+
+const Components = {
+	Test
+};
+
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	console.log(data);
 	const post = data.mdx;
@@ -40,7 +47,9 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 		<Layout>
 			<h1>{title}</h1>
 			<p>{date}</p>
-			<MDXRenderer>{body}</MDXRenderer>
+			<MDXProvider components={Components}>
+				<MDXRenderer>{body}</MDXRenderer>
+			</MDXProvider>
 			<TagList tags={post.frontmatter.tags || []} />
 			<ul>
 				{next && (

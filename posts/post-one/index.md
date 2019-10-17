@@ -5,6 +5,12 @@ title: 'My First Post'
 tags: ['gatsby', 'qiita']
 status: 'published'
 ---
+import { SketchPicker } from "react-color"
+
 This is my beautiful first post.
 
 <h1>test header</h1>
+
+<Test />
+
+<SketchPicker />
