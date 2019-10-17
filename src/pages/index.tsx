@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../layouts';
 
 export const Index: React.FC<Props> = ({ data }) => {
@@ -12,6 +12,9 @@ export const Index: React.FC<Props> = ({ data }) => {
 					<h3>{node.frontmatter.title}</h3>
 					<p>{node.frontmatter.date}</p>
 					<p>{node.excerpt}</p>
+					<Link to={node.frontmatter.path}>
+						<h3>{node.frontmatter.title}</h3>
+					</Link>
 				</div>
 			))}
 		</Layout>
@@ -29,6 +32,7 @@ interface Props {
 						frontmatter: {
 							title: string;
 							date: string;
+							path: string;
 						};
 					};
 				}
@@ -48,7 +52,8 @@ export const query = graphql`
 					excerpt
 					frontmatter {
 						title
-						date
+						date(formatString: "YYYY年MM月DD日")
+						path
 					}
 				}
 			}
