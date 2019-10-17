@@ -1,21 +1,23 @@
 {
-  "name": "hppPortfolio",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:hppRC/hppPortfolio.git",
-  "author": "hppRC <hpp.ricecake@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@mdx-js/mdx": "^1.5.1",
-    "@mdx-js/react": "^1.5.1",
-    "gatsby": "^2.16.3",
-    "gatsby-plugin-catch-links": "^2.1.15",
-    "gatsby-plugin-mdx": "^1.0.52",
-    "gatsby-plugin-typescript": "^2.1.15",
-    "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-transformer-remark": "^2.6.30",
-    "react-color": "^2.17.3",
-    "react-dom": "^16.10.2",
-    "typescript": "^3.6.4"
-  }
+	"name": "hpp_portfolio",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "git@github.com:hppRC/hppPortfolio.git",
+	"author": "hppRC <hpp.ricecake@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@babel/core": "^7.6.4",
+		"@mdx-js/mdx": "^1.5.1",
+		"@mdx-js/react": "^1.5.1",
+		"gatsby": "^2.16.3",
+		"gatsby-plugin-catch-links": "^2.1.15",
+		"gatsby-plugin-mdx": "^1.0.52",
+		"gatsby-plugin-typescript": "^2.1.15",
+		"gatsby-source-filesystem": "^2.1.33",
+		"gatsby-transformer-remark": "^2.6.30",
+		"react": "^16.10.2",
+		"react-color": "^2.17.3",
+		"react-dom": "^16.10.2",
+		"typescript": "^3.6.4"
+	}
 }

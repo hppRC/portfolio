@@ -11,4 +11,4 @@ This is my beautiful first post.
 
 <Test />
 
-<SketchPicker />
+<SliderPicker />
