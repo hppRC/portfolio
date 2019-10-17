@@ -67,14 +67,21 @@ exports.createPages = ({ graphql, actions }) => {
 					}
 				});
 
-				posts.forEach(({ node }) => {
+				posts.forEach(({ node }, index) => {
 					const path = node.frontmatter.path;
+					const prev = index === 0 ? null : posts[index - 1].node;
+					const next =
+						index === posts.length - 1
+							? null
+							: posts[index + 1].node;
 
 					createPage({
 						path,
 						component: postTemplate,
 						context: {
-							pathSlug: path
+							pathSlug: path,
+							prev,
+							next
 						}
 					});
 				});

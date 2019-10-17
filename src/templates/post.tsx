@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts';
+import TagList from '../components/TagList';
 
 interface Props {
 	data: {
@@ -9,6 +10,7 @@ interface Props {
 			frontmatter: {
 				date: string;
 				title: string;
+				tags: string[];
 			};
 		};
 	};
@@ -28,6 +30,7 @@ export const Post: React.FC<Props> = ({ data }) => {
 			<h1>{title}</h1>
 			<p>{date}</p>
 			<div dangerouslySetInnerHTML={{ __html: html }} />
+			<TagList tags={post.frontmatter.tags || []} />
 		</Layout>
 	);
 };
@@ -39,6 +42,7 @@ export const query = graphql`
 			frontmatter {
 				date
 				title
+				tags
 			}
 		}
 	}

@@ -8,11 +8,13 @@ interface Props {
 export const TagList: React.FC<Props> = ({ tags }) => {
 	return (
 		<div>
-			{tags.map(tag => (
-				<Link key={tag} to={`/tags/${tag}`}>
-					{tag}
-				</Link>
-			))}
+			<ul>
+				{tags.map(tag => (
+					<li key={tag}>
+						<Link to={`/tags/${tag}`}>{tag}</Link>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 };
