@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
 import Layout from '../layouts';
 
 export const Index: React.FC<Props> = ({ data }) => {
@@ -9,6 +10,11 @@ export const Index: React.FC<Props> = ({ data }) => {
 			<h1>Gatsby Tutorial Home Page</h1>
 			{edges.map(({ node }) => (
 				<div key={node.id}>
+					{console.log(node.frontmatter.cover)}
+					<Img
+						fluid={node.frontmatter.cover.childImageSharp.fluid}
+						alt={node.frontmatter.title}
+					/>
 					<h3>{node.frontmatter.title}</h3>
 					<p>{node.frontmatter.date}</p>
 					<p>{node.excerpt}</p>
@@ -33,6 +39,11 @@ interface Props {
 							title: string;
 							date: string;
 							path: string;
+							cover: {
+								childImageSharp: {
+									fluid: FluidObject;
+								};
+							};
 						};
 					};
 				}
@@ -47,11 +58,18 @@ export const query = graphql`
 			edges {
 				node {
 					id
-					excerpt
+					excerpt(pruneLength: 100)
 					frontmatter {
 						title
 						date(formatString: "YYYY年MM月DD日")
 						path
+						cover {
+							childImageSharp {
+								fluid(maxWidth: 1000, quality: 90) {
+									...GatsbyImageSharpFluid_withWebp_tracedSVG
+								}
+							}
+						}
 					}
 				}
 			}

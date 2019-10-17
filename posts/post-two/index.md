@@ -4,6 +4,7 @@ date: '2019-08-19'
 title: 'My Second Post'
 tags: ['gatsby', 'qiita']
 status: 'published'
+cover: './icon.png'
 ---
 
 This is my magnificent second post.

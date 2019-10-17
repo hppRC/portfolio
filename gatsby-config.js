@@ -9,7 +9,8 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-catch-links`,
-
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -20,7 +21,17 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
-				extensions: [`.mdx`, `.md`]
+				extensions: [`.mdx`, `.md`],
+				gatsbyRemarkPlugins: [
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 690,
+							quality: 90,
+							linkImagesToOriginal: true
+						}
+					}
+				]
 			}
 		},
 		`gatsby-plugin-netlify-cms`
