@@ -28,12 +28,6 @@ module.exports = {
 							quality: 90,
 							linkImagesToOriginal: true
 						}
-					},
-					{
-						resolve: `gatsby-remark-normalize-paths`,
-						options: {
-							pathFields: ['cover']
-						}
 					}
 				]
 			}

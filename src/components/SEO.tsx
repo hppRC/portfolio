@@ -8,7 +8,7 @@ interface Props {
 	desc: string;
 	banner: string;
 	pathname: string;
-	article: boolean;
+	isArticle: boolean;
 }
 
 export const SEO: React.FC<Props> = ({
@@ -16,7 +16,7 @@ export const SEO: React.FC<Props> = ({
 	desc = null,
 	banner = null,
 	pathname = null,
-	article = false
+	isArticle = false
 }) => (
 	<StaticQuery
 		query={query}
@@ -38,14 +38,19 @@ export const SEO: React.FC<Props> = ({
 				}
 			}
 		}) => {
-			const seo = {
+			const seo: {
+				title: string;
+				description: string;
+				image: string;
+				url: string;
+			} = {
 				title: title || defaultTitle,
 				description: defaultDescription || desc,
 				image: `${siteUrl}${banner || defaultBanner}`,
 				url: `${siteUrl}${pathname || '/'}`
 			};
-			const realPrefix = pathPrefix === '/' ? '' : pathPrefix;
-			let schemaOrgJSONLD = [
+			const realPrefix: string = pathPrefix === '/' ? '' : pathPrefix;
+			let schemaOrgJSONLD: any = [
 				{
 					'@context': 'http://schema.org',
 					'@type': 'WebSite',
@@ -55,7 +60,7 @@ export const SEO: React.FC<Props> = ({
 					alternateName: titleAlt || ''
 				}
 			];
-			if (article) {
+			if (isArticle) {
 				schemaOrgJSONLD = [
 					{
 						'@context': 'http://schema.org',
@@ -111,7 +116,7 @@ export const SEO: React.FC<Props> = ({
 						<meta property='og:url' content={seo.url} />
 						<meta
 							property='og:type'
-							content={article ? 'article' : undefined}
+							content={isArticle ? 'article' : undefined}
 						/>
 						<meta property='og:title' content={seo.title} />
 						<meta
