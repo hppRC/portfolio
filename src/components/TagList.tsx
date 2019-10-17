@@ -7,7 +7,7 @@ interface Props {
 
 export const TagList: React.FC<Props> = ({ tags }) => {
 	return (
-		<div>
+		<>
 			<ul>
 				{tags.map(tag => (
 					<li key={tag}>
@@ -15,7 +15,7 @@ export const TagList: React.FC<Props> = ({ tags }) => {
 					</li>
 				))}
 			</ul>
-		</div>
+		</>
 	);
 };
 
