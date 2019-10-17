@@ -1,10 +1,8 @@
-const path = require('path');
+const config = require('./config/site');
 
 module.exports = {
 	siteMetadata: {
-		title: 'My Wonderful Website',
-		description: 'Welcome to your brilliant website.',
-		author: 'Super Cool Developer'
+		...config
 	},
 	plugins: [
 		`gatsby-plugin-typescript`,
@@ -30,10 +28,32 @@ module.exports = {
 							quality: 90,
 							linkImagesToOriginal: true
 						}
+					},
+					{
+						resolve: `gatsby-remark-normalize-paths`,
+						options: {
+							pathFields: ['cover']
+						}
 					}
 				]
 			}
 		},
-		`gatsby-plugin-netlify-cms`
+		`gatsby-plugin-netlify-cms`,
+		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: config.title,
+				short_name: config.shortName,
+				description: config.description,
+				Scope: `/`,
+				start_url: `/?utm_source=homescreen`,
+				background_color: config.backgroundColor,
+				theme_color: config.themeColor,
+				display: 'standalone',
+				icon: config.icon
+			}
+		},
+		`gatsby-plugin-offline`
 	]
 };
