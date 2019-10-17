@@ -15,6 +15,7 @@ interface Props {
 }
 
 export const Post: React.FC<Props> = ({ data }) => {
+	console.log(data);
 	const post = data.markdownRemark;
 	const title = post.frontmatter.title;
 	const date = post.frontmatter.date;
