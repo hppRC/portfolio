@@ -5,20 +5,22 @@ import Layout from '../layouts';
 
 export const Index: React.FC<Props> = ({ data }) => {
 	const { edges } = data.allMdx;
+
 	return (
 		<Layout>
 			<h1>Gatsby Tutorial Home Page</h1>
 			{edges.map(({ node }) => (
 				<div key={node.id}>
-					{console.log(node.frontmatter.cover)}
-					<Img
-						fluid={node.frontmatter.cover.childImageSharp.fluid}
-						alt={node.frontmatter.title}
-					/>
+					{node.frontmatter.cover && (
+						<Img
+							fluid={node.frontmatter.cover.childImageSharp.fluid}
+							alt={node.frontmatter.title}
+						/>
+					)}
 					<h3>{node.frontmatter.title}</h3>
 					<p>{node.frontmatter.date}</p>
 					<p>{node.excerpt}</p>
-					<Link to={node.frontmatter.path}>
+					<Link to={`/posts/${node.frontmatter.slug}`}>
 						<h3>{node.frontmatter.title}</h3>
 					</Link>
 				</div>
@@ -36,9 +38,10 @@ interface Props {
 						id: string;
 						excerpt: string;
 						frontmatter: {
-							title: string;
+							slug: string;
 							date: string;
-							path: string;
+							title: string;
+							tags: string[];
 							cover: {
 								childImageSharp: {
 									fluid: FluidObject;
@@ -54,15 +57,16 @@ interface Props {
 
 export const query = graphql`
 	query {
-		allMdx(filter: { frontmatter: { status: { eq: "published" } } }) {
+		allMdx {
 			edges {
 				node {
 					id
 					excerpt(pruneLength: 100)
 					frontmatter {
-						title
+						slug
 						date(formatString: "YYYY年MM月DD日")
-						path
+						title
+						tags
 						cover {
 							childImageSharp {
 								fluid(maxWidth: 1000, quality: 90) {

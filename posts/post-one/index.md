@@ -1,9 +1,8 @@
 ---
-path: '/post-one'
+slug: 'post-one'
 date: '2019-08-18'
 title: 'My First Post'
 tags: ['gatsby', 'qiita']
-status: 'published'
 cover: './icon.png'
 ---
 This is my beautiful first post.

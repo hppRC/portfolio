@@ -5,14 +5,16 @@ backend:
 
 media_folder: static/assets
 public_folder: assets
+publish_mode: editorial_workflow
 
 collections:
-    - name: 'posts'
-      label: 'Posts'
-      folder: 'posts'
+    - name: posts
+      label: Posts
+      folder: posts
       create: true
       fields:
-          - { name: path, label: Path }
+          - { name: slug, label: Slug, widget: string }
           - { name: date, label: Date, widget: datetime }
-          - { name: 'title', label: 'Title', widget: 'string' }
-          - { name: 'body', label: 'Body', widget: 'markdown' }
+          - { name: title, label: Title, widget: string }
+          - { name: tags, label: Tags, widget: list }
+          - { name: body, label: Body, widget: markdown }

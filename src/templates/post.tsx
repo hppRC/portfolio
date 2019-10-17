@@ -5,6 +5,7 @@ import TagList from '../components/TagList';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import * as ReactColor from 'react-color';
+import Img, { FluidObject } from 'gatsby-image';
 
 interface Props {
 	data: {
@@ -24,10 +25,15 @@ interface Props {
 }
 
 interface Frontmatter {
-	path: string;
+	slug: string;
 	date: string;
 	title: string;
 	tags: string[];
+	cover: {
+		childImageSharp: {
+			fluid: FluidObject;
+		};
+	};
 }
 
 const Test: React.FC<{}> = () => <h1>Test transferd</h1>;
@@ -42,12 +48,15 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	const title = post.frontmatter.title;
 	const date = post.frontmatter.date;
 	const body = post.body;
+	const fluid =
+		post.frontmatter.cover && post.frontmatter.cover.childImageSharp.fluid;
 	const { prev, next } = pageContext;
 
 	return (
 		<Layout>
 			<h1>{title}</h1>
 			<p>{date}</p>
+			{fluid && <Img fluid={fluid} alt={title} />}
 			<MDXProvider components={Components}>
 				<MDXRenderer>{body}</MDXRenderer>
 			</MDXProvider>
@@ -55,12 +64,14 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 			<ul>
 				{next && (
 					<li key='next'>
-						<Link to={next.frontmatter.path}>Next</Link>
+						<Link to={`/posts/${next.frontmatter.slug}`}>Next</Link>
 					</li>
 				)}
 				{prev && (
 					<li key='prev'>
-						<Link to={prev.frontmatter.path}>Previous</Link>
+						<Link to={`/posts/${prev.frontmatter.slug}`}>
+							Previous
+						</Link>
 					</li>
 				)}
 			</ul>
@@ -69,13 +80,21 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-	query($pathSlug: String!) {
-		mdx(frontmatter: { path: { eq: $pathSlug } }) {
+	query($slug: String!) {
+		mdx(frontmatter: { slug: { eq: $slug } }) {
 			body
 			frontmatter {
+				slug
 				date
 				title
 				tags
+				cover {
+					childImageSharp {
+						fluid(maxWidth: 1000, quality: 90) {
+							...GatsbyImageSharpFluid_withWebp_tracedSVG
+						}
+					}
+				}
 			}
 		}
 	}

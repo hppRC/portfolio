@@ -18,9 +18,9 @@ exports.createPages = ({ graphql, actions }) => {
 							edges {
 								node {
 									frontmatter {
-										path
-										title
+										slug
 										date
+										title
 										tags
 									}
 								}
@@ -71,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
 				});
 
 				posts.forEach(({ node }, index) => {
-					const path = node.frontmatter.path;
+					const slug = node.frontmatter.slug;
 					const prev = index === 0 ? null : posts[index - 1].node;
 					const next =
 						index === posts.length - 1
@@ -79,10 +79,10 @@ exports.createPages = ({ graphql, actions }) => {
 							: posts[index + 1].node;
 
 					createPage({
-						path,
+						path: `/posts/${slug}`,
 						component: postTemplate,
 						context: {
-							pathSlug: path,
+							slug,
 							prev,
 							next
 						}
