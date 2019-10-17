@@ -5,11 +5,27 @@ exports.createPages = ({ graphql, actions }) => {
 
 	return new Promise((resolve, reject) => {
 		const postTemplate = path.resolve('src/templates/post.tsx');
-		const tagPage = path.resolve('src/pages/tags.tsx');
+		const tagPage = path.resolve('src/templates/tags.tsx');
 		const tagPosts = path.resolve('src/templates/tag.tsx');
 
 		resolve(
-			graphql(query).then(result => {
+			graphql(
+				`
+					query {
+						allMarkdownRemark {
+							edges {
+								node {
+									frontmatter {
+										path
+										title
+										tags
+									}
+								}
+							}
+						}
+					}
+				`
+			).then(result => {
 				if (result.errors) {
 					return Promise.reject(result.errors);
 				}
@@ -31,7 +47,6 @@ exports.createPages = ({ graphql, actions }) => {
 
 				const tags = Object.keys(postsByTag);
 
-				//各タグそれぞれの一覧ページ
 				tags.forEach(tagName => {
 					const posts = postsByTag[tagName];
 					createPage({
@@ -44,7 +59,6 @@ exports.createPages = ({ graphql, actions }) => {
 					});
 				});
 
-				//tag一覧ページ
 				createPage({
 					path: '/tags',
 					component: tagPage,
@@ -53,7 +67,6 @@ exports.createPages = ({ graphql, actions }) => {
 					}
 				});
 
-				//投稿記事それぞれのページ作成
 				posts.forEach(({ node }) => {
 					const path = node.frontmatter.path;
 
@@ -69,19 +82,3 @@ exports.createPages = ({ graphql, actions }) => {
 		);
 	});
 };
-
-const query = `
-query {
-	allMarkdownRemark {
-		edges {
-			node {
-				frontmatter {
-					path
-					title
-					tags
-				}
-			}
-		}
-	}
-}
-`;
