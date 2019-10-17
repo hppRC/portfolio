@@ -30,7 +30,7 @@ interface Frontmatter {
 	tags: string[];
 }
 
-const Test = () => <h1>Test transferd</h1>;
+const Test: React.FC<{}> = () => <h1>Test transferd</h1>;
 
 const Components = {
 	Test,
@@ -38,7 +38,6 @@ const Components = {
 };
 
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
-	console.log(data);
 	const post = data.mdx;
 	const title = post.frontmatter.title;
 	const date = post.frontmatter.date;

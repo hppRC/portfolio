@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
 	siteMetadata: {
 		title: 'My Wonderful Website',
@@ -7,6 +9,7 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-catch-links`,
+
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
