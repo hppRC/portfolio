@@ -7,12 +7,17 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-catch-links`,
-		`gatsby-transformer-remark`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `posts`,
 				path: `${__dirname}/posts`
+			}
+		},
+		{
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				extensions: [`.mdx`, `.md`]
 			}
 		}
 	]

@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../layouts';
 
 export const Index: React.FC<Props> = ({ data }) => {
-	const { edges } = data.allMarkdownRemark;
+	const { edges } = data.allMdx;
 	return (
 		<Layout>
 			<h1>Gatsby Tutorial Home Page</h1>
@@ -23,7 +23,7 @@ export const Index: React.FC<Props> = ({ data }) => {
 
 interface Props {
 	data: {
-		allMarkdownRemark: {
+		allMdx: {
 			edges: [
 				{
 					node: {
@@ -43,9 +43,7 @@ interface Props {
 
 export const query = graphql`
 	query {
-		allMarkdownRemark(
-			filter: { frontmatter: { status: { eq: "published" } } }
-		) {
+		allMdx(filter: { frontmatter: { status: { eq: "published" } } }) {
 			edges {
 				node {
 					id
