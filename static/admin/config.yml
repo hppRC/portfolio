@@ -17,5 +17,5 @@ collections:
           - { name: date, label: Date, widget: datetime }
           - { name: title, label: Title, widget: string }
           - { name: tags, label: Tags, widget: list }
-          - { name: eyecatch, label: EyeCatch, widget: image }
+          - { name: cover, label: Cover, widget: image }
           - { name: body, label: Body, widget: markdown }

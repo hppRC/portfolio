@@ -14,13 +14,15 @@ interface Props {
 			frontmatter: Frontmatter;
 		};
 	};
-	pageContext: {
-		prev: {
-			frontmatter: Frontmatter;
-		};
-		next: {
-			frontmatter: Frontmatter;
-		};
+	pageContext: PageContextInterface;
+}
+
+interface PageContextInterface {
+	prev: {
+		frontmatter: Frontmatter;
+	};
+	next: {
+		frontmatter: Frontmatter;
 	};
 }
 
@@ -61,23 +63,25 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 				<MDXRenderer>{body}</MDXRenderer>
 			</MDXProvider>
 			<TagList tags={post.frontmatter.tags || []} />
-			<ul>
-				{next && (
-					<li key='next'>
-						<Link to={`/posts/${next.frontmatter.slug}`}>Next</Link>
-					</li>
-				)}
-				{prev && (
-					<li key='prev'>
-						<Link to={`/posts/${prev.frontmatter.slug}`}>
-							Previous
-						</Link>
-					</li>
-				)}
-			</ul>
+			<PrevAndNext prev={prev} next={next} />
 		</Layout>
 	);
 };
+
+const PrevAndNext: React.FC<PageContextInterface> = ({ prev, next }) => (
+	<ul>
+		{next && (
+			<li key='next'>
+				<Link to={`/posts/${next.frontmatter.slug}`}>Next</Link>
+			</li>
+		)}
+		{prev && (
+			<li key='prev'>
+				<Link to={`/posts/${prev.frontmatter.slug}`}>Previous</Link>
+			</li>
+		)}
+	</ul>
+);
 
 export const query = graphql`
 	query($slug: String!) {
