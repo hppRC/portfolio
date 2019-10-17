@@ -4,6 +4,7 @@ import Layout from '../layouts';
 import TagList from '../components/TagList';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+import * as ReactColor from 'react-color';
 
 interface Props {
 	data: {
@@ -32,7 +33,8 @@ interface Frontmatter {
 const Test = () => <h1>Test transferd</h1>;
 
 const Components = {
-	Test
+	Test,
+	...ReactColor
 };
 
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
