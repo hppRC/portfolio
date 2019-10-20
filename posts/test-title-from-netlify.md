@@ -11,3 +11,7 @@ body
 <h1>test header</h1>
 
 <Test/>
+
+
+
+<SlidePicker />
