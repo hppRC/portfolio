@@ -8,6 +8,22 @@ cover: /assets/alessandro-erbetta-8oypewvmhny-unsplash.jpg
 ---
 body
 
-<h1>test header<Test/></h1>
+<h1>test header</h1>
 
 <LayoutTest><Test/><Test/><Test/></LayoutTest><Test/>
+
+
+
+<ChromePicker/>
+
+yeah
+
+
+
+<CirclePicker/>
+
+nanoda
+
+
+
+<CompactPicker/>
