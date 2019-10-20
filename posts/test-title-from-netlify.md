@@ -14,6 +14,4 @@ body
 
 <LayoutTest><Test/></LayoutTest>
 
-<Color/>
-
 SliderPicker/>
