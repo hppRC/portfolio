@@ -12,18 +12,46 @@ body
 
 <LayoutTest><Test/><Test/><Test/></LayoutTest><Test/>
 
-
-
 <ChromePicker/>
 
 yeah
-
-
 
 <CirclePicker/>
 
 nanoda
 
-
-
 <CompactPicker/>
+
+nanoda
+
+<CustomPicker/>
+
+nanode
+
+<GithubPicker/>
+
+nanoda
+
+<HuePicker/>
+
+nanoda
+
+<MaterialPicker/>
+
+nanoda
+
+PhotoshopPicker
+
+<SketchPicker/>
+
+nanoda
+
+<SliderPicker/>
+
+nanoda
+
+<SwatchesPicker/>
+
+nanoda
+
+<TwitterPicker/>
