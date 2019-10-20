@@ -6,12 +6,14 @@ tags:
   - gatsby
 cover: /assets/alessandro-erbetta-8oypewvmhny-unsplash.jpg
 ---
-import {SliderPicker} from "react-color"
+import Color, {SliderPicker} from "react-color"
 
 body
 
 <h1>test header</h1>
 
-<Test/>
+<LayoutTest><Test/></LayoutTest>
 
-<SliderPicker />
+<Color/>
+
+SliderPicker/>
