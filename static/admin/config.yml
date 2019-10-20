@@ -1,7 +1,7 @@
 backend:
     name: github
     repo: hppRC/hppPortfolio
-    branch: master
+    branch: v3
 
 media_folder: static/assets
 public_folder: assets
