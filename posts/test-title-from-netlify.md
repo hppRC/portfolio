@@ -6,12 +6,8 @@ tags:
   - gatsby
 cover: /assets/alessandro-erbetta-8oypewvmhny-unsplash.jpg
 ---
-import ReactColor from "react-color"
-
 body
 
 <h1>test header<Test/></h1>
 
 <LayoutTest><Test/><Test/><Test/></LayoutTest><Test/>
-
-<ReactColor/>
