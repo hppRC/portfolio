@@ -1,22 +1,46 @@
 import React from 'react';
-import { FileSystemBackend } from 'netlify-cms-backend-fs';
-import CMS from 'netlify-cms';
+//import { FileSystemBackend } from 'netlify-cms-backend-fs';
+import CMS from 'netlify-cms-app';
+import Preview from './Preview';
+import { MdxControl, setupPreview } from 'netlify-cms-widget-mdx';
+import * as ReactColor from 'react-color';
 
-const isClient = typeof window !== 'undefined';
-const isDevelopment = process.env.NODE_ENV === 'development';
+// if (process.env.NODE_ENV === 'development') {
+// 	window.CMS_ENV = 'development_overrides'; // Set the CMS_ENV to the development_ overrides.
+// 	CMS.registerBackend('file-system', FileSystemBackend); // Register the FileSystemBackend.
+// }
 
-if (isClient) {
-	window.CMS_MANUAL_INIT = true;
-}
-
-if (isDevelopment) {
-	// Allows for local development overrides in cms.yaml
-	window.CMS_ENV = 'localhost_development';
-
-	// Attach to the file system
-	CMS.registerBackend('file-system', FileSystemBackend);
-}
-
-CMS.registerPreviewTemplate('posts', Preview);
+CMS.registerWidget(
+	'mdx',
+	MdxControl,
+	setupPreview({
+		components: {
+			h1: ({ children, ...props }) => (
+				<h1 style={{ color: 'tomato' }} {...props}>
+					{children}
+				</h1>
+			)
+		},
+		scope: {
+			LayoutTest: props => (
+				<div
+					style={{
+						padding: '10px',
+						border: '1px solid green',
+						borderRadius: '5px'
+					}}
+					{...props}
+				/>
+			),
+			Test: () => <h1>Testなのだ</h1>
+		},
+		allowedImports: {
+			'react-color': {
+				ImportDefault: ''
+			}
+		},
+		mdPlugins: []
+	})
+);
 
 CMS.init();
