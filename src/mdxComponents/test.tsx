@@ -6,4 +6,4 @@ export const Test = () => (
 	</h1>
 );
 
-export default Test;
+export const Demo = () => <h1>This is a demo component</h1>;
