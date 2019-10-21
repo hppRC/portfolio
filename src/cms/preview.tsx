@@ -8,11 +8,14 @@ interface Props {
 }
 
 export const Preview: React.FC<Props> = ({ entry }) => {
-	/* you should remove escape sequence(ex. if input is "# Hello", entry.getIn(['data']).toJS().body is "\# Hello")*/
-	const mdx = entry
-		.getIn(['data'])
-		.toJS()
-		.body.replace('\\#', '#');
+	/*
+	to rendering mdx(JSX and normal markdown), you have to remove escape sequence
+	because 'entry.getIn(['data']).toJS().body is "\# Hello"' if input is "# Hello"
+	*/
+	console.log(typeof entry);
+	console.log(typeof entry.toJS());
+	const mdx = entry.toJS().data.body.replace('\\#', '#');
+
 	return (
 		<MDX components={{ ...MdxComponents }} scope={{ ...MdxScope }}>
 			{mdx}
