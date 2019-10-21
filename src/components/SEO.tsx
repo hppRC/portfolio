@@ -30,7 +30,7 @@ export const SEO: React.FC<Props> = ({
 					author,
 					siteLanguage,
 					logo,
-					siteUrl,
+					siteURL,
 					pathPrefix,
 					defaultDescription,
 					defaultBanner,
@@ -46,16 +46,16 @@ export const SEO: React.FC<Props> = ({
 			} = {
 				title: title || defaultTitle,
 				description: defaultDescription || desc,
-				image: `${siteUrl}${banner || defaultBanner}`,
-				url: `${siteUrl}${pathname || '/'}`
+				image: `${siteURL}${banner || defaultBanner}`,
+				url: `${siteURL}${pathname || '/'}`
 			};
 			const realPrefix: string = pathPrefix === '/' ? '' : pathPrefix;
 			let schemaOrgJSONLD: any = [
 				{
 					'@context': 'http://schema.org',
 					'@type': 'WebSite',
-					'@id': siteUrl,
-					url: siteUrl,
+					'@id': siteURL,
+					url: siteURL,
 					name: defaultTitle,
 					alternateName: titleAlt || ''
 				}
@@ -86,13 +86,13 @@ export const SEO: React.FC<Props> = ({
 							name: author,
 							logo: {
 								'@type': 'ImageObject',
-								url: siteUrl + realPrefix + logo
+								url: siteURL + realPrefix + logo
 							}
 						},
-						isPartOf: siteUrl,
+						isPartOf: siteURL,
 						mainEntityOfPage: {
 							'@type': 'WebSite',
-							'@id': siteUrl
+							'@id': siteURL
 						}
 					}
 				];
@@ -155,7 +155,7 @@ const query = graphql`
 				author
 				siteLanguage
 				logo
-				siteUrl: url
+				siteURL: url
 				pathPrefix
 				defaultDescription: description
 				defaultBanner: banner
