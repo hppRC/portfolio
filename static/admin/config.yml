@@ -11,8 +11,6 @@ collections:
     - name: posts
       label: Posts
       folder: posts
-      extension: mdx
-      format: frontmatter
       create: true
       fields:
           - { name: slug, label: Slug, widget: string }
@@ -20,4 +18,4 @@ collections:
           - { name: title, label: Title, widget: string }
           - { name: tags, label: Tags, widget: list }
           - { name: cover, label: Cover, widget: image }
-          - { name: body, label: Body, widget: mdx }
+          - { name: body, label: Body, widget: markdown }
