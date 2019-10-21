@@ -5,6 +5,15 @@
 	"repository": "git@github.com:hppRC/hppPortfolio.git",
 	"author": "hppRC <hpp.ricecake@gmail.com>",
 	"license": "MIT",
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"format": "prettier --write src/**/*.{js,jsx}",
+		"start": "yarn develop",
+		"serve": "gatsby serve",
+		"test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+		"type-check": "tsc --noEmit"
+	},
 	"dependencies": {
 		"@babel/core": "^7.6.4",
 		"@mdx-js/mdx": "^1.5.1",
