@@ -4,7 +4,7 @@ module.exports = {
 	titleAlt: 'My Wonderful Website', // JSONLDのためのタイトル
 	description: 'Welcome to my brilliant website.',
 	url: 'https://hpprc.com', // スラッシュなしのサイトURL
-	siteURL: 'https://hpprc.com/', // スラッシュありのサイトURL
+	siteUrl: 'https://hpprc.com/', // スラッシュありのサイトURL
 	siteLanguage: 'ja', // HTMLの言語（ここでは日本語）
 	icon: `src/images/icon.png`,
 	logo: `src/images/icon.png`,
