@@ -7,9 +7,3 @@ tags:
 cover: /assets/alessandro-erbetta-8oypewvmhny-unsplash.jpg
 ---
 <Test/>
-
-<SliderPicker/>
-
-<AlphaPicker/>
-
-pls backedn change
