@@ -9,6 +9,8 @@
 		"@babel/core": "^7.6.4",
 		"@mdx-js/mdx": "^1.5.1",
 		"@mdx-js/react": "^1.5.1",
+		"@mdx-js/runtime": "^0.18.2",
+		"@mdx-js/tag": "^0.18.0",
 		"@types/react-color": "^3.0.1",
 		"@types/react-helmet": "^5.0.12",
 		"gatsby": "^2.16.3",
@@ -27,6 +29,7 @@
 		"gatsby-transformer-remark": "^2.6.30",
 		"gatsby-transformer-sharp": "^2.2.23",
 		"netlify-cms-app": "^2.9.7",
+		"netlify-cms-widget-mdx": "^0.4.3",
 		"react": "^16.10.2",
 		"react-color": "^2.17.3",
 		"react-dom": "^16.10.2",
@@ -34,7 +37,6 @@
 		"typescript": "^3.6.4"
 	},
 	"devDependencies": {
-		"gatsby-plugin-root-import": "^2.0.5",
 		"husky": "^3.0.9"
 	}
 }

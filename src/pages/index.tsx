@@ -4,6 +4,7 @@ import Img, { FluidObject } from 'gatsby-image';
 import Layout from '../layouts';
 
 export const Index: React.FC<Props> = ({ data }) => {
+	console.log(data);
 	const { edges } = data.allMdx;
 
 	return (
