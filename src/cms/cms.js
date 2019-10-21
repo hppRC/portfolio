@@ -1,14 +1,20 @@
 import React from 'react';
-//import { FileSystemBackend } from 'netlify-cms-backend-fs';
 import CMS from 'netlify-cms-app';
 import { MdxControl, setupPreview } from 'netlify-cms-widget-mdx';
-import * as ReactColor from 'react-color';
-import * as UI from './reactColor';
+import * as mdxComponents from '../mdxComponents';
+import { FileSystemBackend } from 'netlify-cms-backend-fs';
 
-// if (process.env.NODE_ENV === 'development') {
-// 	window.CMS_ENV = 'development_overrides'; // Set the CMS_ENV to the development_ overrides.
-// 	CMS.registerBackend('file-system', FileSystemBackend); // Register the FileSystemBackend.
-// }
+const isClient = typeof window !== 'undefined';
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+if (isClient) {
+	window.CMS_MANUAL_INIT = true;
+}
+
+if (isDevelopment) {
+	window.CMS_ENV = 'localhost_development';
+	CMS.registerBackend('file-system', FileSystemBackend);
+}
 
 const components = {
 	h1: ({ children, ...props }) => (
@@ -31,8 +37,8 @@ const scope = {
 			{...props}
 		/>
 	),
-    Test: () => <h1>Testなのだ</h1>,
-    ...UI
+	Test: () => <h1>Testなのだ</h1>,
+	...mdxComponents
 };
 
 console.log(scope);

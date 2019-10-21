@@ -7,7 +7,7 @@ export const Checkboard = () => <ReactColor.Checkboard />;
 export const ChromePicker = () => <ReactColor.ChromePicker />;
 export const CirclePicker = () => <ReactColor.CirclePicker />;
 export const CompactPicker = () => <ReactColor.CompactPicker />;
-export const CustomPicker = () => <ReactColor.CustomPicker />;
+//export const CustomPicker = () => <ReactColor.CustomPicker />;
 export const GithubPicker = () => <ReactColor.GithubPicker />;
 export const HuePicker = () => <ReactColor.HuePicker />;
 export const MaterialPicker = () => <ReactColor.MaterialPicker />;
