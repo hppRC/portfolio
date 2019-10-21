@@ -7,6 +7,7 @@ interface Props {
 	entry: any;
 }
 
+//typescript defeat me (I didn't want to use 'any')
 export const Preview: React.FC<Props> = ({ entry }) => {
 	/*
 	to rendering mdx(JSX and normal markdown), you have to remove escape sequence
