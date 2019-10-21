@@ -2,19 +2,6 @@ import React from 'react';
 import CMS from 'netlify-cms-app';
 import { MdxControl, setupPreview } from 'netlify-cms-widget-mdx';
 import * as mdxComponents from '../mdxComponents';
-import { FileSystemBackend } from 'netlify-cms-backend-fs';
-
-const isClient = typeof window !== 'undefined';
-const isDevelopment = process.env.NODE_ENV === 'development';
-
-if (isClient) {
-	window.CMS_MANUAL_INIT = true;
-}
-
-if (isDevelopment) {
-	window.CMS_ENV = 'localhost_development';
-	CMS.registerBackend('file-system', FileSystemBackend);
-}
 
 const components = {
 	h1: ({ children, ...props }) => (

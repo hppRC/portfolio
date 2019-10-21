@@ -37,8 +37,6 @@
 		"typescript": "^3.6.4"
 	},
 	"devDependencies": {
-		"gatsby-plugin-root-import": "^2.0.5",
-		"husky": "^3.0.9",
-		"netlify-cms-backend-fs": "^0.4.4"
+		"husky": "^3.0.9"
 	}
 }
