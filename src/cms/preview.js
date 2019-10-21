@@ -1,6 +1,5 @@
 import React from 'react';
 import MDX from '@mdx-js/runtime';
-import * as ReactColor from 'react-color';
 import * as MdxComponents from '../mdxComponents';
 
 // Provide custom components for markdown elements
@@ -11,12 +10,12 @@ const components = {
 // Provide custom components that will be referenced as JSX
 // in the markdown string
 const scope = {
-	Demo: props => <h1>This is a demo component</h1>,
-	Test: () => <h1>Test Test Test</h1>,
+	Demo: () => <h1>This is a demo component</h1>,
 	...MdxComponents
 };
 
 export const Preview = ({ entry }) => {
+	/* to remove escape sequence(ex. if input is "# Hello", entry.getIn(['data']).toJS().body is "\# Hello")*/
 	const mdx = entry
 		.getIn(['data'])
 		.toJS()
