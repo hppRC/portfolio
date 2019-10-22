@@ -4,9 +4,10 @@ import Layout from '../layouts';
 import TagList from '../components/TagList';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
-import * as ReactColor from 'react-color';
 import Img, { FluidObject } from 'gatsby-image';
 import SEO from '../components/SEO';
+import * as MdxComponents from '../mdx/components';
+import * as MdxScope from '../mdx/scope';
 
 interface Props {
 	data: {
@@ -41,13 +42,6 @@ interface Frontmatter {
 	};
 }
 
-const Test: React.FC<{}> = () => <h1>Test transferd</h1>;
-
-const Components = {
-	Test,
-	...ReactColor
-};
-
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	const post = data.mdx;
 	const slug = post.frontmatter.slug;
@@ -71,7 +65,10 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 			<h1>{title}</h1>
 			<p>{date}</p>
 			{fluid && <Img fluid={fluid} alt={title} />}
-			<MDXProvider components={Components}>
+			<MDXProvider
+				components={{ ...MdxComponents, ...MdxScope }}
+				scope={{ ...MdxScope }}
+			>
 				<MDXRenderer>{body}</MDXRenderer>
 			</MDXProvider>
 			<TagList tags={post.frontmatter.tags || []} />
