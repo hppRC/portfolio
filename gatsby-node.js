@@ -95,11 +95,10 @@ exports.createPages = ({ graphql, actions }) => {
 	});
 };
 
+//thanks to https://github.com/gatsbyjs/gatsby/issues/12610
 exports.onCreateNode = ({ node, actions, getNode }) => {
 	const { createNodeField } = actions;
-
 	fmImagesToRelative(node);
-	console.log(node.internal.type);
 	if (node.internal.type === `Mdx`) {
 		const value = createFilePath({ node, getNode });
 		createNodeField({
