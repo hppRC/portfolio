@@ -10,6 +10,13 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
+			resolve: `gatsby-source-filesystem`, // this entry has to be the first or will not work as per FAQ
+			options: {
+				path: `${__dirname}/static/assets`,
+				name: `assets`
+			}
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `posts`,
@@ -17,17 +24,11 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `image`,
-				path: `${__dirname}/static/assets`
-			}
-		},
-		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
 				extensions: [`.mdx`, `.md`],
 				gatsbyRemarkPlugins: [
+					`gatsby-remark-relative-images`,
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
