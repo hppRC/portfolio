@@ -1,6 +1,6 @@
 import React from 'react';
-import { MDXProvider } from '@mdx-js/react';
 import { Link, graphql, StaticQuery } from 'gatsby';
+import SEO from '../components/SEO';
 
 interface Props {}
 
@@ -9,6 +9,7 @@ export const Layout: React.FC<Props> = ({ children }) => (
 		query={query}
 		render={data => (
 			<>
+				<SEO />
 				<Link to='/'>
 					<h3>{data.site.siteMetadata.title} Layout</h3>
 				</Link>

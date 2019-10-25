@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 interface Props {
@@ -11,7 +10,9 @@ interface Props {
 	isArticle: boolean;
 }
 
-export const SEO: React.FC<Props> = ({
+type SEOType = Partial<Props>;
+
+export const SEO: React.FC<SEOType> = ({
 	title = null,
 	desc = null,
 	banner = null,
@@ -38,19 +39,14 @@ export const SEO: React.FC<Props> = ({
 				}
 			}
 		}) => {
-			const seo: {
-				title: string;
-				description: string;
-				image: string;
-				url: string;
-			} = {
+			const seo = {
 				title: title || defaultTitle,
 				description: defaultDescription || desc,
 				image: `${siteUrl}${banner || defaultBanner}`,
 				url: `${siteUrl}${pathname || '/'}`
 			};
 			const realPrefix: string = pathPrefix === '/' ? '' : pathPrefix;
-			let schemaOrgJSONLD: any = [
+			let schemaOrgJSONLD: object[] = [
 				{
 					'@context': 'http://schema.org',
 					'@type': 'WebSite',
@@ -98,47 +94,40 @@ export const SEO: React.FC<Props> = ({
 				];
 			}
 			return (
-				<>
-					<Helmet title={seo.title}>
-						<html lang={siteLanguage} />
-						<meta name='description' content={seo.description} />
-						<meta name='image' content={seo.image} />
-						<meta
-							name='apple-mobile-web-app-title'
-							content={shortName}
-						/>
-						<meta name='application-name' content={shortName} />
-						<script type='application/ld+json'>
-							{JSON.stringify(schemaOrgJSONLD)}
-						</script>
+				<Helmet title={seo.title}>
+					<html lang={siteLanguage} />
+					<title>{seo.title}</title>
+					<meta name='description' content={seo.description} />
+					<meta name='image' content={seo.image} />
+					<meta
+						name='apple-mobile-web-app-title'
+						content={shortName}
+					/>
+					<meta name='application-name' content={shortName} />
+					<script type='application/ld+json'>
+						{JSON.stringify(schemaOrgJSONLD)}
+					</script>
 
-						{/* OpenGraph  */}
-						<meta property='og:url' content={seo.url} />
-						<meta
-							property='og:type'
-							content={isArticle ? 'article' : undefined}
-						/>
-						<meta property='og:title' content={seo.title} />
-						<meta
-							property='og:description'
-							content={seo.description}
-						/>
-						<meta property='og:image' content={seo.image} />
+					{/* OpenGraph  */}
+					<meta property='og:url' content={seo.url} />
+					<meta
+						property='og:type'
+						content={isArticle ? 'article' : undefined}
+					/>
+					<meta property='og:title' content={seo.title} />
+					<meta property='og:description' content={seo.description} />
+					<meta property='og:image' content={seo.image} />
 
-						{/* Twitter Card */}
-						<meta
-							name='twitter:card'
-							content='summary_large_image'
-						/>
-						<meta name='twitter:creator' content={twitter} />
-						<meta name='twitter:title' content={seo.title} />
-						<meta
-							name='twitter:description'
-							content={seo.description}
-						/>
-						<meta name='twitter:image' content={seo.image} />
-					</Helmet>
-				</>
+					{/* Twitter Card */}
+					<meta name='twitter:card' content='summary_large_image' />
+					<meta name='twitter:creator' content={twitter} />
+					<meta name='twitter:title' content={seo.title} />
+					<meta
+						name='twitter:description'
+						content={seo.description}
+					/>
+					<meta name='twitter:image' content={seo.image} />
+				</Helmet>
 			);
 		}}
 	/>

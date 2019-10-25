@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Layout from '../layouts';
 
 interface Props {
 	pageContext: {
@@ -8,20 +9,17 @@ interface Props {
 }
 
 const Tags: React.FC<Props> = data => {
-	console.log(data);
 	const { tags } = data.pageContext;
 	return (
-		<div>
+		<Layout>
 			<ul>
-				{tags.map((tagName, index) => {
-					return (
-						<li key={index}>
-							<Link to={`/tags/${tagName}`}>{tagName}</Link>
-						</li>
-					);
-				})}
+				{tags.map((tagName, index) => (
+					<li key={index}>
+						<Link to={`/tags/${tagName}`}>{tagName}</Link>
+					</li>
+				))}
 			</ul>
-		</div>
+		</Layout>
 	);
 };
 
