@@ -3,9 +3,7 @@ import SEO from '../components/SEO';
 import Header from './Header';
 import Footer from './Footer';
 
-interface Props {}
-
-export const Layout: React.FC<Props> = ({ children }) => (
+export const Layout: React.FC<{}> = ({ children }) => (
 	<>
 		<SEO />
 		<Header />
