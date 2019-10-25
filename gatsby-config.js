@@ -52,7 +52,12 @@ module.exports = {
 		},
 		{
 			resolve: `gatsby-plugin-netlify`,
-			options: {}
+			options: {
+				allPageHeaders: [
+					`Link: </manifest.webmanifest>; rel=preload; as=script`,
+					`Link: </page-data/app-data.json>; rel=preload; as=script`
+				]
+			}
 		},
 		`gatsby-plugin-sitemap`,
 		{

@@ -4,6 +4,6 @@
 
 [build.environment]
   YARN_VERSION = "1.17.3"
-  NODE_VERSION = "12.10.0"
+  NODE_VERSION = "12.13.0"
   YARN_FLAGS = "--no-ignore-optional"
   NODE_OPTIONS = "--max_old_space_size=4096"
