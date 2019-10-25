@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../layouts';
+import { Layout } from '../layouts';
 import Posts from '../components/Posts';
 
 export const Index: React.FC<{}> = () => (
