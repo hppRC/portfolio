@@ -1,11 +1,11 @@
 import React from 'react';
 import { Layout } from '../layouts';
-import Posts from '../components/Posts';
+import AllPosts from '../components/AllPosts';
 
 export const Index: React.FC<{}> = () => (
 	<Layout>
 		<h1>Gatsby Tutorial Home Page</h1>
-		<Posts />
+		<AllPosts />
 	</Layout>
 );
 
