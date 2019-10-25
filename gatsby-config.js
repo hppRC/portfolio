@@ -50,6 +50,10 @@ module.exports = {
 				manualInit: true
 			}
 		},
+		{
+			resolve: `gatsby-plugin-netlify`,
+			options: {}
+		},
 		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-plugin-manifest`,
