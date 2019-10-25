@@ -7,7 +7,7 @@ interface Props {
 		posts: [
 			{
 				frontmatter: {
-					path: string;
+					slug: string;
 					title: string;
 				};
 			}
@@ -24,7 +24,7 @@ const Tag: React.FC<Props> = ({ pageContext }) => {
 			<ul>
 				{posts.map((post, index) => (
 					<li key={index}>
-						<Link to={post.frontmatter.path}>
+						<Link to={`/posts/${post.frontmatter.slug}`}>
 							{post.frontmatter.title}
 						</Link>
 					</li>
