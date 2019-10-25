@@ -27,6 +27,7 @@
 		"gatsby-plugin-catch-links": "^2.1.15",
 		"gatsby-plugin-manifest": "^2.2.23",
 		"gatsby-plugin-mdx": "^1.0.52",
+		"gatsby-plugin-netlify": "^2.1.22",
 		"gatsby-plugin-netlify-cms": "^4.1.25",
 		"gatsby-plugin-offline": "^3.0.16",
 		"gatsby-plugin-react-helmet": "^3.1.13",
@@ -39,12 +40,12 @@
 		"gatsby-transformer-remark": "^2.6.30",
 		"gatsby-transformer-sharp": "^2.2.23",
 		"netlify-cms-app": "^2.9.7",
-		"netlify-cms-widget-mdx": "^0.4.3",
 		"react": "^16.10.2",
 		"react-color": "^2.17.3",
 		"react-dom": "^16.10.2",
 		"react-helmet": "^5.2.1",
-		"typescript": "^3.6.4"
+		"typescript": "^3.6.4",
+		"webpack": "^4.41.1"
 	},
 	"devDependencies": {
 		"husky": "^3.0.9"

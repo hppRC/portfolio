@@ -31,7 +31,6 @@ export const AllPosts = () => (
 		query={query}
 		render={({ allMdx: { edges } }: Props) => (
 			<div>
-				{console.log(edges)}
 				{edges.map(({ node }) => (
 					<div key={node.id}>
 						{node.frontmatter.cover && (
