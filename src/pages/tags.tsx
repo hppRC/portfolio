@@ -1,10 +1,10 @@
 import React from 'react';
 import { Layout } from '../layouts';
-import Tags from '../components/Tags';
+import AllTags from '../components/AllTags';
 
 const TagsPage: React.FC<{}> = () => (
 	<Layout>
-		<Tags />
+		<AllTags />
 	</Layout>
 );
 export default TagsPage;

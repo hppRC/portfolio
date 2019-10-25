@@ -1,10 +1,10 @@
 import React from 'react';
 import { Layout } from '../layouts';
-import Posts from '../components/Posts';
+import AllPosts from '../components/AllPosts';
 
 const PostsPage: React.FC<{}> = () => (
 	<Layout>
-		<Posts />
+		<AllPosts />
 	</Layout>
 );
 

@@ -20,7 +20,7 @@ interface NodeInterface {
 	};
 }
 
-export const Tags = () => (
+export const AllTags = () => (
 	<StaticQuery
 		query={query}
 		render={({ allMdx: { edges } }: Props) => {
@@ -72,4 +72,4 @@ const query = graphql`
 	}
 `;
 
-export default Tags;
+export default AllTags;

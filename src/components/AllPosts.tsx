@@ -26,7 +26,7 @@ interface Props {
 	};
 }
 
-export const Posts = () => (
+export const AllPosts = () => (
 	<StaticQuery
 		query={query}
 		render={({ allMdx: { edges } }: Props) => (
@@ -81,4 +81,4 @@ const query = graphql`
 	}
 `;
 
-export default Posts;
+export default AllPosts;
