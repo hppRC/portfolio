@@ -64,14 +64,6 @@ exports.createPages = ({ graphql, actions }) => {
 					});
 				});
 
-				createPage({
-					path: '/tags',
-					component: tagPage,
-					context: {
-						tags: tags.sort()
-					}
-				});
-
 				posts.forEach(({ node }, index) => {
 					const slug = node.frontmatter.slug;
 					const prev = index === 0 ? null : posts[index - 1].node;
