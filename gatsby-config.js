@@ -56,7 +56,8 @@ module.exports = {
 				allPageHeaders: [
 					`Link: </manifest.webmanifest>; rel=preload; as=script`,
 					`Link: </page-data/app-data.json>; rel=preload; as=script`
-				]
+				],
+				transformHeaders: (headers, path) => headers // optional transform for manipulating headers under each path (e.g.sorting), etc.
 			}
 		},
 		`gatsby-plugin-sitemap`,
