@@ -20,7 +20,7 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `posts`,
-				path: `${__dirname}/posts`
+				path: `${__dirname}/content/posts`
 			}
 		},
 		{
@@ -71,7 +71,7 @@ module.exports = {
 				start_url: `/?utm_source=homescreen`,
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
-				display: 'standalone',
+				display: `standalone`,
 				icon: config.icon
 			}
 		},

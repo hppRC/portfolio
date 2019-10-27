@@ -10,7 +10,7 @@ publish_mode: editorial_workflow
 collections:
     - name: posts
       label: Posts
-      folder: posts
+      folder: content/posts
       create: true
       fields:
           - { name: slug, label: Slug, widget: string }
