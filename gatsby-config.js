@@ -1,4 +1,4 @@
-const config = require('./config/site');
+const config = require(`./config/site`);
 
 module.exports = {
 	siteMetadata: {
@@ -46,8 +46,8 @@ module.exports = {
 			options: {
 				modulePath: `${__dirname}/src/cms/cms.tsx`, // for custom preview in the Netlify CMS
 				enableIdentityWidget: false,
-				publicPath: 'admin',
-				htmlTitle: 'Content Manager',
+				publicPath: `admin`,
+				htmlTitle: `Content Manager`,
 				manualInit: true
 			}
 		},
@@ -61,6 +61,33 @@ module.exports = {
 			}
 		},
 		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: `https://hpprc.com`
+			}
+		},
+		{
+			resolve: `gatsby-plugin-robots-txt`,
+			options: {
+				host: `https://hpprc.com`,
+				sitemap: `https://hpprc.com/sitemap.xml`,
+				policy: [{ userAgent: `*`, allow: `/` }]
+			}
+		},
+		{
+			resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+			options: {
+				openAnalyzer: false
+			}
+		},
+		{
+			resolve: `gatsby-plugin-google-analytics`,
+			options: {
+				// replace "UA-XXXXXXXXX-X" with your own Tracking ID
+				trackingId: `UA-149661454-1`
+			}
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {

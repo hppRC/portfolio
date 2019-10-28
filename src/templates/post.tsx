@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Layout } from '../layouts';
-import TagList from '../components/TagList';
+import { SEO, TagList } from '../components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import Img, { FluidObject } from 'gatsby-image';
-import SEO from '../components/SEO';
 import * as MdxComponents from '../mdx/components';
 import * as MdxScope from '../mdx/scope';
 

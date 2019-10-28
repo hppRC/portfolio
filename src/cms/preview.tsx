@@ -16,7 +16,7 @@ export const Preview: React.FC<Props> = ({ entry }) => {
 	*/
 	console.log(typeof entry);
 	console.log(typeof entry.toJS());
-	const mdx = entry.toJS().data.body.replace('\\#', '#');
+	const mdx = entry.toJS().data.body.replace('\\', '');
 
 	return (
 		<MDX components={{ ...MdxComponents }} scope={{ ...MdxScope }}>
