@@ -42,6 +42,16 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-remark-prismjs`,
+			options: {
+				classPrefix: 'language-',
+				inlineCodeMarker: null,
+				aliases: {},
+				showLineNumbers: true,
+				noInlineHighlight: false
+			}
+		},
+		{
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
 				modulePath: `${__dirname}/src/cms/cms.tsx`, // for custom preview in the Netlify CMS
