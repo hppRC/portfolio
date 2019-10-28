@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-type Props = {
+interface Props {
 	allMdx: {
 		edges: [
 			{
@@ -12,7 +12,7 @@ type Props = {
 			}
 		];
 	};
-};
+}
 
 export const useAllTags = () => {
 	const data = useStaticQuery<Props>(graphql`

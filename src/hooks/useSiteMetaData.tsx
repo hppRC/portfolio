@@ -1,12 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-type Props = {
+interface Props {
 	site: {
 		siteMetadata: {
 			[key: string]: string;
 		};
 	};
-};
+}
 
 export const useSiteMetadata = () => {
 	const data = useStaticQuery<Props>(graphql`

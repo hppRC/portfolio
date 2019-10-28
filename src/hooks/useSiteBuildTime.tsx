@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-type Props = {
+interface Props {
 	site: {
 		buildTime: string;
 	};
-};
+}
 
 export const useSiteBuildTime = () => {
 	const data = useStaticQuery<Props>(graphql`
