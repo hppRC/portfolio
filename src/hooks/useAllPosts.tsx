@@ -5,29 +5,25 @@ interface Props {
 	allMdx: {
 		edges: [
 			{
-				node: Node;
+				node: {
+					id: string;
+					excerpt: string;
+					frontmatter: {
+						slug: string;
+						date: string;
+						title: string;
+						tags: string[];
+						cover: {
+							childImageSharp: {
+								fluid: FluidObject;
+							};
+						};
+					};
+				};
 			}
 		];
 	};
 }
-interface Node {
-	id: string;
-	excerpt: string;
-	frontmatter: Frontmatter;
-}
-
-interface Frontmatter {
-	slug: string;
-	date: string;
-	title: string;
-	tags: string[];
-	cover: {
-		childImageSharp: {
-			fluid: FluidObject;
-		};
-	};
-}
-
 export const useAllPosts = () => {
 	const data = useStaticQuery<Props>(graphql`
 		query {
@@ -56,7 +52,21 @@ export const useAllPosts = () => {
 	`);
 
 	const posts = data.allMdx.edges;
-	const allPosts: Node[] = [];
+	const allPosts: {
+		id: string;
+		excerpt: string;
+		frontmatter: {
+			slug: string;
+			date: string;
+			title: string;
+			tags: string[];
+			cover: {
+				childImageSharp: {
+					fluid: FluidObject;
+				};
+			};
+		};
+	}[] = [];
 
 	posts.forEach(({ node }) => {
 		allPosts.push(node);
