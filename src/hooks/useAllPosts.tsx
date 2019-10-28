@@ -10,7 +10,6 @@ interface Props {
 		];
 	};
 }
-
 interface Node {
 	id: string;
 	excerpt: string;
