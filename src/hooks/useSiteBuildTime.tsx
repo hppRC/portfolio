@@ -6,7 +6,7 @@ type Props = {
 	};
 };
 
-const useSiteBuildTime = () => {
+export const useSiteBuildTime = () => {
 	const data = useStaticQuery<Props>(graphql`
 		query {
 			site {
