@@ -2,11 +2,11 @@ import React from 'react';
 import { SEO } from '../components';
 import Header from './Header';
 import Footer from './Footer';
-import Reset from './Reset';
+import ResetCSS from './ResetCSS';
 
 export const Layout: React.FC<{}> = ({ children }) => (
 	<>
-		<Reset />
+		<ResetCSS />
 		<SEO />
 		<Header />
 		{children}

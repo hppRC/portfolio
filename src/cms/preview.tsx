@@ -14,10 +14,7 @@ export const Preview: React.FC<Props> = ({ entry }) => {
 	to rendering mdx(JSX and normal markdown), you have to remove escape sequence
 	because 'entry.getIn(['data']).toJS().body is "\# Hello"' if input is "# Hello"
 	*/
-	console.log(entry);
-	console.log(entry.toJS());
-	console.log(entry.toJS().data.body);
-	const mdx = entry.toJS().data.body.replace('\\', '');
+	const mdx = entry.toJS().data.body.replace('\\#', '#');
 
 	return (
 		<MDX components={{ ...MdxComponents }} scope={{ ...MdxScope }}>

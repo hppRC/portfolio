@@ -1,7 +1,7 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 
-export const Reset = () => (
+export const ResetCSS = () => (
 	<Global
 		styles={css`
 			* {
@@ -32,4 +32,4 @@ export const Reset = () => (
 	/>
 );
 
-export default Reset;
+export default ResetCSS;
