@@ -1,11 +1,12 @@
 import React from 'react';
 import { Layout } from '../layouts';
-import AllPosts from '../components/AllPosts';
+import { AboutMDX, IntroMDX, ProjectsMDX } from '../sections/index';
 
 export const Index: React.FC<{}> = () => (
 	<Layout>
-		<h1>Gatsby Tutorial Home Page</h1>
-		<AllPosts />
+		<AboutMDX />
+		<IntroMDX />
+		<ProjectsMDX />
 	</Layout>
 );
 
