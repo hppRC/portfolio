@@ -7,7 +7,6 @@ exports.createPages = ({ graphql, actions }) => {
 
 	return new Promise((resolve, reject) => {
 		const postTemplate = path.resolve('src/templates/post.tsx');
-		const tagPage = path.resolve('src/templates/tags.tsx');
 		const tagPosts = path.resolve('src/templates/tag.tsx');
 
 		resolve(
@@ -99,4 +98,24 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 			value
 		});
 	}
+};
+
+// to avoid making path "/index/" instead of "/" with index directory
+// see https://github.com/gatsbyjs/gatsby/issues/7363
+exports.onCreatePage = ({ page, actions }) => {
+	const { deletePage, createPage } = actions;
+
+	return new Promise(resolve => {
+		if (page.componentPath === `${__dirname}/src/pages/index/index.tsx`) {
+			deletePage(page);
+
+			// create a new page but with '/' as path
+			createPage({
+				...page,
+				path: '/'
+			});
+		}
+
+		resolve();
+	});
 };
