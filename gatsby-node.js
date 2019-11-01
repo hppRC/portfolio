@@ -114,8 +114,9 @@ exports.onCreatePage = ({ page, actions }) => {
 				...page,
 				path: '/'
 			});
+		} else if (page.componentPath.match(`${__dirname}/src/pages/index`)) {
+			deletePage(page);
 		}
-
 		resolve();
 	});
 };
