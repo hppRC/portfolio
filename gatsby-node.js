@@ -99,24 +99,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 		});
 	}
 };
-
-// to avoid making path "/index/" instead of "/" with index directory
-// see https://github.com/gatsbyjs/gatsby/issues/7363
-exports.onCreatePage = ({ page, actions }) => {
-	const { deletePage, createPage } = actions;
-
-	return new Promise(resolve => {
-		if (page.componentPath === `${__dirname}/src/pages/index/index.tsx`) {
-			deletePage(page);
-
-			// create a new page but with '/' as path
-			createPage({
-				...page,
-				path: '/'
-			});
-		} else if (page.componentPath.match(`${__dirname}/src/pages/index`)) {
-			deletePage(page);
-		}
-		resolve();
-	});
-};
