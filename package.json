@@ -24,6 +24,7 @@
 		"@mdx-js/tag": "^0.18.0",
 		"@types/react-color": "^3.0.1",
 		"@types/react-helmet": "^5.0.12",
+		"@types/three": "^0.103.2",
 		"gatsby": "^2.16.3",
 		"gatsby-image": "^2.2.29",
 		"gatsby-plugin-canonical-urls": "^2.1.13",
@@ -54,8 +55,10 @@
 		"react-color": "^2.17.3",
 		"react-dom": "^16.10.2",
 		"react-helmet": "^5.2.1",
+		"react-three-fiber": "^3.0.8",
 		"slate": "^0.33.3",
 		"slate-schema-violations": "^0.1.7",
+		"three": "^0.110.0",
 		"typescript": "^3.6.4",
 		"webpack": "^4.41.1"
 	},

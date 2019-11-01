@@ -43,20 +43,18 @@ interface Frontmatter {
 
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	const post = data.mdx;
-	const slug = post.frontmatter.slug;
-	const title = post.frontmatter.title;
-	const date = post.frontmatter.date;
+	const { slug, title, date } = post.frontmatter;
 	const body = post.body;
 	const fluid =
 		post.frontmatter.cover && post.frontmatter.cover.childImageSharp.fluid;
+	const description = post.frontmatter.description || post.excerpt || ' ';
 	const { prev, next } = pageContext;
-	//const description = post.frontmatter.description || post.excerpt || ' ';
 
 	return (
 		<Layout>
 			<SEO
 				title={title}
-				desc={' '}
+				desc={description}
 				banner={fluid && fluid.src}
 				pathname={`/posts/${slug}`}
 				isArticle
