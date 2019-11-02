@@ -12435,10 +12435,10 @@ react-textarea-autosize@^7.1.0:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
 
-react-three-fiber@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-3.0.6.tgz#047755fa4bc3f162811c6155b8017789598012a0"
-  integrity sha512-mBmWYpmM+QTaqWZSIIc/Gqc8CvnHbhIjabZm/dXUTAGjQ2wgZNNckc63YmzhEANDYfrZVEiLcjfQbC3PyvOCOQ==
+react-three-fiber@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-3.0.7.tgz#d913273c84a3997265f9d4e7559cc7efbff69fb1"
+  integrity sha512-LU6ZU7/RlnqjPV3nfAafn497iJ3hl9XqSuhRfppp6scz/z4TIetJtdKdw2y41JpU/O1inKMtSd0CWXVzbSrCtw==
   dependencies:
     "@babel/runtime" "^7.6.3"
     react-promise-suspense "^0.3.1"
