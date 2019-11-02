@@ -1,15 +1,6 @@
 import * as THREE from 'three';
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
-import { css } from '@emotion/core';
-
-const theme = css`
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-`;
 
 const vertexSource = `
 precision mediump float;
@@ -47,7 +38,7 @@ varying vec3 pos;
 
 void main() {
 	gl_FragColor = vec4(
-		vColor.r * abs(sin(time*0.4 + pos.z) + pos.x),
+		.1 + vColor.r * abs(sin(time*0.4 + pos.z) + pos.x),
 		vColor.g * abs(cos(time*0.4 - vColor.b) + pos.z),
 		vColor.b * abs(sin(time*0.4 - pos.x) / abs(sin(time*0.4 - vColor.b)) + abs(cos(time*0.4 - vColor.r))),
 		1.0
@@ -122,16 +113,14 @@ const Thing = () => {
 };
 
 export const BackgroundArt = () => (
-	<div css={theme}>
-		<Canvas
-			camera={{
-				position: [0, 0, 1]
-			}}
-			shadowMap
-		>
-			<Thing />
-		</Canvas>
-	</div>
+	<Canvas
+		camera={{
+			position: [0, 0, 1]
+		}}
+		shadowMap
+	>
+		<Thing />
+	</Canvas>
 );
 
 export default BackgroundArt;

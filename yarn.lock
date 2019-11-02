@@ -1458,6 +1458,41 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@react-spring/addons@9.0.0-canary.809.3.a66b280":
+  version "9.0.0-canary.809.3.a66b280"
+  resolved "https://registry.yarnpkg.com/@react-spring/addons/-/addons-9.0.0-canary.809.3.a66b280.tgz#313ecae47cf3bd4e4387219e79d1d59e50ad2e88"
+  integrity sha512-TBPNjaipjDaTKOfMYYDXAupmQvDq60UcjyGibCluftEkT7DyTlSPXrxTvSinaZ3s913GRCx7TBTfRYOWZS4KJQ==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@react-spring/animated" "9.0.0-canary.809.3.a66b280"
+    "@react-spring/core" "9.0.0-canary.809.3.a66b280"
+    use-memo-one "^1.1.0"
+
+"@react-spring/animated@9.0.0-canary.809.3.a66b280":
+  version "9.0.0-canary.809.3.a66b280"
+  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.0.0-canary.809.3.a66b280.tgz#caa1c54d3b1f10bb8ebd2a346a82fa08695c8323"
+  integrity sha512-AD2iXxGcXiMck51+/3Qqz1kXu5YaACWmXerqMhFdZg10iK/xFky82BlpinlrTz1SksQAOymAVfRxHYIr614+8g==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@react-spring/shared" "9.0.0-canary.809.3.a66b280"
+
+"@react-spring/core@9.0.0-canary.809.3.a66b280":
+  version "9.0.0-canary.809.3.a66b280"
+  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-9.0.0-canary.809.3.a66b280.tgz#818db20ea3a4ed7a596392a2911bfce9ea3806fd"
+  integrity sha512-HIQzFdAcdQTVOZwBhgLtaPieGGFVqRRu+/K1+KdVHGhle3NUu/w8CeaFfyf/LEEaofxUpXMwhpk9W1M2iNGuBg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@react-spring/animated" "9.0.0-canary.809.3.a66b280"
+    "@react-spring/shared" "9.0.0-canary.809.3.a66b280"
+    use-memo-one "^1.1.0"
+
+"@react-spring/shared@9.0.0-canary.809.3.a66b280":
+  version "9.0.0-canary.809.3.a66b280"
+  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-9.0.0-canary.809.3.a66b280.tgz#4707a4e64c3be4feacfc6039b76bbcbeb1f1ef49"
+  integrity sha512-P8l3ulIWa4aYvc7ShGsRolPf+CsQjUdJ0/0ZO/mgcW0/2NBfsqQBZ/2BFSmHKx22EakiRcxau8LxE8riHj9jRA==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -12132,7 +12167,17 @@ react-dnd@^7.3.2:
     invariant "^2.1.0"
     shallowequal "^1.1.0"
 
-react-dom@^16.10.2, react-dom@^16.8.4:
+react-dom@^16.11.0:
+  version "16.11.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.11.0.tgz#7e7c4a5a85a569d565c2462f5d345da2dd849af5"
+  integrity sha512-nrRyIUE1e7j8PaXSPtyRKtz+2y9ubW/ghNgqKFHHAHaeP0fpF5uXR+sq8IMRHC+ZUxw7W9NyCDTBtwWxvkb0iA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.17.0"
+
+react-dom@^16.8.4:
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.10.2.tgz#4840bce5409176bc3a1f2bd8cb10b92db452fda6"
   integrity sha512-kWGDcH3ItJK4+6Pl9DZB16BXYAZyrYQItU4OMy0jAkv5aNqc+mAKb4TpFtAteI6TJZu+9ZlNhaeNQSVQDHJzkw==
@@ -12454,6 +12499,15 @@ react@^16.10.2, react@^16.8.4:
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.10.2.tgz#a5ede5cdd5c536f745173c8da47bda64797a4cf0"
   integrity sha512-MFVIq0DpIhrHFyqLU0S3+4dIcBhhOvBE8bJ/5kHPVOVaGdo0KuiQzpcjCPsf585WvhypqtrMILyoE2th6dT+Lw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+
+react@^16.11.0:
+  version "16.11.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.11.0.tgz#d294545fe62299ccee83363599bf904e4a07fdbb"
+  integrity sha512-M5Y8yITaLmU0ynd0r1Yvfq98Rmll6q8AxaEe88c8e7LxO8fZ2cNgmFt0aGAS9wzf1Ao32NKXtCl+/tVVtkxq6g==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -15327,6 +15381,11 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+use-memo-one@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/use-memo-one/-/use-memo-one-1.1.1.tgz#39e6f08fe27e422a7d7b234b5f9056af313bd22c"
+  integrity sha512-oFfsyun+bP7RX8X2AskHNTxu+R3QdE/RC5IefMbqptmACAA/gfol1KDD5KRzPsGMa62sWxGZw+Ui43u6x4ddoQ==
 
 use@^3.1.0:
   version "3.1.1"

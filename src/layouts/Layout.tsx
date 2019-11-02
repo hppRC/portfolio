@@ -7,7 +7,6 @@ import styled from '@emotion/styled';
 
 //Guarantees that the page height is at least 100vh
 const DedaultTheme = styled.div`
-	background-color: #000;
 	color: #fff;
 	min-height: 100vh;
 	height: auto;

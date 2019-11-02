@@ -2,6 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Theme = styled.div`
+	width: 100vw;
+
 	color: #fff;
 `;
 

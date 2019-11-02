@@ -1,9 +1,16 @@
 import React from 'react';
+import styled from '@emotion/styled';
+
+const Theme = styled.div`
+	width: 100vw;
+
+	color: #fff;
+`;
 
 export const Footer = () => (
-	<div>
+	<Theme>
 		<h1>This is footer component</h1>
-	</div>
+	</Theme>
 );
 
 export default Footer;
