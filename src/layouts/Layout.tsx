@@ -6,7 +6,7 @@ import ResetCSS from './ResetCSS';
 import styled from '@emotion/styled';
 
 //Guarantees that the page height is at least 100vh
-const Theme = styled.div`
+const DedaultTheme = styled.div`
 	background-color: #000;
 	color: #fff;
 	min-height: 100vh;
@@ -17,11 +17,11 @@ export const Layout: React.FC = ({ children }) => (
 	<>
 		<ResetCSS />
 		<SEO />
-		<Theme>
+		<DedaultTheme>
 			<Header />
 			{children}
 			<Footer />
-		</Theme>
+		</DedaultTheme>
 	</>
 );
 

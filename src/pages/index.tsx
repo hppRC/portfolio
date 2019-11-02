@@ -10,17 +10,34 @@ import styled from '@emotion/styled';
 
 export const Index = () => (
 	<Layout>
+		{/*<BackgroundArt />*/}
 		<Intro />
-		<BackgroundArt />
+		<About />
+		<Projects />
 	</Layout>
 );
 
-const Theme = styled.div``;
+const BaseTheme = styled.div`
+	min-height: 100vh;
+	height: auto;
+`;
 
 const Intro = () => (
-	<Theme>
+	<BaseTheme>
 		<IntroMDX />
-	</Theme>
+	</BaseTheme>
+);
+
+const About = () => (
+	<BaseTheme>
+		<AboutMDX />
+	</BaseTheme>
+);
+
+const Projects = () => (
+	<BaseTheme>
+		<ProjectsMDX />
+	</BaseTheme>
 );
 
 export default Index;
