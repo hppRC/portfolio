@@ -5,11 +5,15 @@ import Footer from './Footer';
 import ResetCSS from './ResetCSS';
 import styled from '@emotion/styled';
 
+//Guarantees that the page height is at least 100vh
 const Theme = styled.div`
 	background-color: #000;
+	color: #fff;
+	min-height: 100vh;
+	height: auto;
 `;
 
-export const Layout: React.FC<{}> = ({ children }) => (
+export const Layout: React.FC = ({ children }) => (
 	<>
 		<ResetCSS />
 		<SEO />

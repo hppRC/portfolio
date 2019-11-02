@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from '@emotion/styled';
+
+const Theme = styled.div`
+	color: #fff;
+`;
 
 export const Header = () => (
-	<div>
+	<Theme>
 		<h1>This is header component</h1>
-	</div>
+	</Theme>
 );
 
 export default Header;

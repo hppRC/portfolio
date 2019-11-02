@@ -10,19 +10,16 @@ import styled from '@emotion/styled';
 
 export const Index = () => (
 	<Layout>
-		<BackgroundArt />
 		<Intro />
+		<BackgroundArt />
 	</Layout>
 );
 
-const Theme = styled.div`
-	color: #ffffff;
-`;
+const Theme = styled.div``;
 
 const Intro = () => (
 	<Theme>
 		<IntroMDX />
-		<h1>yhea</h1>
 	</Theme>
 );
 

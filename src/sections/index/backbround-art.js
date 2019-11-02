@@ -9,7 +9,6 @@ const theme = css`
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: #000;
 `;
 
 const vertexSource = `

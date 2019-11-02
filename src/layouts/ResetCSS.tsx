@@ -4,170 +4,285 @@ import { Global, css } from '@emotion/core';
 export const ResetCSS = () => (
 	<Global
 		styles={css`
-			html,
-			body,
-			div,
-			span,
-			object,
-			iframe,
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6,
-			p,
-			blockquote,
-			pre,
-			abbr,
-			address,
-			cite,
-			code,
-			del,
-			dfn,
-			em,
-			img,
-			ins,
-			kbd,
-			q,
-			samp,
-			small,
-			strong,
-			sub,
-			sup,
-			var,
-			b,
-			i,
-			dl,
-			dt,
-			dd,
-			ol,
-			ul,
-			li,
-			fieldset,
-			form,
-			label,
-			legend,
-			table,
-			caption,
-			tbody,
-			tfoot,
-			thead,
-			tr,
-			th,
-			td,
-			article,
-			aside,
-			canvas,
-			details,
-			figcaption,
-			figure,
-			footer,
-			header,
-			hgroup,
-			menu,
-			nav,
-			section,
-			summary,
-			time,
-			mark,
-			audio,
-			video {
-				margin: 0;
+			/*!
+* ress.css • v2.0.1
+* MIT License
+* github.com/filipelinhares/ress
+*/
+
+			/* # =================================================================
+  # Global selectors
+  # ================================================================= */
+
+			html {
+				box-sizing: border-box;
+				-webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+				word-break: break-word;
+				-moz-tab-size: 4;
+				tab-size: 4;
+			}
+
+			*,
+			::before,
+			::after {
+				background-repeat: no-repeat;
+				box-sizing: inherit;
+			}
+
+			::before,
+			::after {
+				text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+				vertical-align: inherit;
+			}
+
+			* {
 				padding: 0;
-				border: 0;
-				outline: 0;
-				font-size: 100%;
-				vertical-align: baseline;
-				background: transparent;
+				margin: 0;
 			}
 
-			body {
-				line-height: 1;
+			/* # =================================================================
+  # General elements
+  # ================================================================= */
+
+			hr {
+				overflow: visible; /* Show the overflow in Edge and IE */
+				height: 0; /* Add the correct box sizing in Firefox */
 			}
 
-			article,
-			aside,
 			details,
-			figcaption,
-			figure,
-			footer,
-			header,
-			hgroup,
-			menu,
-			nav,
-			section {
+			main {
 				display: block;
 			}
 
-			nav ul {
-				list-style: none;
+			summary {
+				display: list-item; /* Add the correct display in all browsers */
 			}
 
-			blockquote,
-			q {
-				quotes: none;
+			small {
+				font-size: 80%;
 			}
 
-			blockquote:before,
-			blockquote:after,
-			q:before,
-			q:after {
-				content: '';
-				content: none;
+			[hidden] {
+				display: none; /* Add the correct display in IE */
+			}
+
+			abbr[title] {
+				border-bottom: none; /* Remove the bottom border in Chrome 57 */
+				/* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+				text-decoration: underline;
+				text-decoration: underline dotted;
 			}
 
 			a {
-				margin: 0;
-				padding: 0;
-				font-size: 100%;
+				background-color: transparent; /* Remove the gray background on active links in IE 10 */
+			}
+
+			a:active,
+			a:hover {
+				outline-width: 0; /* Remove the outline when hovering in all browsers */
+			}
+
+			code,
+			kbd,
+			pre,
+			samp {
+				font-family: monospace, monospace; /* Specify the font family of code elements */
+			}
+
+			pre {
+				font-size: 1em;
+			}
+
+			b,
+			strong {
+				font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
+			}
+
+			/* https://gist.github.com/unruthless/413930 */
+			sub,
+			sup {
+				font-size: 75%;
+				line-height: 0;
+				position: relative;
 				vertical-align: baseline;
-				background: transparent;
 			}
 
-			/* change colours to suit your needs */
-			ins {
-				background-color: #ff9;
-				color: #000;
-				text-decoration: none;
+			sub {
+				bottom: -0.25em;
 			}
 
-			/* change colours to suit your needs */
-			mark {
-				background-color: #ff9;
-				color: #000;
-				font-style: italic;
-				font-weight: bold;
+			sup {
+				top: -0.5em;
 			}
 
-			del {
-				text-decoration: line-through;
+			/* # =================================================================
+  # Forms
+  # ================================================================= */
+
+			input {
+				border-radius: 0;
 			}
 
-			abbr[title],
-			dfn[title] {
-				border-bottom: 1px dotted;
-				cursor: help;
+			/* Replace pointer cursor in disabled elements */
+			[disabled] {
+				cursor: default;
 			}
 
-			table {
-				border-collapse: collapse;
-				border-spacing: 0;
+			[type='number']::-webkit-inner-spin-button,
+			[type='number']::-webkit-outer-spin-button {
+				height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
 			}
 
-			/* change border colour to suit your needs */
-			hr {
-				display: block;
-				height: 1px;
-				border: 0;
-				border-top: 1px solid #cccccc;
-				margin: 1em 0;
+			[type='search'] {
+				-webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
+				outline-offset: -2px; /* Correct the outline style in Safari */
+			}
+
+			[type='search']::-webkit-search-decoration {
+				-webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
+			}
+
+			textarea {
+				overflow: auto; /* Internet Explorer 11+ */
+				resize: vertical; /* Specify textarea resizability */
+			}
+
+			button,
+			input,
+			optgroup,
+			select,
+			textarea {
+				font: inherit; /* Specify font inheritance of form elements */
+			}
+
+			optgroup {
+				font-weight: bold; /* Restore the font weight unset by the previous rule */
+			}
+
+			button {
+				overflow: visible;
+			}
+
+			button,
+			select {
+				text-transform: none; /* Firefox 40+, Internet Explorer 11- */
+			}
+
+			/* Apply cursor pointer to button elements */
+			button,
+			[type='button'],
+			[type='reset'],
+			[type='submit'],
+			[role='button'] {
+				cursor: pointer;
+			}
+
+			/* Remove inner padding and border in Firefox 4+ */
+			button::-moz-focus-inner,
+			[type='button']::-moz-focus-inner,
+			[type='reset']::-moz-focus-inner,
+			[type='submit']::-moz-focus-inner {
+				border-style: none;
 				padding: 0;
 			}
 
+			/* Replace focus style removed in the border reset above */
+			button:-moz-focusring,
+			[type='button']::-moz-focus-inner,
+			[type='reset']::-moz-focus-inner,
+			[type='submit']::-moz-focus-inner {
+				outline: 1px dotted ButtonText;
+			}
+
+			button,
+			html [type='button'],
+			[type='reset'],
+			[type='submit'] {
+				-webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
+			}
+
+			/* Remove the default button styling in all browsers */
+			button,
 			input,
+			select,
+			textarea {
+				background-color: transparent;
+				border-style: none;
+			}
+
+			/* Style select like a standard input */
 			select {
-				vertical-align: middle;
+				-moz-appearance: none; /* Firefox 36+ */
+				-webkit-appearance: none; /* Chrome 41+ */
+			}
+
+			select::-ms-expand {
+				display: none; /* Internet Explorer 11+ */
+			}
+
+			select::-ms-value {
+				color: currentColor; /* Internet Explorer 11+ */
+			}
+
+			legend {
+				border: 0;
+				color: inherit;
+				display: table; /* Correct the text wrapping in Edge and IE */
+				max-width: 100%; /* Correct the text wrapping in Edge and IE */
+				white-space: normal; /* Correct the text wrapping in Edge and IE */
+				max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
+			}
+
+			::-webkit-file-upload-button {
+				-webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
+				font: inherit;
+			}
+
+			/* # =================================================================
+  # Specify media element style
+  # ================================================================= */
+
+			img {
+				border-style: none;
+			}
+
+			/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+			progress {
+				vertical-align: baseline;
+			}
+
+			svg:not([fill]) {
+				fill: currentColor;
+			}
+
+			/* # =================================================================
+  # Accessibility
+  # ================================================================= */
+
+			/* Hide content from screens but not screenreaders */
+			@media screen {
+				[hidden~='screen'] {
+					display: inherit;
+				}
+				[hidden~='screen']:not(:active):not(:focus):not(:target) {
+					position: absolute !important;
+					clip: rect(0 0 0 0) !important;
+				}
+			}
+
+			/* Specify the progress cursor of updating elements */
+			[aria-busy='true'] {
+				cursor: progress;
+			}
+
+			/* Specify the pointer cursor of trigger elements */
+			[aria-controls] {
+				cursor: pointer;
+			}
+
+			/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+			[aria-disabled] {
+				cursor: default;
 			}
 		`}
 	/>
