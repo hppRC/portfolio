@@ -9,7 +9,7 @@ const theme = css`
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: #0b0b0b;
+	background-color: #000;
 	z-index: -9999;
 `;
 
@@ -23,20 +23,20 @@ varying vec3 pos;
 void main() {
 	vColor = color;
 	pos = vec3(
-		position.x + clamp(
+		(sin(time * .53) + cos(time * 0.03 + 32.) + 1.) * position.x + sin(time * .1 - 200.) * clamp(
 			1.,
-			sin(time),
+			sin(time * 0.2),
 			position.x * ( 1. / time + cos(position.x) * position.x * sin(1. + position.z * time) * cos(1.2 * position.x * sin(cos(position.z + 0.01 * sin(0.5 * time))) + sin(cos(0.5 * time) * position.y)))
 		),
-		position.y +
-			position.y * (1. / time + sin(position.z + 0.5 * time) * position.y * cos(0.001*0.5 * time + position.z + sin(cos(sin(1. - sin(0.5 * time) * cos(0.5 * time)) + sin(0.5 * time)) + sin(cos(0.5 * time)) + 0.5 * time * sin(position.y))) * cos(position.x * cos(sin(0.5 * time)))
+		(cos(time * .23 - position.x) + 1.) * position.y +
+			position.y * (1. / time + sin(position.z + 0.5 * time) * position.y * cos(0.001*0.5 * time + position.z + sin(cos(sin(1. - sin(0.5 * time) * cos(0.5 * time)) + sin(0.5 * time)) + sin(cos(0.5 * time)) + 0.5 * time * sin(position.y))) * cos(position.x * cos(sin(0.23 * time)))
 		),
 		position.z + min(
 			sin(time * 0.4 - 200.),
-			position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.5 * time))))))
+			position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.3218 * time - 2.2))))))
 		)
 			);
-	gl_PointSize = 1.5;
+	gl_PointSize = 1.;
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `;
@@ -74,14 +74,15 @@ const Thing = () => {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
 			z = Math.random() * 2.0 - 1.0;
-
-			positions.push(x);
-			positions.push(y);
-			positions.push(z);
-			colors.push(Math.random() * 255.0);
-			colors.push(Math.random() * 255.0);
-			colors.push(Math.random() * 255.0);
-			colors.push(Math.random() * 255.0);
+			if (x * x + y * y + z * z <= 1) {
+				positions.push(x);
+				positions.push(y);
+				positions.push(z);
+				colors.push(Math.random() * 255.0);
+				colors.push(Math.random() * 255.0);
+				colors.push(Math.random() * 255.0);
+				colors.push(Math.random() * 255.0);
+			}
 		}
 		return [positions, colors];
 	}, []);
