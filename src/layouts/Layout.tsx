@@ -3,14 +3,21 @@ import { SEO } from '../components';
 import Header from './Header';
 import Footer from './Footer';
 import ResetCSS from './ResetCSS';
+import styled from '@emotion/styled';
+
+const Theme = styled.div`
+	background-color: #000;
+`;
 
 export const Layout: React.FC<{}> = ({ children }) => (
 	<>
 		<ResetCSS />
 		<SEO />
-		<Header />
-		{children}
-		<Footer />
+		<Theme>
+			<Header />
+			{children}
+			<Footer />
+		</Theme>
 	</>
 );
 
