@@ -23,10 +23,19 @@ varying vec3 pos;
 void main() {
 	vColor = color;
 	pos = vec3(
-		position.x + cos(time) * sin(position.x + smoothstep(0., 1., position.z*sin(time))) * sin(time),
-		position.y + fract(sin(0.001*time)) + sin(time) * sin(position.y + normalize(position.x * time)),
-		position.z * sin(sin(sin(time)))
-	);
+		position.x + clamp(
+			1.,
+			sin(time),
+			position.x * ( 1. / time + cos(position.x) * position.x * sin(1. + position.z * time) * cos(1.2 * position.x * sin(cos(position.z + 0.01 * sin(0.5 * time))) + sin(cos(0.5 * time) * position.y)))
+		),
+		position.y +
+			position.y * (1. / time + sin(position.z + 0.5 * time) * position.y * cos(0.001*0.5 * time + position.z + sin(cos(sin(1. - sin(0.5 * time) * cos(0.5 * time)) + sin(0.5 * time)) + sin(cos(0.5 * time)) + 0.5 * time * sin(position.y))) * cos(position.x * cos(sin(0.5 * time)))
+		),
+		position.z + min(
+			sin(time * 0.4 - 200.),
+			position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.5 * time))))))
+		)
+			);
 	gl_PointSize = 1.5;
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
@@ -40,7 +49,7 @@ varying vec3 pos;
 
 void main() {
 	gl_FragColor = vec4(
-		sin(tan(time - 2.0) / abs(vColor.r)),
+		vColor.r * abs(sin(time*0.4 + pos.z) + pos.x),
 		vColor.g * abs(cos(time*0.4 - vColor.b) + pos.z),
 		vColor.b * abs(sin(time*0.4 - pos.x) / abs(sin(time*0.4 - vColor.b)) + abs(cos(time*0.4 - vColor.r))),
 		1.0
