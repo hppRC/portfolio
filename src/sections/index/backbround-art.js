@@ -114,18 +114,14 @@ const Thing = () => {
 };
 
 export const BackgroundArt = () => (
-	<>
-		{typeof ResizeObserver !== 'undefined' && (
-			<Canvas
-				camera={{
-					position: [0, 0, 1]
-				}}
-				shadowMap
-			>
-				<Thing />
-			</Canvas>
-		)}
-	</>
+	<Canvas
+		camera={{
+			position: [0, 0, 1]
+		}}
+		shadowMap
+	>
+		<Thing />
+	</Canvas>
 );
 
 export default BackgroundArt;

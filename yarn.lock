@@ -12435,15 +12435,14 @@ react-textarea-autosize@^7.1.0:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
 
-react-three-fiber@^3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-3.0.8.tgz#58e720539a91fb6d7f8080a7ccdde8c5f5437767"
-  integrity sha512-ipsAi+mM2/D93aLT21EspXuRxk4txT14rb1JwuBIYF+oIfxHwd+3QMHxfUHj1N9YiNXDPJv49U2JS6af8wAV9A==
+react-three-fiber@3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-3.0.6.tgz#047755fa4bc3f162811c6155b8017789598012a0"
+  integrity sha512-mBmWYpmM+QTaqWZSIIc/Gqc8CvnHbhIjabZm/dXUTAGjQ2wgZNNckc63YmzhEANDYfrZVEiLcjfQbC3PyvOCOQ==
   dependencies:
     "@babel/runtime" "^7.6.3"
     react-promise-suspense "^0.3.1"
     react-reconciler "0.23.0"
-    react-use-measure "^1.0.3"
     resize-observer-polyfill "^1.5.1"
     scheduler "0.17.0"
     tiny-emitter "^2.1.0"
@@ -12480,11 +12479,6 @@ react-transition-group@^2.2.1, react-transition-group@^2.6.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
-
-react-use-measure@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-use-measure/-/react-use-measure-1.0.3.tgz#9872ae4540645359a19eb82e17034ec5ca84495e"
-  integrity sha512-pGKLmuumwyO2CdrIWCh1oR8zwkygVuGDt7F430Qd5ZMRI/xAvG/idEgpPmDo0PA/K0fhEJOjbNAGLB6bn9WVJA==
 
 react-waypoint@^8.1.0:
   version "8.1.0"
