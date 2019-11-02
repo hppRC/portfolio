@@ -42,7 +42,7 @@ void main() {
 		.1 + vColor.r * abs(sin(time*0.4 + pos.z) + pos.x),
 		vColor.g * abs(cos(time*0.4 - vColor.b) + pos.z),
 		vColor.b * abs(sin(time*0.4 - pos.x) / abs(sin(time*0.4 - vColor.b)) + abs(cos(time*0.4 - vColor.r))),
-		1.0
+		1.5
 		);
 }
 `;
