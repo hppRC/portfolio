@@ -26,7 +26,7 @@ void main() {
 			position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.3218 * time - 2.2))))))
 		)
 			);
-	gl_PointSize = 1.;
+	gl_PointSize = 1.5;
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `;
@@ -42,7 +42,7 @@ void main() {
 		.1 + vColor.r * abs(sin(time*0.4 + pos.z) + pos.x),
 		vColor.g * abs(cos(time*0.4 - vColor.b) + pos.z),
 		vColor.b * abs(sin(time*0.4 - pos.x) / abs(sin(time*0.4 - vColor.b)) + abs(cos(time*0.4 - vColor.r))),
-		1.5
+		1.0
 		);
 }
 `;
