@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import * as THREE from 'three';
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
+import { isBrowser } from 'react-device-detect';
 
 const vertexSource = `
 precision mediump float;
@@ -26,7 +27,7 @@ void main() {
 			position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.3218 * time - 2.2))))))
 		)
 			);
-	gl_PointSize = 1.5;
+	gl_PointSize = 1.;
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `;
@@ -60,7 +61,8 @@ const Thing = () => {
 		let positions = [];
 		let colors = [];
 		let x, y, z;
-		for (let i = 0; i < 75000; i++) {
+		const points = isBrowser ? 50000 : 10000;
+		for (let i = 0; i < points; i++) {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
 			z = Math.random() * 2.0 - 1.0;
@@ -120,7 +122,9 @@ export const BackgroundArt = () => (
 		}}
 		shadowMap
 	>
-		<Thing />
+		<Suspense fallback={null}>
+			<Thing />
+		</Suspense>
 	</Canvas>
 );
 
