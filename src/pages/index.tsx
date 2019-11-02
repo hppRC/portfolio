@@ -10,7 +10,10 @@ import styled from '@emotion/styled';
 
 export const Index = () => (
 	<Layout>
-		{/*<BackgroundArt />*/}
+		{/*
+
+	*/}
+		<BackgroundArt />
 		<Intro />
 		<About />
 		<Projects />
