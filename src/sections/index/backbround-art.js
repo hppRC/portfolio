@@ -1,3 +1,4 @@
+import React from 'react';
 import * as THREE from 'three';
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
@@ -113,14 +114,18 @@ const Thing = () => {
 };
 
 export const BackgroundArt = () => (
-	<Canvas
-		camera={{
-			position: [0, 0, 1]
-		}}
-		shadowMap
-	>
-		<Thing />
-	</Canvas>
+	<>
+		{typeof ResizeObserver !== 'undefined' && (
+			<Canvas
+				camera={{
+					position: [0, 0, 1]
+				}}
+				shadowMap
+			>
+				<Thing />
+			</Canvas>
+		)}
+	</>
 );
 
 export default BackgroundArt;
