@@ -84,21 +84,21 @@ export const HppPortfolio = () => {
 			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o']), 500)
 		);
 		ref.current.push(
-			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r']), 500)
+			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r']), 600)
 		);
 		ref.current.push(
-			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r', 't']), 600)
+			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r', 't']), 700)
 		);
 		ref.current.push(
 			setTimeout(
 				() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r', 't', 'f']),
-				700
+				800
 			)
 		);
 		ref.current.push(
 			setTimeout(
 				() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r', 't', 'f', 'o']),
-				800
+				900
 			)
 		);
 		ref.current.push(
@@ -117,7 +117,7 @@ export const HppPortfolio = () => {
 						'o',
 						'l'
 					]),
-				900
+				1000
 			)
 		);
 		ref.current.push(
@@ -137,7 +137,7 @@ export const HppPortfolio = () => {
 						'l',
 						'i'
 					]),
-				1000
+				1100
 			)
 		);
 		ref.current.push(
@@ -158,7 +158,7 @@ export const HppPortfolio = () => {
 						'i',
 						'o'
 					]),
-				1100
+				1200
 			)
 		);
 	}, []);
