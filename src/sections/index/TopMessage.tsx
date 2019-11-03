@@ -7,19 +7,10 @@ const config = {
 		opacity: 0,
 		height: 0,
 		innerHeight: 0,
-		color: '#bbb'
+		color: '#fff'
 	},
-	enter: [
-		{ opacity: 1, height: 80, innerHeight: 80 },
-		{
-			color: '#f5a500'
-		}
-	],
-	leave: [
-		{ color: '#c23369' },
-		{ innerHeight: 0 },
-		{ opacity: 0, height: 0 }
-	],
+	enter: [{ opacity: 1, height: 80 }],
+	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
 
@@ -43,11 +34,15 @@ export const TopMessage = () => {
 		ref.current.map(clearTimeout);
 		ref.current = [];
 		set([]);
-		ref.current.push(setTimeout(() => set([`Hello,`, `I'm`, `hpp`]), 1000));
-		ref.current.push(setTimeout(() => set([`hpp`, `Portfolio`]), 3000));
+		ref.current.push(setTimeout(() => set([`Hello,`, `I'm`, `hpp`]), 500));
+		ref.current.push(setTimeout(() => set([`hpp`, `Portfolio`]), 2000));
+		ref.current.push(setTimeout(() => set([`Enjoy`]), 4000));
+		ref.current.push(setTimeout(() => set([`Enjoy`, `this`]), 4750));
 		ref.current.push(
-			setTimeout(() => set([`Enjoy`, `this`, `website`]), 5000)
+			setTimeout(() => set([`Enjoy`, `this`, `website`]), 5250)
 		);
+		ref.current.push(setTimeout(() => set([]), 6500));
+		ref.current.push(setTimeout(() => set([`hpp Portfolio`]), 7500));
 	}, []);
 
 	return (
