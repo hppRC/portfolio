@@ -10,7 +10,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: isBrowser ? 80 : 40 }],
+	enter: [{ opacity: 1, height: isBrowser ? 80 : 50 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
@@ -22,7 +22,7 @@ const Theme = styled.div`
 	flex-flow: column;
 	width: 100vw;
 	height: 100vh;
-	font-size: ${isBrowser ? 4 : 1.7}rem;
+	font-size: ${isBrowser ? 4 : 1.5}rem;
 	font-weight: bold;
 `;
 

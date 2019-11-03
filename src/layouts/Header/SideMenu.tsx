@@ -17,6 +17,7 @@ const SideMenuTheme = styled.div`
 	top: 0;
 	right: 0;
 	height: 100vh;
+	padding: 2rem;
 	background-color: #ffffffa0;
 `;
 
