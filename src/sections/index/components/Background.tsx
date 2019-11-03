@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { BackgroundArt } from './backbround-art';
+import { BackgroundArt } from './BackgroundArt';
 
 const BackgroundTheme = styled.div`
 	position: fixed;

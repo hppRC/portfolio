@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectsMDX from './intro.mdx';
+import ProjectsMDX from '../documents/projects.mdx';
 import styled from '@emotion/styled';
 
 const Theme = styled.div`

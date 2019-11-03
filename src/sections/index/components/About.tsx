@@ -1,5 +1,5 @@
 import React from 'react';
-import IntroMDX from './intro.mdx';
+import AboutMDX from '../documents/about.mdx';
 import styled from '@emotion/styled';
 
 const Theme = styled.div`
@@ -7,10 +7,10 @@ const Theme = styled.div`
 	height: auto;
 `;
 
-export const Intro = () => (
+export const About = () => (
 	<Theme>
-		<IntroMDX />
+		<AboutMDX />
 	</Theme>
 );
 
-export default Intro;
+export default About;

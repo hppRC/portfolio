@@ -14,7 +14,7 @@ varying vec3 pos;
 void main() {
 	vColor = color;
 	pos = vec3(
-		(sin(time * .53) + cos(time * 0.03 + 32.) + 1.) * position.x + sin(time * .1 - 200.) * clamp(
+		(sin(time * .053) + cos(time * 0.03 + 32.) + 1.) * position.x + sin(time * .1 - 200.) * clamp(
 			1.,
 			sin(time * 0.2),
 			position.x * ( 1. / time + cos(position.x) * position.x * sin(1. + position.z * time) * cos(1.2 * position.x * sin(cos(position.z + 0.01 * sin(0.5 * time))) + sin(cos(0.5 * time) * position.y)))
