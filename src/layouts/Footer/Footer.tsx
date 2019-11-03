@@ -1,16 +1,19 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const Theme = styled.div`
+const ThemedFooter = styled.footer`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100vw;
-
+	height: 10vh;
 	color: #fff;
 `;
 
 export const Footer = () => (
-	<Theme>
-		<h1>This is footer component</h1>
-	</Theme>
+	<ThemedFooter>
+		<p>Copyright © 2019 hppRC All Rights Reserved.</p>
+	</ThemedFooter>
 );
 
 export default Footer;

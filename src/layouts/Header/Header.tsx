@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Menu from './Menu';
 
-const Theme = styled.div`
+const ThemedHeader = styled.header`
 	display: flex;
 	justify-content: flex-end;
 	position: fixed;
@@ -27,9 +27,9 @@ const Theme = styled.div`
 `;
 
 export const Header = () => (
-	<Theme>
+	<ThemedHeader>
 		<Menu />
-	</Theme>
+	</ThemedHeader>
 );
 
 export default Header;
