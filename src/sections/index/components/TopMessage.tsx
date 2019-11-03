@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import styled from '@emotion/styled';
+import { isBrowser } from 'react-device-detect';
 
 const config = {
 	from: {
@@ -21,7 +22,7 @@ const Theme = styled.div`
 	flex-flow: column;
 	width: 100vw;
 	height: 100vh;
-	font-size: 4rem;
+	font-size: ${isBrowser ? 4 : 2}rem;
 	font-weight: bold;
 `;
 
@@ -62,8 +63,6 @@ const TitleTheme = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 4rem;
-	font-weight: bold;
 `;
 
 export const HppPortfolio = () => {
