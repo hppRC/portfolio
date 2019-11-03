@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { animated, useSpring, config } from 'react-spring';
+import React from 'react';
+import { useSpring, animated, config } from 'react-spring';
 
-export const Menu = () => (
-	<div>
-		<MenuIcon />
-	</div>
-);
+interface MenuInterface {
+	open: boolean;
+	toggle(open: boolean): void;
+	width?: number;
+	opacity?: number;
+}
 
 const openedTransformationConfig = {
 	top: 'translate(2, 7) rotate(0)',
@@ -21,8 +22,7 @@ const closedTransformationConfig = {
 	color: '#fff' // Add color
 };
 
-export const MenuIcon = () => {
-	const [open, toggle]: [boolean, any] = useState(false);
+export const MenuIcon: React.FC<MenuInterface> = ({ open, toggle }) => {
 	const { top, center, bottom, color }: any = useSpring({
 		to: open ? closedTransformationConfig : openedTransformationConfig,
 		config: config.stiff
@@ -35,11 +35,11 @@ export const MenuIcon = () => {
 			fill={color}
 			onClick={() => toggle(!open)}
 		>
-			<animated.rect width='40' height='3' rx='3' transform={top} />
-			<animated.rect width='40' height='3' rx='3' transform={center} />
-			<animated.rect width='40' height='3' rx='3' transform={bottom} />
+			<animated.rect width='40' height='3' rx='2' transform={top} />
+			<animated.rect width='40' height='3' rx='2' transform={center} />
+			<animated.rect width='40' height='3' rx='2' transform={bottom} />
 		</animated.svg>
 	);
 };
 
-export default Menu;
+export default MenuIcon;

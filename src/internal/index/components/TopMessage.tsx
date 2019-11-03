@@ -10,7 +10,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: 80 }],
+	enter: [{ opacity: 1, height: isBrowser ? 80 : 40 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
