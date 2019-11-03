@@ -13,6 +13,7 @@ interface MenuInterface {
 
 const SideMenuTheme = styled.div`
 	display: flex;
+	flex-direction: row-reverse;
 	position: absolute;
 	top: 0;
 	right: 0;
