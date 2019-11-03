@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { animated, useSpring } from 'react-spring';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import Menu from './Menu';
 
 const Theme = styled.div`
 	display: flex;
@@ -21,17 +23,18 @@ const Theme = styled.div`
 		li {
 			display: inline-block;
 			padding: 1rem;
-		}
-	}
 
-	ul li a {
-		text-decoration: none;
-		color: #fff;
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+		}
 	}
 `;
 
 export const Header = () => (
 	<Theme>
+		<Menu />
 		<ul>
 			<li>
 				<Link to='/about'>about</Link>
@@ -45,5 +48,26 @@ export const Header = () => (
 		</ul>
 	</Theme>
 );
+
+const ButtonTheme = styled.div`
+	color: #fff;
+	background-color: #734992;
+`;
+
+const Button = () => {
+	const [open, toggle]: [boolean, any] = useState(false);
+	const props: any = useSpring({ width: open ? 100 : 0 });
+
+	return (
+		<div onClick={() => toggle(!open)}>
+			<animated.div style={props} />
+			<ButtonTheme>
+				<animated.div>
+					{props.width.interpolate((x: number) => x.toFixed(0))}
+				</animated.div>
+			</ButtonTheme>
+		</div>
+	);
+};
 
 export default Header;
