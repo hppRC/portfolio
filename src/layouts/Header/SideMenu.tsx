@@ -22,7 +22,7 @@ const SideMenuTheme = styled.div`
 	height: 100vh;
 	padding: 2rem;
 	border: solid 1px #fff;
-	background-color: #090909b5;
+	background-color: #09090fb5;
 `;
 
 const ThemedUl = styled.ul`
