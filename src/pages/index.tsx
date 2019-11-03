@@ -1,6 +1,12 @@
 import React from 'react';
 import { Layout } from '../layouts';
-import { About, Intro, Projects, BackgroundArt } from '../sections/index';
+import {
+	About,
+	Intro,
+	Projects,
+	BackgroundArt,
+	TopMessage
+} from '../sections/index';
 import styled from '@emotion/styled';
 //import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
 
@@ -9,7 +15,7 @@ export const Index = () => (
 		{/*
 		 */}
 		<Background />
-
+		<TopMessage />
 		<Intro />
 		<About />
 		<Projects />
