@@ -22,7 +22,7 @@ const Theme = styled.div`
 	flex-flow: column;
 	width: 100vw;
 	height: 100vh;
-	font-size: ${isBrowser ? 4 : 2}rem;
+	font-size: ${isBrowser ? 4 : 1.7}rem;
 	font-weight: bold;
 `;
 

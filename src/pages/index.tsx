@@ -7,8 +7,16 @@ import {
 	Background,
 	TopMessage
 } from '../internal/index';
+import styled from '@emotion/styled';
 
 //import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
+
+const Theme = styled.div`
+	min-height: 100vh;
+	height: auto;
+	padding: 10%;
+	max-width: 1600px;
+`;
 
 export const Index = () => (
 	<Layout>
@@ -16,9 +24,11 @@ export const Index = () => (
 		 */}
 		<Background />
 		<TopMessage />
-		<Intro />
-		<About />
-		<Projects />
+		<Theme>
+			<Intro />
+			<About />
+			<Projects />
+		</Theme>
 	</Layout>
 );
 
