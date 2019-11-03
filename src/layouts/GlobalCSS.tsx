@@ -8,8 +8,6 @@ export const GlobalCSS = () => (
 			body {
 				background-color: #070707;
 				color: #fff;
-				min-height: 100vh;
-				height: auto;
 			}
 		`}
 	/>

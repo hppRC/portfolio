@@ -6,7 +6,7 @@ import {
 	Projects,
 	Background,
 	TopMessage
-} from '../sections/index';
+} from '../internal/index';
 
 //import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
 
