@@ -6,3 +6,4 @@ export * from './About';
 export * from './Intro';
 export * from './Projects';
 export * from './TopMessage';
+export * from './Background';

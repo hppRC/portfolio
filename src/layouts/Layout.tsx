@@ -3,24 +3,16 @@ import { SEO } from '../components';
 import Header from './Header';
 import Footer from './Footer';
 import ResetCSS from './ResetCSS';
-import styled from '@emotion/styled';
-
-//Guarantees that the page height is at least 100vh
-const DedaultTheme = styled.div`
-	color: #fff;
-	min-height: 100vh;
-	height: auto;
-`;
+import GlobalCSS from './GlobalCSS';
 
 export const Layout: React.FC = ({ children }) => (
 	<>
 		<ResetCSS />
+		<GlobalCSS />
 		<SEO />
-		<DedaultTheme>
-			<Header />
-			{children}
-			<Footer />
-		</DedaultTheme>
+		<Header />
+		{children}
+		<Footer />
 	</>
 );
 
