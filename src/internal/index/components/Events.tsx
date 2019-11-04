@@ -1,14 +1,14 @@
 import React from 'react';
-import ProjectsMDX from '../documents/projects.mdx';
+import EventsMDX from '../documents/events.mdx';
 import styled from '@emotion/styled';
 import BaseTheme from './BaseTheme';
 
 const Theme = styled(BaseTheme)``;
 
-export const Projects = () => (
+export const Events = () => (
 	<Theme>
-		<ProjectsMDX />
+		<EventsMDX />
 	</Theme>
 );
 
-export default Projects;
+export default Events;

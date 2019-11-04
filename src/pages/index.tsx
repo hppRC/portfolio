@@ -3,7 +3,7 @@ import { Layout } from '../layouts';
 import {
 	About,
 	Intro,
-	Projects,
+	Events,
 	Skills,
 	Background,
 	TopMessage
@@ -29,7 +29,7 @@ export const Index = () => (
 			<Intro />
 			<About />
 			<Skills />
-			<Projects />
+			<Events />
 		</Theme>
 	</Layout>
 );

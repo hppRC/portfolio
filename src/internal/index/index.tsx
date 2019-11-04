@@ -1,11 +1,11 @@
 export { default as AboutMDX } from './documents/about.mdx';
 export { default as IntroMDX } from './documents/intro.mdx';
-export { default as ProjectsMDX } from './documents/projects.mdx';
+export { default as EventsMDX } from './documents/events.mdx';
 export { default as SkillsMDX } from './documents/skills.mdx';
 export * from './components/BackgroundArt';
 export * from './components/About';
 export * from './components/Intro';
 export * from './components/Skills';
-export * from './components/Projects';
+export * from './components/Events';
 export * from './components/TopMessage';
 export * from './components/Background';
