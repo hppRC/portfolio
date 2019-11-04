@@ -9,6 +9,7 @@ const Theme = styled.div`
 	min-height: 100vh;
 	> h1:first-of-type {
 		margin: 0 auto;
+		padding: 2rem 0;
 	}
 `;
 
