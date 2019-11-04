@@ -2,15 +2,12 @@ import React from 'react';
 import { animated, useSpring } from 'react-spring';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import MenuIcon from './MenuIcon';
 import UseAnimations from 'react-useanimations';
 import { isMobile } from 'react-device-detect';
 
 interface MenuInterface {
 	open: boolean;
 	toggle(open: boolean): void;
-	width?: number;
-	opacity?: number;
 }
 
 const SideMenuTheme = styled.div`
@@ -20,14 +17,12 @@ const SideMenuTheme = styled.div`
 	top: 0;
 	right: 0;
 	height: 100vh;
-	padding: 2rem;
-	border: solid 1px #fff;
-	background-color: #09090fb5;
 `;
 
 const ThemedUl = styled.ul`
 	display: flex;
 	flex-direction: column;
+
 	li {
 		a {
 			font-size: 2rem;
@@ -46,48 +41,84 @@ const ThemedIconsUl = styled.ul`
 	}
 `;
 
-export const SideMenu: React.FC<MenuInterface> = ({
-	open,
-	toggle,
-	width,
-	opacity
-}) => {
-	const props = useSpring({
-		config: { mass: 100, friction: 100 },
-		from: { opacity: 0 },
-		to: { opacity: 1 }
+export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
+	const props: any = useSpring({
+		config: { mass: 5, friction: 50 },
+		from: {
+			o: 0,
+			opacity: 0
+		},
+		o: 1,
+		opacity: open ? 1 : 0,
+		width: open ? 200 : 0,
+		border: 'solid 1px #fff',
+		backgroundColor: '#09090fb5',
+		height: '100vh'
 	});
 	return (
 		<SideMenuTheme>
-			<div
+			<animated.div
 				style={{
-					width: width,
-					display: 'flex',
-					justifyContent: 'flex-end'
+					...props,
+					padding: props.o
+						.interpolate({ range: [0, 0.5, 1], output: [0, 0, 4] })
+						.interpolate((o: number) => `${o}rem ${o / 4}rem`),
+					opacity: props.opacity.interpolate([0, 0.6, 1], [0, 0.3, 1])
 				}}
 			>
-				<MenuIcon open={open} toggle={toggle} />
-			</div>
-
-			<animated.div style={{ width: width, opacity: opacity }}>
 				<ThemedUl>
-					<animated.li style={props}>
+					<animated.li
+						style={{
+							opacity: props.opacity.interpolate(
+								[0, 0.8, 1],
+								[0, 0.1, 1]
+							)
+						}}
+					>
 						<Link to='/about'>about</Link>
 					</animated.li>
-					<animated.li style={props}>
+					<animated.li
+						style={{
+							opacity: props.opacity.interpolate(
+								[0, 0.8, 1],
+								[0, 0.1, 1]
+							)
+						}}
+					>
 						<Link to='/posts'>posts</Link>
 					</animated.li>
-					<animated.li style={props}>
+					<animated.li
+						style={{
+							opacity: props.opacity.interpolate(
+								[0, 0.8, 1],
+								[0, 0.1, 1]
+							)
+						}}
+					>
 						<Link to='/contact'>contact</Link>
 					</animated.li>
 				</ThemedUl>
 				<ThemedIconsUl>
-					<animated.li style={props}>
+					<animated.li
+						style={{
+							opacity: props.opacity.interpolate(
+								[0, 0.8, 1],
+								[0, 0.1, 1]
+							)
+						}}
+					>
 						<a href='https://github.com/hppRC'>
 							<UseAnimations animationKey='github' size={40} />
 						</a>
 					</animated.li>
-					<animated.li style={props}>
+					<animated.li
+						style={{
+							opacity: props.opacity.interpolate(
+								[0, 0.8, 1],
+								[0, 0.1, 1]
+							)
+						}}
+					>
 						<a
 							href={`https://${
 								isMobile ? 'mobile.' : ''

@@ -1,5 +1,12 @@
 import React from 'react';
 import { useSpring, animated, config } from 'react-spring';
+import styled from '@emotion/styled';
+
+const Theme = styled.div`
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+`;
 
 interface MenuInterface {
 	open: boolean;
@@ -28,17 +35,29 @@ export const MenuIcon: React.FC<MenuInterface> = ({ open, toggle }) => {
 		config: config.stiff
 	});
 	return (
-		<animated.svg
-			width='44'
-			height='44'
-			viewBox='0 0 44 44'
-			fill={color}
-			onClick={() => toggle(!open)}
-		>
-			<animated.rect width='40' height='3' rx='2' transform={top} />
-			<animated.rect width='40' height='3' rx='2' transform={center} />
-			<animated.rect width='40' height='3' rx='2' transform={bottom} />
-		</animated.svg>
+		<Theme>
+			<animated.svg
+				width='44'
+				height='44'
+				viewBox='0 0 44 44'
+				fill={color}
+				onClick={() => toggle(!open)}
+			>
+				<animated.rect width='40' height='3' rx='2' transform={top} />
+				<animated.rect
+					width='40'
+					height='3'
+					rx='2'
+					transform={center}
+				/>
+				<animated.rect
+					width='40'
+					height='3'
+					rx='2'
+					transform={bottom}
+				/>
+			</animated.svg>
+		</Theme>
 	);
 };
 
