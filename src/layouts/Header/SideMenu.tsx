@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import UseAnimations from 'react-useanimations';
 import { isMobile } from 'react-device-detect';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 interface MenuInterface {
 	open: boolean;
@@ -75,7 +76,9 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 							)
 						}}
 					>
-						<Link to='/about'>about</Link>
+						<AniLink cover bg='09090f' to='/'>
+							top
+						</AniLink>
 					</animated.li>
 					<animated.li
 						style={{
@@ -85,7 +88,9 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 							)
 						}}
 					>
-						<Link to='/posts'>posts</Link>
+						<AniLink cover bg='09090f' to='/about'>
+							about
+						</AniLink>
 					</animated.li>
 					<animated.li
 						style={{
@@ -95,7 +100,21 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 							)
 						}}
 					>
-						<Link to='/contact'>contact</Link>
+						<AniLink cover bg='09090f' to='/posts'>
+							posts
+						</AniLink>
+					</animated.li>
+					<animated.li
+						style={{
+							opacity: props.opacity.interpolate(
+								[0, 0.8, 1],
+								[0, 0.1, 1]
+							)
+						}}
+					>
+						<AniLink cover bg='09090f' to='/contact'>
+							contact
+						</AniLink>
 					</animated.li>
 				</ThemedUl>
 				<ThemedIconsUl>

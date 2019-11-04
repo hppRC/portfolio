@@ -8,6 +8,7 @@ module.exports = {
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-emotion`,
 		`gatsby-plugin-catch-links`,
+		`gatsby-plugin-transition-link`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
