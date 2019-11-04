@@ -123,16 +123,14 @@ const Thing = () => {
 };
 
 export const BackgroundArt = () => (
-	<Suspense>
-		<Canvas
-			camera={{
-				position: [0, 0, 1]
-			}}
-			shadowMap
-		>
-			<Thing />
-		</Canvas>
-	</Suspense>
+	<Canvas
+		camera={{
+			position: [0, 0, 1]
+		}}
+		shadowMap
+	>
+		<Thing />
+	</Canvas>
 );
 
 export default BackgroundArt;
