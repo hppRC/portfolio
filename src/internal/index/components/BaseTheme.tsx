@@ -9,6 +9,7 @@ export const BaseTheme = styled.div`
 	> h1:first-of-type {
 		margin: 0 auto;
 		padding: 2rem 0;
+		font-size: 3.2rem;
 	}
 `;
 
