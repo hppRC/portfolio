@@ -86,7 +86,7 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 						</AniLink>
 					</animated.li>
 					<animated.li style={opacityStyle}>
-						<AniLink fade to='/contact'>
+						<AniLink fade to='/'>
 							contact
 						</AniLink>
 					</animated.li>
