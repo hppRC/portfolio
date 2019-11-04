@@ -1,6 +1,5 @@
 import React from 'react';
 import { animated, useSpring } from 'react-spring';
-import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import UseAnimations from 'react-useanimations';
 import { isMobile } from 'react-device-detect';
@@ -56,6 +55,9 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 		backgroundColor: '#09090fb5',
 		height: '100vh'
 	});
+	const opacityStyle = {
+		opacity: props.opacity.interpolate([0, 0.8, 1], [0, 0.1, 1])
+	};
 	return (
 		<SideMenuTheme>
 			<animated.div
@@ -68,76 +70,34 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 				}}
 			>
 				<ThemedUl>
-					<animated.li
-						style={{
-							opacity: props.opacity.interpolate(
-								[0, 0.8, 1],
-								[0, 0.1, 1]
-							)
-						}}
-					>
-						<AniLink cover bg='09090f' to='/'>
+					<animated.li style={opacityStyle}>
+						<AniLink fade to='/'>
 							top
 						</AniLink>
 					</animated.li>
-					<animated.li
-						style={{
-							opacity: props.opacity.interpolate(
-								[0, 0.8, 1],
-								[0, 0.1, 1]
-							)
-						}}
-					>
-						<AniLink cover bg='09090f' to='/about'>
+					<animated.li style={opacityStyle}>
+						<AniLink fade to='/about'>
 							about
 						</AniLink>
 					</animated.li>
-					<animated.li
-						style={{
-							opacity: props.opacity.interpolate(
-								[0, 0.8, 1],
-								[0, 0.1, 1]
-							)
-						}}
-					>
-						<AniLink cover bg='09090f' to='/posts'>
+					<animated.li style={opacityStyle}>
+						<AniLink fade to='/posts'>
 							posts
 						</AniLink>
 					</animated.li>
-					<animated.li
-						style={{
-							opacity: props.opacity.interpolate(
-								[0, 0.8, 1],
-								[0, 0.1, 1]
-							)
-						}}
-					>
-						<AniLink cover bg='09090f' to='/contact'>
+					<animated.li style={opacityStyle}>
+						<AniLink fade to='/contact'>
 							contact
 						</AniLink>
 					</animated.li>
 				</ThemedUl>
 				<ThemedIconsUl>
-					<animated.li
-						style={{
-							opacity: props.opacity.interpolate(
-								[0, 0.8, 1],
-								[0, 0.1, 1]
-							)
-						}}
-					>
+					<animated.li style={opacityStyle}>
 						<a href='https://github.com/hppRC'>
 							<UseAnimations animationKey='github' size={40} />
 						</a>
 					</animated.li>
-					<animated.li
-						style={{
-							opacity: props.opacity.interpolate(
-								[0, 0.8, 1],
-								[0, 0.1, 1]
-							)
-						}}
-					>
+					<animated.li style={opacityStyle}>
 						<a
 							href={`https://${
 								isMobile ? 'mobile.' : ''
