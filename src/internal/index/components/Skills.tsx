@@ -1,5 +1,5 @@
 import React from 'react';
-import LanguageMDX from '../documents/language.mdx';
+import SkillsMDX from '../documents/skills.mdx';
 import styled from '@emotion/styled';
 import BaseTheme from './BaseTheme';
 
@@ -9,10 +9,10 @@ const Theme = styled(BaseTheme)`
 	}
 `;
 
-export const Language = () => (
+export const Skills = () => (
 	<Theme>
-		<LanguageMDX />
+		<SkillsMDX />
 	</Theme>
 );
 
-export default Language;
+export default Skills;

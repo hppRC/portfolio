@@ -68,20 +68,18 @@ const Thing = () => {
 		let positions = [];
 		let colors = [];
 		let x, y, z;
-		const points = isBrowser ? 50000 : 10000;
+		const points = isBrowser ? 50000 : 5000;
 		for (let i = 0; i < points; i++) {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
 			z = Math.random() * 2.0 - 1.0;
-			if (x * x + y * y + z * z <= 1) {
-				positions.push(x);
-				positions.push(y);
-				positions.push(z);
-				colors.push(Math.random() * 255.0);
-				colors.push(Math.random() * 255.0);
-				colors.push(Math.random() * 255.0);
-				colors.push(Math.random() * 255.0);
-			}
+			positions.push(x);
+			positions.push(y);
+			positions.push(z);
+			colors.push(Math.random() * 255.0);
+			colors.push(Math.random() * 255.0);
+			colors.push(Math.random() * 255.0);
+			colors.push(Math.random() * 255.0);
 		}
 		return [positions, colors];
 	}, []);

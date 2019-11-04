@@ -4,7 +4,7 @@ import {
 	About,
 	Intro,
 	Projects,
-	Language,
+	Skills,
 	Background,
 	TopMessage
 } from '../internal/index';
@@ -28,7 +28,7 @@ export const Index = () => (
 		<Theme>
 			<Intro />
 			<About />
-			<Language />
+			<Skills />
 			<Projects />
 		</Theme>
 	</Layout>
