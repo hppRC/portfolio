@@ -1,15 +1,9 @@
 import React from 'react';
 import ProjectsMDX from '../documents/projects.mdx';
 import styled from '@emotion/styled';
+import BaseTheme from './BaseTheme';
 
-const Theme = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	min-height: 100vh;
-	height: auto;
-`;
+const Theme = styled(BaseTheme)``;
 
 export const Projects = () => (
 	<Theme>
