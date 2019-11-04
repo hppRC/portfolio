@@ -129,7 +129,9 @@ export const BackgroundArt = () => (
 		}}
 		shadowMap
 	>
-		<Thing />
+		<Suspense>
+			<Thing />
+		</Suspense>
 	</Canvas>
 );
 

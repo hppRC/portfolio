@@ -43,7 +43,7 @@ const ThemedIconsUl = styled.ul`
 
 export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 	const props: any = useSpring({
-		config: { mass: 5, friction: 50 },
+		config: { mass: 2, friction: 30 },
 		from: {
 			o: 0,
 			opacity: 0
@@ -94,7 +94,7 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 				<ThemedIconsUl>
 					<animated.li style={opacityStyle}>
 						<a href='https://github.com/hppRC'>
-							<span style={{ display: 'hidden' }}>github</span>
+							<span style={{ display: 'none' }}>github</span>
 							<UseAnimations animationKey='github' size={40} />
 						</a>
 					</animated.li>
@@ -104,7 +104,7 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 								isMobile ? 'mobile.' : ''
 							}twitter.com/osaremochi`}
 						>
-							<span style={{ display: 'hidden' }}>twitter</span>
+							<span style={{ display: 'none' }}>twitter</span>
 							<UseAnimations animationKey='twitter' size={50} />
 						</a>
 					</animated.li>
