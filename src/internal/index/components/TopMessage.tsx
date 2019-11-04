@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import styled from '@emotion/styled';
-import { isBrowser } from 'react-device-detect';
 
 const config = {
 	from: {
@@ -10,7 +9,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: isBrowser ? 80 : 50 }],
+	enter: [{ opacity: 1, height: 60 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
@@ -22,7 +21,7 @@ const Theme = styled.div`
 	flex-flow: column;
 	width: 100vw;
 	height: 100vh;
-	font-size: ${isBrowser ? 4 : 1.5}rem;
+	font-size: 5vw;
 	font-weight: bold;
 `;
 
