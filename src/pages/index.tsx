@@ -1,9 +1,10 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { Layout } from '../layouts';
 import { About, Intro, Events, Skills, TopMessage } from '../internal/index';
 import styled from '@emotion/styled';
+import loadable from '@loadable/component';
 
-const Background = lazy(() =>
+const Background = loadable(() =>
 	import('../internal/index/components/Background')
 );
 
@@ -16,8 +17,6 @@ const Theme = styled.div`
 
 export const Index = () => (
 	<Layout>
-		{/*
-		 */}
 		<TopMessage />
 		<Theme>
 			<Intro />
@@ -25,9 +24,7 @@ export const Index = () => (
 			<Skills />
 			<Events />
 		</Theme>
-		<Suspense fallback={null}>
-			<Background />
-		</Suspense>
+		<Background />
 	</Layout>
 );
 

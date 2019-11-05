@@ -18,6 +18,7 @@
 		"@babel/core": "^7.6.4",
 		"@emotion/core": "^10.0.22",
 		"@emotion/styled": "^10.0.22",
+		"@loadable/component": "^5.10.3",
 		"@mdx-js/mdx": "^1.5.1",
 		"@mdx-js/react": "^1.5.1",
 		"@mdx-js/runtime": "^0.18.2",
