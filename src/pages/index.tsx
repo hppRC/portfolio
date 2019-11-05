@@ -22,7 +22,6 @@ export const Index = () => {
 	const [show, setShow]: [boolean, any] = useState(false);
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			console.log('This will run after 5 second!');
 			setShow((prev: boolean) => !prev);
 		}, 1000);
 		return () => clearTimeout(timer);
