@@ -6,7 +6,8 @@ import {
 	Events,
 	Skills,
 	Background,
-	TopMessage
+	TopMessage,
+	PlaceHolder
 } from '../internal/index';
 import styled from '@emotion/styled';
 
@@ -39,12 +40,5 @@ export const Index = () => {
 		</Layout>
 	);
 };
-
-const PlaceHolderTheme = styled.div`
-	width: 100%;
-	height: 100vw;
-`;
-
-const PlaceHolder = () => <PlaceHolderTheme />;
 
 export default Index;

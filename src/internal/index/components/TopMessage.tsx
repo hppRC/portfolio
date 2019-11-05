@@ -21,19 +21,18 @@ const Theme = styled.div`
 	flex-flow: column;
 	width: 100vw;
 	height: 100vh;
-	font-size: 2rem;
+	font-size: 3.5rem;
 	font-weight: bold;
 	@media (max-width: 540px) {
 		font-size: 1.35rem;
 	}
 `;
 
-//トップ画面への２回目のアクセスでアニメーションするやつ表示すると早いかも
-// export const TopMessage = () => (
-// 	<Theme>
-// 		<h1>hpp Portfolio</h1>
-// 	</Theme>
-// );
+export const PlaceHolder = () => (
+	<Theme>
+		<div></div>
+	</Theme>
+);
 
 export const TopMessage = () => {
 	const ref: any = useRef([]);
