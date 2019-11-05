@@ -1,16 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Layout } from '../layouts';
-import {
-	About,
-	Intro,
-	Events,
-	Skills,
-	Background,
-	TopMessage
-} from '../internal/index';
+import { About, Intro, Events, Skills, TopMessage } from '../internal/index';
 import styled from '@emotion/styled';
 
-//import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons.cjs';
+const Background = lazy(() =>
+	import('../internal/index/components/Background')
+);
 
 const Theme = styled.div`
 	min-height: 100vh;
@@ -23,7 +18,6 @@ export const Index = () => (
 	<Layout>
 		{/*
 		 */}
-		<Background />
 		<TopMessage />
 		<Theme>
 			<Intro />
@@ -31,6 +25,9 @@ export const Index = () => (
 			<Skills />
 			<Events />
 		</Theme>
+		<Suspense fallback={null}>
+			<Background />
+		</Suspense>
 	</Layout>
 );
 
