@@ -27,7 +27,7 @@ export const Index = () => (
 			<Skills />
 			<Events />
 		</Theme>
-		<Background />
+		{/*<Background />*/}
 	</Layout>
 );
 

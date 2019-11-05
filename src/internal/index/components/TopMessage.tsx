@@ -29,44 +29,44 @@ const Theme = styled.div`
 `;
 
 //トップ画面への２回目のアクセスでアニメーションするやつ表示すると早いかも
-export const TopMessage = () => (
-	<Theme>
-		<h1>hpp Portfolio</h1>
-	</Theme>
-);
+// export const TopMessage = () => (
+// 	<Theme>
+// 		<h1>hpp Portfolio</h1>
+// 	</Theme>
+// );
 
-// export const TopMessage = () => {
-// 	const ref: any = useRef([]);
-// 	const [items, set]: [any, any] = useState([]);
-// 	const transitions = useTransition(items, null, config);
+export const TopMessage = () => {
+	const ref: any = useRef([]);
+	const [items, set]: [any, any] = useState([]);
+	const transitions = useTransition(items, null, config);
 
-// 	useEffect(() => {
-// 		ref.current.map(clearTimeout);
-// 		ref.current = [];
-// 		set([]);
-// 		ref.current.push(setTimeout(() => set([`Hello,`, `I'm`, `hpp`]), 300));
-// 		ref.current.push(setTimeout(() => set([`I'm`, `hpp`]), 1200));
-// 		ref.current.push(setTimeout(() => set([`Developer`]), 1750));
-// 		ref.current.push(setTimeout(() => set([`Developer`, `&`]), 2500));
-// 		ref.current.push(setTimeout(() => set([`Developer`, `Creator`]), 3000));
-// 		ref.current.push(setTimeout(() => set([`Enjoy`]), 4000));
-// 		ref.current.push(setTimeout(() => set([`Enjoy`, `this`]), 4750));
-// 		ref.current.push(
-// 			setTimeout(() => set([`Enjoy`, `this`, `website`]), 5250)
-// 		);
-// 		ref.current.push(setTimeout(() => set([<HppPortfolio />]), 6100));
-// 	}, []);
+	useEffect(() => {
+		ref.current.map(clearTimeout);
+		ref.current = [];
+		set([]);
+		ref.current.push(setTimeout(() => set([`Hello,`, `I'm`, `hpp`]), 300));
+		ref.current.push(setTimeout(() => set([`I'm`, `hpp`]), 1200));
+		ref.current.push(setTimeout(() => set([`Developer`]), 1750));
+		ref.current.push(setTimeout(() => set([`Developer`, `&`]), 2500));
+		ref.current.push(setTimeout(() => set([`Developer`, `Creator`]), 3000));
+		ref.current.push(setTimeout(() => set([`Enjoy`]), 4000));
+		ref.current.push(setTimeout(() => set([`Enjoy`, `this`]), 4750));
+		ref.current.push(
+			setTimeout(() => set([`Enjoy`, `this`, `website`]), 5250)
+		);
+		ref.current.push(setTimeout(() => set([<HppPortfolio />]), 6100));
+	}, []);
 
-// 	return (
-// 		<Theme>
-// 			{transitions.map(({ item, props, key }: any) => (
-// 				<animated.div key={key} style={props}>
-// 					{item}
-// 				</animated.div>
-// 			))}
-// 		</Theme>
-// 	);
-// };
+	return (
+		<Theme>
+			{transitions.map(({ item, props, key }: any) => (
+				<animated.div key={key} style={props}>
+					{item}
+				</animated.div>
+			))}
+		</Theme>
+	);
+};
 
 const TitleTheme = styled.div`
 	display: flex;
