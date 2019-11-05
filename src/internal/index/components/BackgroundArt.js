@@ -69,7 +69,7 @@ const Thing = () => {
 		let positions = [];
 		let colors = [];
 		let x, y, z;
-		const points = isBrowser ? 50000 : 5000;
+		const points = isBrowser ? 50000 : 15000;
 		for (let i = 0; i < points; i++) {
 			x = Math.random() * 2.0 - 1.0;
 			y = Math.random() * 2.0 - 1.0;
