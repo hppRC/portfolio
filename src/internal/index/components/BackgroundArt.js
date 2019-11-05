@@ -68,15 +68,11 @@ const Thing = () => {
 	const [positions, colors] = useMemo(() => {
 		let positions = [];
 		let colors = [];
-		let x, y, z;
 		const points = isBrowser ? 50000 : 15000;
 		for (let i = 0; i < points; i++) {
-			x = Math.random() * 2.0 - 1.0;
-			y = Math.random() * 2.0 - 1.0;
-			z = Math.random() * 2.0 - 1.0;
-			positions.push(x);
-			positions.push(y);
-			positions.push(z);
+			positions.push(Math.random() * 2.0 - 1.0);
+			positions.push(Math.random() * 2.0 - 1.0);
+			positions.push(Math.random() * 2.0 - 1.0);
 			colors.push(Math.random() * 255.0);
 			colors.push(Math.random() * 255.0);
 			colors.push(Math.random() * 255.0);
