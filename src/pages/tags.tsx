@@ -1,9 +1,15 @@
 import React from 'react';
 import { Layout } from '../layouts';
-import AllTags from '../components/AllTags';
+import { AllTags } from '../components';
+import styled from '@emotion/styled';
+import { PageBaseTheme } from '../themes';
+
+const Theme = styled(PageBaseTheme)``;
 
 export default () => (
 	<Layout>
-		<AllTags />
+		<Theme>
+			<AllTags />
+		</Theme>
 	</Layout>
 );
