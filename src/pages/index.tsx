@@ -18,7 +18,7 @@ const Theme = styled.div`
 	margin: 0 auto;
 `;
 
-export const Index = () => (
+export default () => (
 	<Layout>
 		<TopMessage />
 		<Theme>
@@ -30,5 +30,3 @@ export const Index = () => (
 		<Background />
 	</Layout>
 );
-
-export default Index;

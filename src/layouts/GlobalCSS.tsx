@@ -8,6 +8,8 @@ export const GlobalCSS = () => (
 			body {
 				background-color: #09090f;
 				color: #fff;
+				font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+					Roboto, 'メイリオ', sans-serif;
 			}
 		`}
 	/>

@@ -1,32 +1,20 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import { Layout } from '../layouts';
+import { About } from '../internal/about';
+import styled from '@emotion/styled';
 
-interface Props {
-	data: {
-		site: {
-			siteMetadata: {
-				title: string;
-			};
-		};
-	};
-}
-
-export const About: React.FC<Props> = ({ data }) => (
-	<Layout>
-		<h1>{data.site.siteMetadata.title} About</h1>
-		<p>This is the about page.</p>
-	</Layout>
-);
-
-export const query = graphql`
-	query AboutQuery {
-		site {
-			siteMetadata {
-				title
-			}
-		}
-	}
+const Theme = styled.div`
+	min-height: 100vh;
+	height: auto;
+	padding: 10%;
+	max-width: 1600px;
+	margin: 0 auto;
 `;
 
-export default About;
+export default () => (
+	<Layout>
+		<Theme>
+			<About />
+		</Theme>
+	</Layout>
+);

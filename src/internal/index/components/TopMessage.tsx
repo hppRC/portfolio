@@ -25,8 +25,10 @@ const Theme = styled.div`
 	height: 100vh;
 	font-size: 3.5rem;
 	font-weight: bold;
+	font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Roboto,
+		'メイリオ', sans-serif;
 	@media (max-width: 540px) {
-		font-size: 1.5rem;
+		font-size: 2rem;
 	}
 `;
 

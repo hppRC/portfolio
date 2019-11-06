@@ -2,10 +2,8 @@ import React from 'react';
 import { Layout } from '../layouts';
 import AllPosts from '../components/AllPosts';
 
-const PostsPage: React.FC<{}> = () => (
+export default () => (
 	<Layout>
 		<AllPosts />
 	</Layout>
 );
-
-export default PostsPage;

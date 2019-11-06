@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Layout } from '../layouts';
-import { SEO, TagList } from '../components';
+import { SEO } from '../components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import Img, { FluidObject } from 'gatsby-image';
@@ -86,6 +86,16 @@ const PrevAndNext: React.FC<PageContextInterface> = ({ prev, next }) => (
 				<Link to={`/posts/${prev.frontmatter.slug}`}>Previous</Link>
 			</li>
 		)}
+	</ul>
+);
+
+export const TagList = ({ tags }: { tags: string[] }) => (
+	<ul>
+		{tags.map(tag => (
+			<li key={tag}>
+				<Link to={`/tags/${tag}`}>{tag}</Link>
+			</li>
+		))}
 	</ul>
 );
 
