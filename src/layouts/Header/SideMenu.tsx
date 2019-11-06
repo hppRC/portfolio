@@ -22,7 +22,6 @@ const SideMenuTheme = styled.div`
 const ThemedUl = styled.ul`
 	display: flex;
 	flex-direction: column;
-
 	li {
 		a {
 			font-size: 2rem;
@@ -77,10 +76,13 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 						<Link to='/about'>about</Link>
 					</animated.li>
 					<animated.li style={opacityStyle}>
+						<Link to='/skills'>skills</Link>
+					</animated.li>
+					<animated.li style={opacityStyle}>
 						<Link to='/posts'>posts</Link>
 					</animated.li>
 					<animated.li style={opacityStyle}>
-						<Link to='/'>contact</Link>
+						<Link to='/contact'>contact</Link>
 					</animated.li>
 				</ThemedUl>
 				<ThemedIconsUl>

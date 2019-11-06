@@ -9,6 +9,7 @@ const Theme = styled(PageBaseTheme)``;
 export default () => (
 	<Layout>
 		<Theme>
+			<h1>Tags</h1>
 			<AllTags />
 		</Theme>
 	</Layout>

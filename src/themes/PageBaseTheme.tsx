@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const PageBaseTheme = styled.div`
 	min-height: 100vh;
 	height: auto;
-	padding: 5% 10%;
+	padding: 10% 10%;
 	max-width: 1200px;
 	margin: 0 auto;
 	list-style-position: inside;
