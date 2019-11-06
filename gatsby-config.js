@@ -14,8 +14,8 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`, // this entry has to be the first or will not work as per FAQ
 			options: {
-				path: `${__dirname}/static/assets`,
-				name: `assets`
+				name: `assets`,
+				path: `${__dirname}/static/assets`
 			}
 		},
 		{
@@ -23,6 +23,13 @@ module.exports = {
 			options: {
 				name: `posts`,
 				path: `${__dirname}/content/posts`
+			}
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `images`,
+				path: `${__dirname}/src/images`
 			}
 		},
 		{
