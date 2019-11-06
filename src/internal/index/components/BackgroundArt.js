@@ -1,24 +1,7 @@
 import React, { Suspense } from 'react';
-import * as THREE from 'three';
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
 import { isBrowser } from 'react-device-detect';
-
-// pos = vec3(
-// 	(sin(time * .053) + cos(time * 0.03 + 32.) + 1.) * position.x + sin(time * .1 + 20.) * min(
-// 		sin(time * 0.2),
-// 		position.x * ( 1. / time + cos(position.x) * position.x * sin(1. + position.z * time) * cos(1.2 * position.x * sin(cos(position.z + 0.01 * sin(0.5 * time))) + sin(cos(0.5 * time) * position.y)))
-// 	),
-// 	(cos(time * .23 - position.x) + 1.) * position.y +
-// 		position.y * (1. / time + sin(position.z + 0.5 * time) * position.y * cos(0.001*0.5 * time + position.z + sin(cos(sin(1. - sin(0.5 * time) * cos(0.5 * time)) + sin(0.5 * time)) + sin(cos(0.5 * time)) + 0.5 * time * sin(position.y))) * cos(position.x * cos(sin(0.23 * time)))
-// 	),
-// 	position.z + min(
-// 		sin(time * 0.4 - 200.),
-// 		position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.3218 * time - 2.2))))))
-// 	)
-// 		);
-// gl_PointSize = 1.5;
-// gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 
 const vertexSource = `
 precision mediump float;
@@ -35,7 +18,7 @@ void main() {
 		),
 		position.z + position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.3218 * time - 2.2))))))
 		);
-	gl_PointSize = ${isBrowser ? '1.0' : '0.5'};
+	gl_PointSize = ${isBrowser ? '1.0' : '0.75'};
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `;
@@ -110,7 +93,6 @@ const Thing = () => {
 				vertexShader={vertexSource}
 				fragmentShader={fragmentSource}
 				uniforms={uniforms}
-				side={THREE.DoubleSide}
 				transparent
 			/>
 		</points>
