@@ -1,9 +1,9 @@
 import React from 'react';
-import { animated, useSpring } from 'react-spring';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import UseAnimations from 'react-useanimations';
+import { animated, useSpring } from 'react-spring';
 import { isMobile } from 'react-device-detect';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 interface MenuInterface {
 	open: boolean;
@@ -71,24 +71,16 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 			>
 				<ThemedUl>
 					<animated.li style={opacityStyle}>
-						<AniLink fade to='/'>
-							top
-						</AniLink>
+						<Link to='/'>top</Link>
 					</animated.li>
 					<animated.li style={opacityStyle}>
-						<AniLink fade to='/about'>
-							about
-						</AniLink>
+						<Link to='/about'>about</Link>
 					</animated.li>
 					<animated.li style={opacityStyle}>
-						<AniLink fade to='/posts'>
-							posts
-						</AniLink>
+						<Link to='/posts'>posts</Link>
 					</animated.li>
 					<animated.li style={opacityStyle}>
-						<AniLink fade to='/'>
-							contact
-						</AniLink>
+						<Link to='/'>contact</Link>
 					</animated.li>
 				</ThemedUl>
 				<ThemedIconsUl>

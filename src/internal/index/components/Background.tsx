@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import loadable from '@loadable/component';
 
-let BackgroundArt: React.FC;
+const BackgroundArt = loadable(() => import('./BackgroundArt'));
 
 const BackgroundTheme = styled.div`
 	position: fixed;
@@ -17,7 +17,6 @@ export const Background = () => {
 	const [show, setShow]: [boolean, any] = useState(false);
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			BackgroundArt = loadable(() => import('./BackgroundArt'));
 			setShow((prev: boolean) => !prev);
 		}, 1500);
 		return () => clearTimeout(timer);

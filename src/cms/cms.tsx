@@ -1,5 +1,7 @@
 import CMS from 'netlify-cms-app';
-import Preview from './preview';
+import loadable from '@loadable/component';
+
+const Preview = loadable(() => import('./preview'));
 
 CMS.registerPreviewTemplate('posts', Preview);
 

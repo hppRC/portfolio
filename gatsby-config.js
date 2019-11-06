@@ -38,18 +38,18 @@ module.exports = {
 							quality: 90,
 							linkImagesToOriginal: true
 						}
+					},
+					{
+						resolve: `gatsby-remark-prismjs`,
+						options: {
+							classPrefix: 'language-',
+							inlineCodeMarker: null,
+							aliases: {},
+							showLineNumbers: true,
+							noInlineHighlight: false
+						}
 					}
 				]
-			}
-		},
-		{
-			resolve: `gatsby-remark-prismjs`,
-			options: {
-				classPrefix: 'language-',
-				inlineCodeMarker: null,
-				aliases: {},
-				showLineNumbers: true,
-				noInlineHighlight: false
 			}
 		},
 		{
@@ -62,15 +62,7 @@ module.exports = {
 				manualInit: true
 			}
 		},
-		{
-			resolve: `gatsby-plugin-netlify`,
-			options: {
-				allPageHeaders: [
-					`Link: </manifest.webmanifest>; rel=preload; as=script`,
-					`Link: </page-data/app-data.json>; rel=preload; as=script`
-				]
-			}
-		},
+		`gatsby-plugin-netlify`,
 		`gatsby-plugin-advanced-sitemap`,
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
