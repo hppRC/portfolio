@@ -1,13 +1,5 @@
 import React from 'react';
-import { Layout } from '../layouts';
-import {
-	About,
-	Intro,
-	Events,
-	Skills,
-	TopMessage,
-	Background
-} from '../internal/index';
+import NotFoundMDX from '../documents/NotFound.mdx';
 import styled from '@emotion/styled';
 
 const Theme = styled.div`
@@ -33,15 +25,10 @@ const Theme = styled.div`
 	}
 `;
 
-export default () => (
-	<Layout>
-		<TopMessage />
-		<Theme>
-			<Intro />
-			<About />
-			<Skills />
-			<Events />
-		</Theme>
-		<Background />
-	</Layout>
+export const NotFound = () => (
+	<Theme>
+		<NotFoundMDX />
+	</Theme>
 );
+
+export default NotFound;

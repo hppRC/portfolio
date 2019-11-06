@@ -11,7 +11,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: isBrowser ? 60 : 35 }],
+	enter: [{ opacity: 1, height: isBrowser ? 60 : 40 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
@@ -25,10 +25,14 @@ const Theme = styled.div`
 	height: 100vh;
 	font-size: 3.5rem;
 	font-weight: bold;
-	font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Roboto,
-		'メイリオ', sans-serif;
-	@media (max-width: 540px) {
-		font-size: 2rem;
+	@media screen and (max-width: 768px) {
+		padding: 4rem 10%;
+		font-size: 3.15rem;
+	}
+
+	@media screen and (max-width: 480px) {
+		padding: 3rem 10%;
+		font-size: 2.75rem;
 	}
 `;
 
@@ -69,6 +73,11 @@ export const Title = () => {
 			setTimeout(() => set([`Enjoy`, `this`, `website`]), 5250)
 		);
 		ref.current.push(setTimeout(() => set([<HppPortfolio />]), 6100));
+		return () => {
+			ref.current.map((id: number) => {
+				clearTimeout(id);
+			});
+		};
 	}, []);
 
 	return (
@@ -184,6 +193,11 @@ export const HppPortfolio = () => {
 				1200
 			)
 		);
+		return () => {
+			ref.current.map((id: number) => {
+				clearTimeout(id);
+			});
+		};
 	}, []);
 
 	return (

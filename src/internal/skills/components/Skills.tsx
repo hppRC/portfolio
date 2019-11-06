@@ -1,13 +1,13 @@
 import React from 'react';
-import AboutMDX from '../documents/about.mdx';
+import SkillsMDX from '../documents/skills.mdx';
 import styled from '@emotion/styled';
 
 const Theme = styled.div``;
 
-export const About = () => (
+export const Skills = () => (
 	<Theme>
-		<AboutMDX />
+		<SkillsMDX />
 	</Theme>
 );
 
-export default About;
+export default Skills;

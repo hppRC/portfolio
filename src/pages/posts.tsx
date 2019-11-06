@@ -1,9 +1,14 @@
 import React from 'react';
 import { Layout } from '../layouts';
-import AllPosts from '../components/AllPosts';
+import { AllPosts } from '../components';
+import styled from '@emotion/styled';
+
+const Theme = styled.div``;
 
 export default () => (
 	<Layout>
-		<AllPosts />
+		<Theme>
+			<AllPosts />
+		</Theme>
 	</Layout>
 );
