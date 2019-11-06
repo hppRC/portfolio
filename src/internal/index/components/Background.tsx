@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { BackgroundArt } from './BackgroundArt';
+import loadable from '@loadable/component';
+
+let BackgroundArt: React.FC;
 
 const BackgroundTheme = styled.div`
 	position: fixed;
@@ -11,10 +13,16 @@ const BackgroundTheme = styled.div`
 	z-index: -1;
 `;
 
-export const Background = () => (
-	<BackgroundTheme>
-		<BackgroundArt />
-	</BackgroundTheme>
-);
+export const Background = () => {
+	const [show, setShow]: [boolean, any] = useState(false);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			BackgroundArt = loadable(() => import('./BackgroundArt'));
+			setShow((prev: boolean) => !prev);
+		}, 1500);
+		return () => clearTimeout(timer);
+	}, []);
 
+	return <BackgroundTheme>{show && <BackgroundArt />}</BackgroundTheme>;
+};
 export default Background;

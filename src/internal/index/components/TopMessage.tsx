@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import styled from '@emotion/styled';
 import UseAnimations from 'react-useanimations';
+import { isBrowser } from 'react-device-detect';
 
 const config = {
 	from: {
@@ -10,7 +11,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: 60 }],
+	enter: [{ opacity: 1, height: isBrowser ? 60 : 35 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
@@ -25,9 +26,20 @@ const Theme = styled.div`
 	font-size: 3.5rem;
 	font-weight: bold;
 	@media (max-width: 540px) {
-		font-size: 1.35rem;
+		font-size: 1.5rem;
 	}
 `;
+
+export const TopMessage = () => {
+	const [show, setShow]: [boolean, any] = useState(false);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setShow((prev: boolean) => !prev);
+		}, 500);
+		return () => clearTimeout(timer);
+	}, []);
+	return <>{show ? <Title /> : <PlaceHolder />}</>;
+};
 
 export const PlaceHolder = () => (
 	<Theme>
@@ -35,9 +47,9 @@ export const PlaceHolder = () => (
 	</Theme>
 );
 
-export const TopMessage = () => {
+export const Title = () => {
 	const ref: any = useRef([]);
-	const [items, set]: [any, any] = useState([]);
+	const [items, set]: [(string | JSX.Element)[], any] = useState([]);
 	const transitions = useTransition(items, null, config);
 
 	useEffect(() => {
@@ -128,6 +140,7 @@ export const HppPortfolio = () => {
 				1000
 			)
 		);
+
 		ref.current.push(
 			setTimeout(
 				() =>

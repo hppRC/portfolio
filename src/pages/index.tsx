@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Layout } from '../layouts';
-import { About, Intro, Events, Skills, PlaceHolder } from '../internal/index';
+import {
+	About,
+	Intro,
+	Events,
+	Skills,
+	TopMessage,
+	Background
+} from '../internal/index';
 import styled from '@emotion/styled';
-import loadable from '@loadable/component';
 
 const Theme = styled.div`
 	min-height: 100vh;
@@ -12,35 +18,17 @@ const Theme = styled.div`
 	margin: 0 auto;
 `;
 
-let Background: React.FC;
-let TopMessage: React.FC;
-
-export const Index = () => {
-	const [show, setShow]: [boolean, any] = useState(false);
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			Background = loadable(() =>
-				import('../internal/index/components/Background')
-			);
-			TopMessage = loadable(() =>
-				import('../internal/index/components/TopMessage')
-			);
-			setShow((prev: boolean) => !prev);
-		}, 1000);
-		return () => clearTimeout(timer);
-	}, []);
-	return (
-		<Layout>
-			{show ? <TopMessage /> : <PlaceHolder />}
-			<Theme>
-				<Intro />
-				<About />
-				<Skills />
-				<Events />
-			</Theme>
-			{show && <Background />}
-		</Layout>
-	);
-};
+export const Index = () => (
+	<Layout>
+		<TopMessage />
+		<Theme>
+			<Intro />
+			<About />
+			<Skills />
+			<Events />
+		</Theme>
+		<Background />
+	</Layout>
+);
 
 export default Index;
