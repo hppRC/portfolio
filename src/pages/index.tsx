@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Layout } from '../layouts';
-import {
-	About,
-	Intro,
-	Events,
-	Skills,
-	TopMessage,
-	PlaceHolder
-} from '../internal/index';
+import { About, Intro, Events, Skills, PlaceHolder } from '../internal/index';
 import styled from '@emotion/styled';
 import loadable from '@loadable/component';
 
@@ -20,6 +13,7 @@ const Theme = styled.div`
 `;
 
 let Background: React.FC;
+let TopMessage: React.FC;
 
 export const Index = () => {
 	const [show, setShow]: [boolean, any] = useState(false);
@@ -27,6 +21,9 @@ export const Index = () => {
 		const timer = setTimeout(() => {
 			Background = loadable(() =>
 				import('../internal/index/components/Background')
+			);
+			TopMessage = loadable(() =>
+				import('../internal/index/components/TopMessage')
 			);
 			setShow((prev: boolean) => !prev);
 		}, 1000);
