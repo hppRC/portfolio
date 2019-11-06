@@ -35,7 +35,7 @@ void main() {
 		),
 		position.z + position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.3218 * time - 2.2))))))
 		);
-	gl_PointSize = 1.;
+	gl_PointSize = ${isBrowser ? '1.0' : '0.5'};
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `;

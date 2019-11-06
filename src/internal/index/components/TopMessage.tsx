@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import styled from '@emotion/styled';
+import UseAnimations from 'react-useanimations';
 
 const config = {
 	from: {
@@ -30,7 +31,7 @@ const Theme = styled.div`
 
 export const PlaceHolder = () => (
 	<Theme>
-		<div></div>
+		<UseAnimations animationKey='loading2' size={40} />
 	</Theme>
 );
 

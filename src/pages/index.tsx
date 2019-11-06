@@ -5,11 +5,11 @@ import {
 	Intro,
 	Events,
 	Skills,
-	Background,
 	TopMessage,
 	PlaceHolder
 } from '../internal/index';
 import styled from '@emotion/styled';
+import loadable from '@loadable/component';
 
 const Theme = styled.div`
 	min-height: 100vh;
@@ -19,10 +19,15 @@ const Theme = styled.div`
 	margin: 0 auto;
 `;
 
+let Background: React.FC;
+
 export const Index = () => {
 	const [show, setShow]: [boolean, any] = useState(false);
 	useEffect(() => {
 		const timer = setTimeout(() => {
+			Background = loadable(() =>
+				import('../internal/index/components/Background')
+			);
 			setShow((prev: boolean) => !prev);
 		}, 1000);
 		return () => clearTimeout(timer);
