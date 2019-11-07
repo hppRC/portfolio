@@ -2,11 +2,13 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Layout } from '../layouts';
 import { SEO } from '../components';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+//import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import Img, { FluidObject } from 'gatsby-image';
 import * as MdxComponents from '../mdx/components';
 import * as MdxScope from '../mdx/scope';
+import loadable from '@loadable/component';
+const GPMDX = loadable.lib(() => import('gatsby-plugin-mdx'));
 
 interface Props {
 	data: {
@@ -41,7 +43,7 @@ interface Frontmatter {
 	};
 }
 
-export const Post: React.FC<Props> = ({ data, pageContext }) => {
+function Post({ data, pageContext }: Props) {
 	const post = data.mdx;
 	const { slug, title, date } = post.frontmatter;
 	const body = post.body;
@@ -52,6 +54,8 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 
 	return (
 		<Layout>
+			{console.log(GPMDX)}
+			{console.log(GPMDX.MDXRenderer)}
 			<SEO
 				title={title}
 				desc={description}
@@ -66,13 +70,13 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 				components={{ ...MdxComponents, ...MdxScope }}
 				scope={{ ...MdxScope }}
 			>
-				<MDXRenderer>{body}</MDXRenderer>
+				<GPMDX.MDXRenderer>{body}</GPMDX.MDXRenderer>
 			</MDXProvider>
 			<TagList tags={post.frontmatter.tags || []} />
 			<PrevAndNext prev={prev} next={next} />
 		</Layout>
 	);
-};
+}
 
 const PrevAndNext: React.FC<PageContextInterface> = ({ prev, next }) => (
 	<ul>
