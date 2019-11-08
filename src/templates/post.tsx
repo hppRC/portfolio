@@ -4,50 +4,26 @@ import { Layout } from '../layouts';
 import { SEO } from '../components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
-import Img, { FluidObject } from 'gatsby-image';
+import Img from 'gatsby-image';
 import * as MdxComponents from '../mdx/components';
 import * as MdxScope from '../mdx/scope';
+import {
+	PostTemplateQuery,
+	SitePageContext,
+} from '../../types/graphql-types.d';
 
-interface Props {
-	data: {
-		mdx: {
-			body: string;
-			excerpt: string;
-			frontmatter: Frontmatter;
-		};
-	};
-	pageContext: PageContextInterface;
-}
-
-interface PageContextInterface {
-	prev: {
-		frontmatter: Frontmatter;
-	};
-	next: {
-		frontmatter: Frontmatter;
-	};
-}
-
-interface Frontmatter {
-	slug: string;
-	date: string;
-	title: string;
-	tags: string[];
-	description: string;
-	cover: {
-		childImageSharp: {
-			fluid: FluidObject;
-		};
-	};
+type Props = {
+	data: PostTemplateQuery;
+	pageContext: SitePageContext;
 }
 
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	const post = data.mdx;
-	const { slug, title, date } = post.frontmatter;
-	const body = post.body;
-	const fluid =
-		post.frontmatter.cover && post.frontmatter.cover.childImageSharp.fluid;
-	const description = post.frontmatter.description || post.excerpt || ' ';
+	const { slug, title, date, tags }: any = post?.frontmatter;
+	const body = post?.body;
+	const fluid: any =
+		post?.frontmatter?.cover?.childImageSharp?.fluid;
+	const description = post?.excerpt ?? ' ';
 	const { prev, next } = pageContext;
 
 	return (
@@ -55,35 +31,35 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 			<SEO
 				title={title}
 				desc={description}
-				banner={fluid && fluid.src}
+				banner={fluid?.src ?? ""}
 				pathname={`/posts/${slug}`}
 				isArticle
 			/>
 			<h1>{title}</h1>
 			<p>{date}</p>
-			{fluid && <Img fluid={fluid} alt={title} />}
+			<Img fluid={fluid} alt={title} />
 			<MDXProvider
 				components={{ ...MdxComponents, ...MdxScope }}
 				scope={{ ...MdxScope }}
 			>
 				<MDXRenderer>{body}</MDXRenderer>
 			</MDXProvider>
-			<TagList tags={post.frontmatter.tags || []} />
+			<TagList tags={tags ?? []} />
 			<PrevAndNext prev={prev} next={next} />
 		</Layout>
 	);
 };
 
-const PrevAndNext: React.FC<PageContextInterface> = ({ prev, next }) => (
+const PrevAndNext: React.FC<SitePageContext> = ({ prev, next }) => (
 	<ul>
 		{next && (
 			<li key='next'>
-				<Link to={`/posts/${next.frontmatter.slug}`}>Next</Link>
+				<Link to={`/posts/${next?.frontmatter?.slug}`}>Next</Link>
 			</li>
 		)}
 		{prev && (
 			<li key='prev'>
-				<Link to={`/posts/${prev.frontmatter.slug}`}>Previous</Link>
+				<Link to={`/posts/${prev?.frontmatter?.slug}`}>Previous</Link>
 			</li>
 		)}
 	</ul>
