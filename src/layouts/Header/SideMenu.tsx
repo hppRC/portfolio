@@ -17,14 +17,22 @@ const SideMenuTheme = styled.div`
 	top: 0;
 	right: 0;
 	height: 100vh;
+	> div {
+		border: solid 1px #fff;
+		background-color: #09090fb5;
+		height: 100vh;
+	}
 `;
 
 const ThemedUl = styled.ul`
 	display: flex;
 	flex-direction: column;
 	li {
+		display: inline-block;
 		a {
 			font-size: 2rem;
+			text-decoration: none;
+			color: #fff;
 		}
 	}
 `;
@@ -34,14 +42,17 @@ const ThemedIconsUl = styled.ul`
 	flex-direction: column;
 	padding: 2rem 0;
 	li {
+		display: inline-block;
 		a {
 			font-size: 2rem;
+			text-decoration: none;
+			color: #fff;
 		}
 	}
 `;
 
 export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
-	const props: any = useSpring({
+	const props = useSpring({
 		config: { mass: 2, friction: 30 },
 		from: {
 			o: 0,
@@ -49,13 +60,13 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 		},
 		o: 1,
 		opacity: open ? 1 : 0,
-		width: open ? 200 : 0,
-		border: 'solid 1px #fff',
-		backgroundColor: '#09090fb5',
-		height: '100vh'
+		width: open ? 200 : 0
 	});
 	const opacityStyle = {
-		opacity: props.opacity.interpolate([0, 0.8, 1], [0, 0.1, 1])
+		opacity: props.opacity.interpolate({
+			range: [0, 0.8, 1],
+			output: [0, 0.1, 1]
+		})
 	};
 	return (
 		<SideMenuTheme>
@@ -65,7 +76,10 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 					padding: props.o
 						.interpolate({ range: [0, 0.5, 1], output: [0, 0, 4] })
 						.interpolate((o: number) => `${o}rem ${o / 4}rem`),
-					opacity: props.opacity.interpolate([0, 0.6, 1], [0, 0.3, 1])
+					opacity: props.opacity.interpolate({
+						range: [0, 0.6, 1],
+						output: [0, 0.3, 1]
+					})
 				}}
 			>
 				<ThemedUl>

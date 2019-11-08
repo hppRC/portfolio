@@ -100,7 +100,7 @@ export const TagList = ({ tags }: { tags: string[] }) => (
 );
 
 export const query = graphql`
-	query($slug: String!) {
+	query PostTemplate($slug: String!) {
 		mdx(frontmatter: { slug: { eq: $slug } }) {
 			body
 			excerpt

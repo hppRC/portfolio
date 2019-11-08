@@ -33,6 +33,7 @@
 		"gatsby-plugin-catch-links": "^2.1.15",
 		"gatsby-plugin-emotion": "^4.1.13",
 		"gatsby-plugin-google-analytics": "^2.1.23",
+		"gatsby-plugin-graphql-codegen": "^2.0.1",
 		"gatsby-plugin-manifest": "^2.2.23",
 		"gatsby-plugin-mdx": "^1.0.52",
 		"gatsby-plugin-netlify": "^2.1.22",
@@ -62,7 +63,7 @@
 		"react-useanimations": "^1.2.11",
 		"redux": "^4.0.4",
 		"three": "^0.110.0",
-		"typescript": "^3.6.4",
+		"typescript": "^3.7.2",
 		"webpack": "^4.41.1"
 	},
 	"devDependencies": {

@@ -13,17 +13,6 @@ const ThemedHeader = styled.header`
 	width: 100vw;
 	color: #fff;
 	padding: 2rem;
-
-	ul {
-		li {
-			display: inline-block;
-
-			a {
-				text-decoration: none;
-				color: #fff;
-			}
-		}
-	}
 `;
 
 export const Header = () => (

@@ -1,32 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { FluidObject } from 'gatsby-image';
+import { UseAllPostsQuery } from '../../types/graphql-types.d';
 
-interface Props {
-	allMdx: {
-		edges: [
-			{
-				node: {
-					id: string;
-					excerpt: string;
-					frontmatter: {
-						slug: string;
-						date: string;
-						title: string;
-						tags: string[];
-						cover: {
-							childImageSharp: {
-								fluid: FluidObject;
-							};
-						};
-					};
-				};
-			}
-		];
-	};
-}
 export const useAllPosts = () => {
-	const data = useStaticQuery<Props>(graphql`
-		query {
+	const data = useStaticQuery<UseAllPostsQuery>(graphql`
+		query UseAllPosts {
 			allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
 				edges {
 					node {
@@ -50,27 +27,8 @@ export const useAllPosts = () => {
 			}
 		}
 	`);
-
 	const posts = data.allMdx.edges;
-	const allPosts: {
-		id: string;
-		excerpt: string;
-		frontmatter: {
-			slug: string;
-			date: string;
-			title: string;
-			tags: string[];
-			cover: {
-				childImageSharp: {
-					fluid: FluidObject;
-				};
-			};
-		};
-	}[] = [];
-
-	posts.forEach(({ node }) => {
-		allPosts.push(node);
-	});
+	const allPosts = posts.map(({ node }) => node);
 
 	return allPosts;
 };

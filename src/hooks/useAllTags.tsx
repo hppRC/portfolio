@@ -1,22 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby';
-
-interface Props {
-	allMdx: {
-		edges: [
-			{
-				node: {
-					frontmatter: {
-						tags: string[];
-					};
-				};
-			}
-		];
-	};
-}
+import { UseAllTagsQuery } from '../../types/graphql-types.d';
 
 export const useAllTags = () => {
-	const data = useStaticQuery<Props>(graphql`
-		query {
+	const data = useStaticQuery<UseAllTagsQuery>(graphql`
+		query useAllTags {
 			allMdx {
 				edges {
 					node {
@@ -36,12 +23,14 @@ export const useAllTags = () => {
 	} = {};
 
 	posts.forEach(({ node }) => {
-		if (node.frontmatter.tags) {
-			node.frontmatter.tags.forEach(tag => {
-				if (!postsByTag[tag]) {
-					postsByTag[tag] = [];
+		if (node?.frontmatter?.tags) {
+			node?.frontmatter?.tags.forEach((tag : string | null) => {
+				if (typeof tag === 'string') {
+					if (!postsByTag[tag]) {
+						postsByTag[tag] = [];
+					}
+					postsByTag[tag].push(node);
 				}
-				postsByTag[tag].push(node);
 			});
 		}
 	});
