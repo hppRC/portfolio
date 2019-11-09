@@ -16,52 +16,26 @@ body
 
 <LayoutTest><Test/><Test/><Test/></LayoutTest><Test/>
 
-<ChromePicker />
+以下react-colorのテスト
 
-yeah
+<ChromePicker />
 
 <CirclePicker />
 
-nanoda
-
 <CompactPicker />
-
-nanode
 
 <GithubPicker />
 
-nanoda
-
 <HuePicker />
-
-nanoda
 
 <MaterialPicker />
 
-nanoda
-
-PhotoshopPicker
-
 <SketchPicker />
-
-nanoda
 
 <SliderPicker />
 
-nanoda
-
 <SwatchesPicker />
-
-nanoda
 
 <TwitterPicker />
 
 # header
-
-```
-test code
-# test 
-やでやでやで
-```
-
-## むずかしいね
