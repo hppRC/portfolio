@@ -4654,6 +4654,11 @@ devcert-san@^0.3.3:
     tmp "^0.0.31"
     tslib "^1.6.0"
 
+devicon-react-svg@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/devicon-react-svg/-/devicon-react-svg-0.2.2.tgz#d3c318e7771f985eec7086d60849f78aa29f6e9b"
+  integrity sha512-hUz/KzWdjLoGKv3HQ9MNsSOpKzWRseyEHVQhAYer4cibsYxOWry0btHDpYiNCehTYppeRXrC5I9PLL9JHNkctQ==
+
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
@@ -11705,6 +11710,13 @@ react-hot-loader@^4.12.15:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.1.0"
     source-map "^0.7.3"
+
+react-icons@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.8.0.tgz#229de5904809696c9f46932bd9b6126b2522866e"
+  integrity sha512-rA/8GRKjPulft8BSBSMsHkE1AGPqJ7LjNsyk0BE7XjG70Iz62zOled2SJk7LDo8x9z86a3xOstDlKlMZ4pAy7A==
+  dependencies:
+    camelcase "^5.0.0"
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.10.2"
