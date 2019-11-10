@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import styled from '@emotion/styled';
-import UseAnimations from 'react-useanimations';
 import { isBrowser } from 'react-device-detect';
 
 const config = {
@@ -11,7 +10,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: isBrowser ? 60 : 40 }],
+	enter: [{ opacity: 1, height: isBrowser ? 60 : 44 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
@@ -37,25 +36,8 @@ const Theme = styled.div`
 `;
 
 export const TopMessage = () => {
-	const [show, setShow]: [boolean, any] = useState(false);
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setShow((prev: boolean) => !prev);
-		}, 500);
-		return () => clearTimeout(timer);
-	}, []);
-	return <>{show ? <Title /> : <PlaceHolder />}</>;
-};
-
-export const PlaceHolder = () => (
-	<Theme>
-		<UseAnimations animationKey='loading2' size={40} />
-	</Theme>
-);
-
-export const Title = () => {
 	const ref: any = useRef([]);
-	const [items, set]: [(string | JSX.Element)[], any] = useState([]);
+	const [items, set] = useState<(string | JSX.Element)[]>([]);
 	const transitions = useTransition(items, null, config);
 
 	useEffect(() => {
@@ -73,11 +55,7 @@ export const Title = () => {
 			setTimeout(() => set([`Enjoy`, `this`, `website`]), 5250)
 		);
 		ref.current.push(setTimeout(() => set([<HppPortfolio />]), 6100));
-		return () => {
-			ref.current.map((id: number) => {
-				clearTimeout(id);
-			});
-		};
+		return () => ref.current.map(clearTimeout);
 	}, []);
 
 	return (
@@ -99,111 +77,34 @@ const TitleTheme = styled.div`
 
 export const HppPortfolio = () => {
 	const ref: any = useRef([]);
-	const [items, set]: [any, any] = useState([]);
+	const [items, set] = useState<string[]>([]);
 	const transitions = useTransition(items, null, config);
+	const Title = 'hpp Portfolio';
 
 	useEffect(() => {
 		ref.current.map(clearTimeout);
 		ref.current = [];
 		set([]);
-		ref.current.push(setTimeout(() => set(['h']), 100));
-		ref.current.push(setTimeout(() => set(['h', 'p']), 200));
-		ref.current.push(setTimeout(() => set(['h', 'p', 'p']), 300));
-		ref.current.push(setTimeout(() => set(['h', 'p', 'p', ' ']), 350));
-		ref.current.push(setTimeout(() => set(['h', 'p', 'p', ' ', 'P']), 400));
-		ref.current.push(
-			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o']), 500)
-		);
-		ref.current.push(
-			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r']), 600)
-		);
-		ref.current.push(
-			setTimeout(() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r', 't']), 700)
-		);
-		ref.current.push(
-			setTimeout(
-				() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r', 't', 'f']),
-				800
-			)
-		);
-		ref.current.push(
-			setTimeout(
-				() => set(['h', 'p', 'p', ' ', 'P', 'o', 'r', 't', 'f', 'o']),
-				900
-			)
-		);
-		ref.current.push(
-			setTimeout(
-				() =>
-					set([
-						'h',
-						'p',
-						'p',
-						' ',
-						'P',
-						'o',
-						'r',
-						't',
-						'f',
-						'o',
-						'l'
-					]),
-				1000
-			)
-		);
-
-		ref.current.push(
-			setTimeout(
-				() =>
-					set([
-						'h',
-						'p',
-						'p',
-						' ',
-						'P',
-						'o',
-						'r',
-						't',
-						'f',
-						'o',
-						'l',
-						'i'
-					]),
-				1100
-			)
-		);
-		ref.current.push(
-			setTimeout(
-				() =>
-					set([
-						'h',
-						'p',
-						'p',
-						' ',
-						'P',
-						'o',
-						'r',
-						't',
-						'f',
-						'o',
-						'l',
-						'i',
-						'o'
-					]),
-				1200
-			)
-		);
-		return () => {
-			ref.current.map((id: number) => {
-				clearTimeout(id);
-			});
-		};
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 1)]), 100));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 2)]), 200));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 3)]), 300));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 4)]), 350));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 5)]), 400));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 6)]), 500));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 7)]), 600));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 8)]), 700));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 9)]), 800));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 10)]), 900));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 11)]), 1000));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 12)]), 1100));
+		ref.current.push(setTimeout(() => set([...Title.slice(0, 13)]), 1200));
+		return () => ref.current.map(clearTimeout);
 	}, []);
 
 	return (
 		<TitleTheme>
-			{transitions.map(({ item, props, key }: any, index: number) => (
-				<animated.div key={`${key}${index}`} style={props}>
+			{transitions.map(({ item, props }: any, index: number) => (
+				<animated.div key={`${index}`} style={props}>
 					{item}
 				</animated.div>
 			))}

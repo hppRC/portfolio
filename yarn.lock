@@ -1730,13 +1730,6 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/three@^0.103.2":
-  version "0.103.2"
-  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.103.2.tgz#f7d49130001c551941a0ded757def810579aafc4"
-  integrity sha512-zhtf0Qs5wLJpIn1+VWCpzSgpKayj/GSWZ6woiuz09FW59KEDeLpnBkYz6lbblVpRmGdlnG8nd0unaASshOvcXw==
-  dependencies:
-    three "*"
-
 "@types/tmp@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.32.tgz#0d3cb31022f8427ea58c008af32b80da126ca4e3"
@@ -4660,11 +4653,6 @@ devcert-san@^0.3.3:
     mkdirp "^0.5.1"
     tmp "^0.0.31"
     tslib "^1.6.0"
-
-devicon-react-svg@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/devicon-react-svg/-/devicon-react-svg-0.2.2.tgz#d3c318e7771f985eec7086d60849f78aa29f6e9b"
-  integrity sha512-hUz/KzWdjLoGKv3HQ9MNsSOpKzWRseyEHVQhAYer4cibsYxOWry0btHDpYiNCehTYppeRXrC5I9PLL9JHNkctQ==
 
 diffie-hellman@^5.0.0:
   version "5.0.3"
@@ -13758,7 +13746,7 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-three@*, three@^0.110.0:
+three@^0.110.0:
   version "0.110.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.110.0.tgz#8719591de1336269113ee79f4268ba247b2324f8"
   integrity sha512-wlurH8XBO9Sd5VIw8nBa+taLR20kqaI4e9FiuMh6tqK8eOS2q2R+ZoUyufbyDTVTHhs8GiTbv0r2CMLkwerFJg==
