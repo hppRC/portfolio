@@ -14,7 +14,7 @@ const BackgroundTheme = styled.div`
 `;
 
 export const Background = () => {
-	const [show, setShow]: [boolean, any] = useState(false);
+	const [show, setShow] = useState(false);
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setShow((prev: boolean) => !prev);
@@ -22,6 +22,14 @@ export const Background = () => {
 		return () => clearTimeout(timer);
 	}, []);
 
-	return <BackgroundTheme>{show && <BackgroundArt />}</BackgroundTheme>;
+	return (
+		<>
+			{show && (
+				<BackgroundTheme>
+					<BackgroundArt />
+				</BackgroundTheme>
+			)}
+		</>
+	);
 };
 export default Background;

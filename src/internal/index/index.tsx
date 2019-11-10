@@ -9,3 +9,4 @@ export * from './components/Skills';
 export * from './components/Events';
 export * from './components/TopMessage';
 export * from './components/Background';
+export * from './components/IndexPage';
