@@ -17,6 +17,7 @@ const SideMenuTheme = styled.div`
 	top: 0;
 	right: 0;
 	height: 100vh;
+	z-index: 100;
 	> div {
 		border: solid 1px #fff;
 		background-color: #09090fb5;
@@ -27,6 +28,7 @@ const SideMenuTheme = styled.div`
 const ThemedUl = styled.ul`
 	display: flex;
 	flex-direction: column;
+	z-index: 101;
 	li {
 		display: inline-block;
 		a {
@@ -47,6 +49,7 @@ const ThemedIconsUl = styled.ul`
 			font-size: 2rem;
 			text-decoration: none;
 			color: #fff;
+			z-index: 102;
 		}
 	}
 `;

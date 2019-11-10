@@ -6,6 +6,7 @@ const Theme = styled.div`
 	position: fixed;
 	top: 2rem;
 	right: 2rem;
+	z-index: 101;
 `;
 
 interface MenuInterface {
