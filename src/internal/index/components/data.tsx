@@ -1,6 +1,6 @@
-import React from 'react';
-import DevIcon from 'devicon-react-svg';
-import { DiRust } from 'react-icons/di';
+// import React from 'react';
+// import DevIcon from 'devicon-react-svg';
+// import { DiRust } from 'react-icons/di';
 
 export default [
 	{ icon: '', name: 'Python' },
