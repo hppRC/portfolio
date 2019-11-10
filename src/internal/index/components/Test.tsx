@@ -64,7 +64,11 @@ export const Test = () => {
 	const { width, opacity, ...rest }: any = useSpring({
 		ref: springRef,
 		config: config.stiff,
-		from: { width: '20%', opacity: 1, gridGap: '0vw' },
+		from: {
+			width: '10%',
+			opacity: 1,
+			gridGap: '0vw'
+		},
 		to: {
 			width: open ? '100%' : '20%',
 			opacity: open ? 0 : 1,
@@ -106,7 +110,10 @@ export const Test = () => {
 	return (
 		<Theme>
 			<Container
-				style={{ ...rest, width: width }}
+				style={{
+					...rest,
+					width: width
+				}}
 				onClick={() => set(open => !open)}
 			>
 				{transitions.map(({ item, key, props }) => (
