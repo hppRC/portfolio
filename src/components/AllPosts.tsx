@@ -2,7 +2,25 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { useAllPosts } from '../hooks';
+import styled from '@emotion/styled';
 
+const StyledArticle = styled.article`
+	a {
+		text-decoration: none;
+		> div {
+			color: #fff;
+			padding: 2rem;
+			transition: all 0.5s;
+			:hover {
+				opacity: 0.6;
+			}
+			div {
+				border-radius: 5px;
+				z-index: -1;
+			}
+		}
+	}
+`
 
 export const AllPosts = () => (
 	<section>
@@ -12,17 +30,18 @@ export const AllPosts = () => (
 			const fluid: any =
 				frontmatter?.cover?.childImageSharp?.fluid;
 			return (
-				<article key={id}>
-					{fluid && (
-						<Img fluid={fluid} alt={title} style={{ zIndex:"-1" }}/>
-					)}
-					<h3>{title}</h3>
-					<p>{date}</p>
-					<p>{excerpt}</p>
+				<StyledArticle key={id}>
 					<Link to={`/posts/${slug}`}>
-						<h3>{title}</h3>
+						<div>
+							{fluid && (
+								<Img fluid={fluid} alt={title}/>
+							)}
+							<h3>{title}</h3>
+							<p>{date}</p>
+							<p>{excerpt}</p>
+						</div>
 					</Link>
-				</article>
+				</StyledArticle>
 			);
 		})}
 	</section>

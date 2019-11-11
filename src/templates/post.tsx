@@ -11,11 +11,38 @@ import {
 	PostTemplateQuery,
 	SitePageContext,
 } from '../../types/graphql-types.d';
+import styled from '@emotion/styled';
+import { PageBaseTheme } from '../themes';
 
 type Props = {
 	data: PostTemplateQuery;
 	pageContext: SitePageContext;
 }
+
+const StyledArticle = styled.article`
+	min-height: 100vh;
+	list-style-position: inside;
+
+	div {
+		border-radius: 5px;
+		z-index: -1;
+	}
+`
+
+const BodyTheme = styled.div`
+	p span {
+		padding: 2rem;
+		a {
+			span {
+				display: none !important;
+			}
+			img {
+				border-radius: 5px;
+				width: 100%;
+			}
+		}
+	}
+`
 
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	const post = data.mdx;
@@ -35,18 +62,22 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 				pathname={`/posts/${slug}`}
 				isArticle
 			/>
-			<article>
-				<h1>{title}</h1>
-				<p>{date}</p>
-				<Img fluid={fluid} alt={title} />
-				<MDXProvider
-				components={{ ...MdxComponents, ...MdxScope }}
-				scope={{ ...MdxScope }}>
-					<MDXRenderer>{body}</MDXRenderer>
-				</MDXProvider>
-				<TagList tags={tags ?? []} />
-				<PrevAndNext prev={prev} next={next} />
-			</article>
+			<PageBaseTheme>
+				<StyledArticle>
+					<h1>{title}</h1>
+					<p>{date}</p>
+					<Img fluid={fluid} alt={title} backgroundColor={"#fff"} />
+					<BodyTheme>
+						<MDXProvider
+						components={{ ...MdxComponents, ...MdxScope }}
+						scope={{ ...MdxScope }}>
+							<MDXRenderer>{body}</MDXRenderer>
+						</MDXProvider>
+					</BodyTheme>
+					<TagList tags={tags ?? []} />
+					<PrevAndNext prev={prev} next={next} />
+				</StyledArticle>
+			</PageBaseTheme>
 		</Layout>
 	);
 };
