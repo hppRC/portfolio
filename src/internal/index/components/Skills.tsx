@@ -2,7 +2,7 @@ import React from 'react';
 import SkillsMDX from '../documents/skills.mdx';
 import styled from '@emotion/styled';
 import BaseTheme from './BaseTheme';
-import Test from './Test';
+import SkillsTable from './SkillsTable';
 
 const Theme = styled(BaseTheme)`
 	li {
@@ -14,7 +14,7 @@ export const Skills = () => (
 	<>
 		<Theme>
 			<SkillsMDX />
-			<Test />
+			<SkillsTable />
 		</Theme>
 	</>
 );

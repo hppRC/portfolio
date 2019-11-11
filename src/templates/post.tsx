@@ -12,7 +12,6 @@ import {
 	SitePageContext,
 } from '../../types/graphql-types.d';
 import styled from '@emotion/styled';
-import { Global, css } from '@emotion/core';
 import { PageBaseTheme } from '../themes';
 
 type Props = {

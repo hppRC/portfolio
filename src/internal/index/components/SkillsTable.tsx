@@ -6,6 +6,7 @@ import { Link } from 'gatsby';
 import data from './data';
 
 const Theme = styled.div`
+	positoin: relative;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -14,8 +15,9 @@ const Theme = styled.div`
 	a {
 		color: #fff;
 		text-decoration: none;
+		transition: opacity 0.3s;
 		:hover {
-			opacity: 0.6;
+			opacity: 0.5;
 		}
 	}
 `;
@@ -24,7 +26,7 @@ const Container = styled(animated.div)`
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	padding: 5%;
+	padding: 2rem;
 	width: 100%;
 	border: solid 1px #fff;
 	border-radius: 5px;
@@ -57,7 +59,7 @@ const Item = styled(animated.div)`
 	}
 `;
 
-export const Test = () => {
+export const SkillsTable = () => {
 	const [open, set] = useState(false);
 
 	const springRef: any = useRef();
@@ -65,14 +67,16 @@ export const Test = () => {
 		ref: springRef,
 		config: config.stiff,
 		from: {
-			width: '10%',
+			width: '5%',
 			opacity: 1,
-			gridGap: '0vw'
+			gridGap: '0vw',
+			backgroundColor: '#fff'
 		},
 		to: {
-			width: open ? '100%' : '20%',
+			width: open ? '100%' : '5%',
 			opacity: open ? 0 : 1,
-			gridGap: open ? '2vw' : '0vw'
+			gridGap: open ? '2vw' : '0vw',
+			backgroundColor: open ? '#ffffff00' : '#fff'
 		}
 	});
 
@@ -107,9 +111,14 @@ export const Test = () => {
 		open ? 0.1 : 0.6
 	]);
 
+	const ContainerHover = styled(Container)`
+		transition: opacity 0.3s;
+		${!open && ':hover {opacity: 0.5;}'}
+	`;
+
 	return (
 		<Theme>
-			<Container
+			<ContainerHover
 				style={{
 					...rest,
 					width: width
@@ -124,9 +133,9 @@ export const Test = () => {
 						</Item>
 					</Link>
 				))}
-			</Container>
+			</ContainerHover>
 		</Theme>
 	);
 };
 
-export default Test;
+export default SkillsTable;
