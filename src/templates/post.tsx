@@ -19,11 +19,11 @@ type Props = {
 
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	const post = data.mdx;
-	const { slug, title, date, tags }: any = post?.frontmatter;
 	const body = post?.body;
+	const description = post?.excerpt ?? ' ';
+	const { slug, title, date, tags }: any = post?.frontmatter;
 	const fluid: any =
 		post?.frontmatter?.cover?.childImageSharp?.fluid;
-	const description = post?.excerpt ?? ' ';
 	const { prev, next } = pageContext;
 
 	return (
@@ -31,21 +31,22 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 			<SEO
 				title={title}
 				desc={description}
-				banner={fluid?.src ?? ""}
+				banner={fluid?.src}
 				pathname={`/posts/${slug}`}
 				isArticle
 			/>
-			<h1>{title}</h1>
-			<p>{date}</p>
-			<Img fluid={fluid} alt={title} />
-			<MDXProvider
+			<article>
+				<h1>{title}</h1>
+				<p>{date}</p>
+				<Img fluid={fluid} alt={title} />
+				<MDXProvider
 				components={{ ...MdxComponents, ...MdxScope }}
-				scope={{ ...MdxScope }}
-			>
-				<MDXRenderer>{body}</MDXRenderer>
-			</MDXProvider>
-			<TagList tags={tags ?? []} />
-			<PrevAndNext prev={prev} next={next} />
+				scope={{ ...MdxScope }}>
+					<MDXRenderer>{body}</MDXRenderer>
+				</MDXProvider>
+				<TagList tags={tags ?? []} />
+				<PrevAndNext prev={prev} next={next} />
+			</article>
 		</Layout>
 	);
 };
@@ -65,7 +66,7 @@ const PrevAndNext: React.FC<SitePageContext> = ({ prev, next }) => (
 	</ul>
 );
 
-export const TagList = ({ tags }: { tags: string[] }) => (
+export const TagList: React.FC<{ tags: string[] }> = ({ tags }) => (
 	<ul>
 		{tags.map(tag => (
 			<li key={tag}>

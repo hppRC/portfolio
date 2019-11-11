@@ -5,8 +5,12 @@ import styled from '@emotion/styled';
 import { PageBaseTheme } from '../themes';
 
 const Theme = styled(PageBaseTheme)`
-	img {
-		z-index: -1;
+	section {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		article {
+		}
 	}
 `;
 
