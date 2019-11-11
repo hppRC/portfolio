@@ -12,6 +12,7 @@ import {
 	SitePageContext,
 } from '../../types/graphql-types.d';
 import styled from '@emotion/styled';
+import { Global, css } from '@emotion/core';
 import { PageBaseTheme } from '../themes';
 
 type Props = {
@@ -30,19 +31,24 @@ const StyledArticle = styled.article`
 `
 
 const BodyTheme = styled.div`
-	p span {
-		padding: 2rem;
-		a {
-			span {
-				display: none !important;
-			}
-			img {
-				border-radius: 5px;
-				width: 100%;
+	padding: 5rem 0;
+	p {
+		z-index: -1;
+		span {
+			padding: 2rem;
+			a {
+				span {
+					display: none !important;
+				}
+				img {
+					border-radius: 5px;
+					width: 100%;
+				}
 			}
 		}
 	}
 `
+
 
 export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	const post = data.mdx;
@@ -82,29 +88,66 @@ export const Post: React.FC<Props> = ({ data, pageContext }) => {
 	);
 };
 
+const PrevAndNextTheme = styled.ul`
+	display: flex;
+
+	list-style: none;
+	li a {
+		text-decoration: none;
+		color: #fff;
+		transition: all 0.5s;
+		:hover {
+			opacity: 0.6;
+		}
+	}
+`
+
 const PrevAndNext: React.FC<SitePageContext> = ({ prev, next }) => (
-	<ul>
+	<PrevAndNextTheme>
 		{next && (
 			<li key='next'>
-				<Link to={`/posts/${next?.frontmatter?.slug}`}>Next</Link>
+				<Link to={`/posts/${next?.frontmatter?.slug}`}>{"Next >>"}</Link>
 			</li>
 		)}
 		{prev && (
 			<li key='prev'>
-				<Link to={`/posts/${prev?.frontmatter?.slug}`}>Previous</Link>
+				<Link to={`/posts/${prev?.frontmatter?.slug}`}>{"<< Previous"}</Link>
 			</li>
 		)}
-	</ul>
+	</PrevAndNextTheme>
 );
 
+
+const TagListTheme = styled.ul`
+	display: flex;
+	list-style: inside;
+	color: #09090f;
+	li {
+		background-color: #fff;
+		border-radius: 5px;
+		padding: 0.2rem 1rem;
+		transition: all 0.5s;
+		:hover {
+			opacity: 0.6;
+		}
+		a {
+			text-decoration: none;
+			color: #09090f;
+			font-weight: bold;
+			font-family: 'American Typewriter','Superclarendon',sans-serif;
+		}
+	}
+`
+
+
 export const TagList: React.FC<{ tags: string[] }> = ({ tags }) => (
-	<ul>
+	<TagListTheme>
 		{tags.map(tag => (
 			<li key={tag}>
 				<Link to={`/tags/${tag}`}>{tag}</Link>
 			</li>
 		))}
-	</ul>
+	</TagListTheme>
 );
 
 export const query = graphql`
