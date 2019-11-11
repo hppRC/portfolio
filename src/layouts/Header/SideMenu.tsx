@@ -35,6 +35,10 @@ const ThemedUl = styled.ul`
 			font-size: 2rem;
 			text-decoration: none;
 			color: #fff;
+			transition: opacity 0.3s;
+			:hover {
+				opacity: 0.6;
+			}
 		}
 	}
 `;
@@ -50,6 +54,12 @@ const ThemedIconsUl = styled.ul`
 			text-decoration: none;
 			color: #fff;
 			z-index: 102;
+			div {
+				transition: opacity 0.3s;
+				:hover {
+					opacity: 0.6;
+				}
+			}
 		}
 	}
 `;

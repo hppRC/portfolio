@@ -30,7 +30,6 @@ const Container = styled(animated.div)`
 	width: 100%;
 	border: solid 1px #fff;
 	border-radius: 5px;
-	will-change: width, height;
 	@media screen and (max-width: 768px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -39,7 +38,7 @@ const Container = styled(animated.div)`
 		grid-template-columns: repeat(1, 1fr);
 	}
 
-	will-change: grid-gap;
+	will-change: grid-gap, height, width;
 `;
 
 const Item = styled(animated.div)`
@@ -49,7 +48,6 @@ const Item = styled(animated.div)`
 	width: 100%;
 	border: solid 1px #fff;
 	border-radius: 5px;
-	will-change: transform, opacity, height;
 	fill: #fff;
 	color: #fff;
 
@@ -57,6 +55,7 @@ const Item = styled(animated.div)`
 		width: 5rem;
 		height: 5rem;
 	}
+	will-change: transform, opacity, width, height;
 `;
 
 export const SkillsTable = () => {
