@@ -8,6 +8,7 @@ export const Card = styled.div`
 		left: -1rem;
 		display: flex;
 		align-items: center;
+		pointer-events: none;
 	}
 	svg {
 		width: 5rem;

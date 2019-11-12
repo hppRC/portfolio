@@ -10,7 +10,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: isBrowser ? 60 : 44 }],
+	enter: [{ opacity: 1, height: isBrowser ? 60 : 50 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
@@ -26,12 +26,12 @@ const Theme = styled.div`
 	font-weight: bold;
 	@media screen and (max-width: 768px) {
 		padding: 4rem 10%;
-		font-size: 3rem;
+		font-size: 3.15rem;
 	}
 
 	@media screen and (max-width: 480px) {
 		padding: 3rem 10%;
-		font-size: 2.5rem;
+		font-size: 2.85rem;
 	}
 `;
 
