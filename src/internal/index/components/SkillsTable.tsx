@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from '@emotion/styled';
 import { useTransition, useSpring, useChain, config } from 'react-spring';
 import { animated } from 'react-spring';
@@ -6,7 +6,6 @@ import { Link } from 'gatsby';
 import data from './data';
 
 const Theme = styled.div`
-	positoin: relative;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -20,10 +19,10 @@ const Theme = styled.div`
 			opacity: 0.5;
 		}
 	}
+	z-index: 0;
 `;
 
 const Container = styled(animated.div)`
-	position: relative;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	padding: 2rem;
@@ -37,11 +36,6 @@ const Container = styled(animated.div)`
 
 	@media screen and (max-width: 480px) {
 		grid-template-columns: repeat(1, 1fr);
-	}
-
-	transition: opacity 0.3s;
-	:hover {
-		opacity: ${(props: { open: boolean }) => (props.open ? 0.5 : 1)};
 	}
 
 	will-change: grid-gap, height, width;
@@ -118,10 +112,11 @@ export const SkillsTable = () => {
 
 	return (
 		<Theme>
-			<ContainerHover
+			<Container
 				style={{
 					...rest,
-					width: width
+					width: width,
+					cursor: open ? 'default' : 'pointer'
 				}}
 				onClick={() => set(open => !open)}
 			>
@@ -133,7 +128,7 @@ export const SkillsTable = () => {
 						</Item>
 					</Link>
 				))}
-			</ContainerHover>
+			</Container>
 		</Theme>
 	);
 };

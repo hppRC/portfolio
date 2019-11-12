@@ -18,6 +18,14 @@ const StyledArticle = styled.article`
 				border-radius: 5px;
 				z-index: -1;
 			}
+
+			@media screen and (max-width: 768px) {
+				padding: 1.5rem;
+			}
+
+			@media screen and (max-width: 480px) {
+				padding: 1rem;
+			}
 		}
 	}
 `

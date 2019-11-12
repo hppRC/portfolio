@@ -102,9 +102,8 @@ const Thing = () => {
 export const BackgroundArt = () => (
 	<Canvas
 		camera={{
-			position: [0, 0, 1]
+			position: [0, 0, isBrowser ? 1.5 : 1]
 		}}
-		shadowMap
 	>
 		<Suspense>
 			<Thing />

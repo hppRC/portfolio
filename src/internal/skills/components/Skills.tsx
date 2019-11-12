@@ -15,9 +15,15 @@ const Theme = styled.div`
 
 		@media screen and (max-width: 768px) {
 			grid-template-columns: repeat(1, 1fr);
+			li {
+				padding: 1.5rem;
+			}
 		}
 
 		@media screen and (max-width: 480px) {
+			li {
+				padding: 1rem;
+			}
 		}
 	}
 `;
