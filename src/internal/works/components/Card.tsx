@@ -16,7 +16,7 @@ const Theme = styled.div`
 
 const StyledA = styled.a`
 	text-decoration: none;
-	transition: all 0.5s ease 0s;
+	transition: all 0.3s ease 0s;
 	:hover {
 		box-shadow: 0 3px 6px 0 #000;
 		transform: translateY(-0.1875em);
