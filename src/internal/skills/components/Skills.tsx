@@ -11,19 +11,19 @@ const Theme = styled.div`
 
 		li {
 			display: flex;
-			padding: 1rem;
+			padding: 1rem 0;
 		}
 
 		@media screen and (max-width: 768px) {
 			grid-template-columns: repeat(1, 1fr);
 			li {
-				padding: 0.75rem;
+				padding: 0.75rem 0;
 			}
 		}
 
 		@media screen and (max-width: 480px) {
 			li {
-				padding: 0.5rem;
+				padding: 0.5rem 0;
 			}
 		}
 	}

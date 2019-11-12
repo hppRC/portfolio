@@ -5,7 +5,7 @@ export const Background = () => (
 		styles={css`
 			body {
 				background: linear-gradient(236deg, #080113, #09090f, #cfda00);
-				background-color: #09090f;
+				background-color: #080113;
 				background-size: 600% 600%;
 
 				-webkit-animation: BackAnimation 60s ease infinite;
