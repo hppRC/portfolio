@@ -9,8 +9,8 @@ const StyledArticle = styled.article`
 		text-decoration: none;
 		> div {
 			color: #fff;
-			padding: 2rem;
 			transition: all 0.5s;
+			padding: 2rem 0;
 			:hover {
 				opacity: 0.6;
 			}
@@ -20,11 +20,11 @@ const StyledArticle = styled.article`
 			}
 
 			@media screen and (max-width: 768px) {
-				padding: 1.5rem;
+
 			}
 
 			@media screen and (max-width: 480px) {
-				padding: 1rem;
+
 			}
 		}
 	}

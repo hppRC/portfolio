@@ -1,6 +1,7 @@
 import React from 'react';
 import SkillsMDX from '../documents/skills.mdx';
 import styled from '@emotion/styled';
+import Background from './Background';
 
 const Theme = styled.div`
 	ul {
@@ -10,19 +11,19 @@ const Theme = styled.div`
 
 		li {
 			display: flex;
-			padding: 2rem;
+			padding: 1rem;
 		}
 
 		@media screen and (max-width: 768px) {
 			grid-template-columns: repeat(1, 1fr);
 			li {
-				padding: 1.5rem;
+				padding: 0.75rem;
 			}
 		}
 
 		@media screen and (max-width: 480px) {
 			li {
-				padding: 1rem;
+				padding: 0.5rem;
 			}
 		}
 	}
@@ -30,6 +31,7 @@ const Theme = styled.div`
 
 export const Skills = () => (
 	<Theme>
+		<Background />
 		<SkillsMDX />
 	</Theme>
 );
