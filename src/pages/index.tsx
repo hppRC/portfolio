@@ -13,7 +13,6 @@ export const Index = ({ data }: { data: IndexPageQuery }) => {
 				desc={'hpp portfolio site.'}
 				banner={fluid?.src}
 				pathname={`/`}
-				isArticle
 			/>
 			<IndexPage />
 		</>
