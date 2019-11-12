@@ -1,8 +1,10 @@
 import Card from "../components/Card"
+import Img from "gatsby-image"
 import ShaderGIF from '../../../images/gif/shader.gif';
 import PhysicsGIF from '../../../images/gif/phisics.gif';
 import ExperimentsGIF from '../../../images/gif/experiments.gif';
 import PortfolioGIF from '../../../images/gif/portfolio.gif';
+import NijisanjibotPNG from '../../../images/nijisanjibot.png';
 
 # works
 
@@ -23,6 +25,11 @@ import PortfolioGIF from '../../../images/gif/portfolio.gif';
         <img src={ShaderGIF} alt='shader experiments' />
         <h2>Shader Experiments</h2>
         <p>react-three-fiber(React用のThree.jsライブラリ)を触っているときに錬成されたものです。shaderがめちゃくちゃ楽しいので困ります。</p>
+    </Card>
+    <Card to={"https://twitter.com/2434illustbot"}>
+        <img src={NijisanjibotPNG} alt='nijisanji illust bot' />
+        <h2>2434 Illust bot</h2>
+        <p>にじさんじのイラストbotです(名前のまんま)。Rustで直接Twitter APIを叩いて動かしています。アプリはherokuにデプロイされており、定期実行の機能もあります。Githubは<a href="https://github.com/hppRC/2434illustbot">こちらです。</a>たまにAPIの権限が吹っ飛ぶので定期実行できていない時があります。</p>
     </Card>
     <Card to={"https://hpprc.github.io/generativereact/#/works/7"}>
         <img src={PhysicsGIF} alt='Physics experiments' />
