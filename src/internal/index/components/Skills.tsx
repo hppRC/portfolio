@@ -8,15 +8,16 @@ const Theme = styled(BaseTheme)`
 	li {
 		padding: 0.2rem 0;
 	}
+	> div {
+		margin: 5rem 0;
+	}
 `;
 
 export const Skills = () => (
-	<>
-		<Theme>
-			<SkillsMDX />
-			<SkillsTable />
-		</Theme>
-	</>
+	<Theme>
+		<SkillsMDX />
+		<SkillsTable />
+	</Theme>
 );
 
 export default Skills;

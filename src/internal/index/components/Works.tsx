@@ -12,9 +12,12 @@ const Theme = styled(BaseTheme)`
 			height: auto;
 			border-radius: 5px;
 		}
-		h2,
+
+		h2 {
+			padding: 1.5rem;
+		}
 		p {
-			padding: 2.5rem;
+			padding: 0 0 3rem 0;
 		}
 	}
 `;

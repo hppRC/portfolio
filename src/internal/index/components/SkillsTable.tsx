@@ -6,11 +6,10 @@ import { Link } from 'gatsby';
 import data from './data';
 
 const Theme = styled.div`
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 5rem 0;
+	position: relative;
+	width: auto;
+	height: auto;
+
 	a {
 		color: #fff;
 		text-decoration: none;
@@ -26,9 +25,9 @@ const Container = styled(animated.div)`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	padding: 2rem;
-	width: 100%;
 	border: solid 1px #fff;
 	border-radius: 5px;
+	margin: 0 auto;
 
 	@media screen and (max-width: 768px) {
 		grid-template-columns: repeat(2, 1fr);
@@ -45,7 +44,6 @@ const Item = styled(animated.div)`
 	display: flex;
 	align-items: center;
 
-	width: 100%;
 	border: solid 1px #fff;
 	border-radius: 5px;
 	fill: #fff;
