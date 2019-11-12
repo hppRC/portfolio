@@ -12,6 +12,13 @@ const Theme = styled.div`
 			display: flex;
 			padding: 2rem;
 		}
+
+		@media screen and (max-width: 768px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		@media screen and (max-width: 480px) {
+		}
 	}
 `;
 

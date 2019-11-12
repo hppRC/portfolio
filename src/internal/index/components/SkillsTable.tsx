@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { useTransition, useSpring, useChain, config } from 'react-spring';
 import { animated } from 'react-spring';
@@ -30,12 +30,18 @@ const Container = styled(animated.div)`
 	width: 100%;
 	border: solid 1px #fff;
 	border-radius: 5px;
+
 	@media screen and (max-width: 768px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
 	@media screen and (max-width: 480px) {
 		grid-template-columns: repeat(1, 1fr);
+	}
+
+	transition: opacity 0.3s;
+	:hover {
+		opacity: ${(props: { open: boolean }) => (props.open ? 0.5 : 1)};
 	}
 
 	will-change: grid-gap, height, width;
@@ -109,11 +115,6 @@ export const SkillsTable = () => {
 		0,
 		open ? 0.1 : 0.6
 	]);
-
-	const ContainerHover = styled(Container)`
-		transition: opacity 0.3s;
-		${!open && ':hover {opacity: 0.5;}'}
-	`;
 
 	return (
 		<Theme>

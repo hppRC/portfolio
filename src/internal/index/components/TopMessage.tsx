@@ -26,12 +26,12 @@ const Theme = styled.div`
 	font-weight: bold;
 	@media screen and (max-width: 768px) {
 		padding: 4rem 10%;
-		font-size: 3.15rem;
+		font-size: 3rem;
 	}
 
 	@media screen and (max-width: 480px) {
 		padding: 3rem 10%;
-		font-size: 2.75rem;
+		font-size: 2.5rem;
 	}
 `;
 
