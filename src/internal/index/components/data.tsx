@@ -14,17 +14,17 @@ import {
 } from 'react-icons/di';
 
 export default [
-	{ icon: <DiPython />, name: 'Python' },
-	{ icon: <DiReact />, name: 'React' },
-	{ icon: <DiJsBadge />, name: 'JavaScript' },
-	{ icon: <DiRust />, name: 'Rust' },
-	{ icon: <DiLaravel />, name: 'Laravel' },
-	{ icon: <DiGo />, name: 'Go' },
-	{ icon: <DiHtml5 />, name: 'HTML' },
-	{ icon: <DiCss3 />, name: 'CSS' },
-	{ icon: <DiHaskell />, name: 'Haskell' },
-	{ icon: <DiDocker />, name: 'Docker' },
-	{ icon: <DiGithubBadge />, name: 'GitHub' },
-	{ icon: '', name: 'Gatsby.js' },
-	{ icon: '', name: 'C/C++' }
+	{ icon: <DiPython />, name: 'Python', id: 'python' },
+	{ icon: <DiReact />, name: 'React', id: 'react' },
+	{ icon: <DiJsBadge />, name: 'JavaScript', id: 'javascript' },
+	{ icon: <DiRust />, name: 'Rust', id: 'rust' },
+	{ icon: <DiLaravel />, name: 'Laravel', id: 'laravel' },
+	{ icon: <DiGo />, name: 'Go', id: 'go' },
+	{ icon: <DiHtml5 />, name: 'HTML', id: 'html' },
+	{ icon: <DiCss3 />, name: 'CSS', id: 'html' },
+	{ icon: <DiHaskell />, name: 'Haskell', id: 'haskell' },
+	{ icon: <DiDocker />, name: 'Docker', id: 'docker' },
+	{ icon: <DiGithubBadge />, name: 'GitHub', id: 'git' },
+	{ icon: '', name: 'Gatsby.js', id: 'gatsby' },
+	{ icon: '', name: 'C/C++', id: 'c' }
 ];

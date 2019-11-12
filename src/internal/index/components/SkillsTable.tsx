@@ -121,7 +121,7 @@ export const SkillsTable = () => {
 				onClick={() => set(open => !open)}
 			>
 				{transitions.map(({ item, key, props }) => (
-					<Link key={key} to='/skills'>
+					<Link key={key} to={`/skills#${item.id}`}>
 						<Item style={{ ...props }}>
 							{item.icon}
 							<h3>{item.name}</h3>

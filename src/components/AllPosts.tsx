@@ -33,7 +33,6 @@ const StyledArticle = styled.article`
 export const AllPosts = () => (
 	<section>
 		{useAllPosts().map(({ id, excerpt, frontmatter }) => {
-			console.log(frontmatter);
 			const { slug, title, date, tags }: any = frontmatter;
 			const fluid: any =
 				frontmatter?.cover?.childImageSharp?.fluid;
