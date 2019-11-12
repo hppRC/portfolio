@@ -31,7 +31,7 @@ const Theme = styled.div`
 
 	@media screen and (max-width: 480px) {
 		padding: 3rem 10%;
-		font-size: 2.85rem;
+		font-size: 2.6rem;
 	}
 `;
 
