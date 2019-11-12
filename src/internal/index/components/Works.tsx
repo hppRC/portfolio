@@ -6,21 +6,25 @@ import LearnMoreButton from './LearnMoreButton';
 
 const Theme = styled(BaseTheme)`
 	color: #fff;
-	img {
-		width: 100%;
-		height: auto;
-		border-radius: 5px;
-	}
-	h2,
-	p {
-		padding: 2.5rem;
+	div {
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 5px;
+		}
+		h2,
+		p {
+			padding: 2.5rem;
+		}
 	}
 `;
 
 export const Works = () => (
 	<Theme>
 		<WorksMDX />
-		<LearnMoreButton to={'/works'} />
+		<div style={{ display: 'flex', justifyContent: 'center' }}>
+			<LearnMoreButton to={'/works'} />
+		</div>
 	</Theme>
 );
 

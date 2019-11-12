@@ -3,15 +3,24 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 
 const StyledButton = styled.div`
-	width: 5rem;
-	height: 2rem;
-	padding: 1rem 3rem;
+	width: 12rem;
+	height: auto;
 	border: solid 1px #fff;
+	border-radius: 5px;
+	text-align: center;
+	transition: all 0.3s ease 0s;
 
 	a {
 		display: block;
+		padding: 1rem 1rem;
 		color: #fff;
+		text-align: center;
 		text-decoration: none;
+		font-weight: bold;
+	}
+
+	:hover {
+		opacity: 0.6;
 	}
 `;
 
