@@ -10,7 +10,7 @@ const config = {
 		innerHeight: 0,
 		color: '#fff'
 	},
-	enter: [{ opacity: 1, height: isBrowser ? 60 : 50 }],
+	enter: [{ opacity: 1, height: 60 }],
 	leave: [{ opacity: 0, height: 0 }],
 	update: { color: '#fff' }
 };
@@ -31,7 +31,7 @@ const Theme = styled.div`
 
 	@media screen and (max-width: 480px) {
 		padding: 3rem 10%;
-		font-size: 2.6rem;
+		font-size: 2.85rem;
 	}
 `;
 
@@ -73,6 +73,7 @@ const TitleTheme = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 1rem;
 `;
 
 export const HppPortfolio = () => {
