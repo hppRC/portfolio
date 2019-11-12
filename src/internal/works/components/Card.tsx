@@ -34,6 +34,9 @@ const StyledA = styled.a`
 			background: rgba(255, 255, 255, 0.03);
 		}
 	}
+	@media screen and (max-width: 768px) {
+		box-shadow: 0px 3px 10px 0px #000;
+	}
 `;
 
 const StyledLi = styled.li`
