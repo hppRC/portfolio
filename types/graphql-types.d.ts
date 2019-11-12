@@ -2934,6 +2934,11 @@ export type UseSiteMetadataQueryVariables = {};
 
 export type UseSiteMetadataQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'titleAlt' | 'shortName' | 'author' | 'siteLanguage' | 'logo' | 'url' | 'pathPrefix' | 'description' | 'banner' | 'twitter'>> }> };
 
+export type IndexPageQueryVariables = {};
+
+
+export type IndexPageQuery = { file: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluid_WithWebp_TracedSvgFragment> }> }> };
+
 export type PostTemplateQueryVariables = {
   slug: Scalars['String']
 };
