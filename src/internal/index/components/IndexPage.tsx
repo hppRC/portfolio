@@ -8,6 +8,7 @@ const About = loadable(() => import('./About'));
 const Intro = loadable(() => import('./Intro'));
 const Events = loadable(() => import('./Events'));
 const Skills = loadable(() => import('./Skills'));
+const Works = loadable(() => import('./Works'));
 const TopMessage = loadable(() => import('./TopMessage'));
 const Background = loadable(() => import('./Background'));
 
@@ -20,6 +21,7 @@ export const IndexPage = () => (
 			<Intro />
 			<About />
 			<Skills />
+			<Works />
 			<Events />
 		</Theme>
 		<Background />

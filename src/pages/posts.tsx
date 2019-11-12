@@ -8,15 +8,12 @@ const Theme = styled(PageBaseTheme)`
 	section {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		article {
-			padding: 2rem;
-		}
+		padding: 2rem 0;
+		grid-gap: 2rem;
 
 		@media screen and (max-width: 768px) {
 			grid-template-columns: repeat(1, 1fr);
-			article {
-				padding: 0rem;
-			}
+			padding: 1rem 0;
 		}
 
 		@media screen and (max-width: 480px) {

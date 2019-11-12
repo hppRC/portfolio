@@ -8,10 +8,6 @@ const Theme = styled.div`
 	right: 2rem;
 	z-index: 101;
 	cursor: pointer;
-	transition: opacity 0.3s;
-	:hover {
-		opacity: 0.5;
-	}
 `;
 
 interface MenuInterface {

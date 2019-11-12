@@ -106,6 +106,9 @@ export const SideMenu: React.FC<MenuInterface> = ({ open, toggle }) => {
 						<Link to='/skills'>skills</Link>
 					</animated.li>
 					<animated.li style={opacityStyle}>
+						<Link to='/works'>works</Link>
+					</animated.li>
+					<animated.li style={opacityStyle}>
 						<Link to='/posts'>posts</Link>
 					</animated.li>
 					<animated.li style={opacityStyle}>

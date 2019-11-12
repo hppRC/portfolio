@@ -2,21 +2,31 @@ import Card from "../components/Card"
 import ShaderGIF from '../gif/shader.gif';
 import PhisicsGIF from '../gif/phisics.gif';
 import ExperimentsGIF from '../gif/experiments.gif';
+import PortfolioGIF from '../gif/portfolio.gif';
 
 # works
 
 自分の作ったものを載せていきます。随時更新予定です。
 
-<Card to={"https://hpprc.github.io/generativereact/#/works/12"}>
-    <img src={ShaderGIF} alt='shader experiments' />
-    <h2>shader experiments</h2>
-    <p>react-three-fiber(React用のThree.jsライブラリ)を触っているときに錬成されたものです。shaderがめちゃくちゃ楽しいので困ります。</p>
-</Card>
-<Card to={"https://hpprc.github.io/generativereact/#/works/7"}>
-    <img src={PhisicsGIF} alt='phisics experiments' />
-    <h2>shader experiments</h2>
-    <p></p>
-</Card>
-<Card>
-    <img src={ExperimentsGIF} alt='experiments site' />
-</Card>
+<ul>
+    <Card to={"https://hpprc.com"}>
+        <img src={PortfolioGIF} alt='my portfolio site' />
+        <h2>Portfolio Site</h2>
+        <p>自分のポートフォリオサイトです。TypeScript + Gatsby.jsでサイトの全体を書いていて、ヒーローイメージはreact-three-fiberを使ってWebGLからShaderをいじっています。Netlify CMSを使って管理画面からブログ記事を作成・投稿できます。さらにMDX(JSX in Markdown)という闇技術で、ブログ記事中でもReactコンポーネントをimportして使えたりもします。全部載せ感。</p>
+    </Card>
+    <Card to={"https://hpprc.github.io/generativereact/"}>
+        <img src={ExperimentsGIF} alt='experiments site' />
+        <h2>Generative React</h2>
+        <p>Generative Artが用いられているSPAってあんまりないよな〜的な気持ちから作ったサイトです。もとはp5.jsで作ったスケッチなどの作品を置いておくための倉庫的な気持ちで作ったサイトです。その後react-three-fiberを使った作品の実験場みたいな感じになりました。Gatsbyで書き直したい...🔥</p>
+    </Card>
+    <Card to={"https://hpprc.github.io/generativereact/#/works/12"}>
+        <img src={ShaderGIF} alt='shader experiments' />
+        <h2>shader experiments</h2>
+        <p>react-three-fiber(React用のThree.jsライブラリ)を触っているときに錬成されたものです。shaderがめちゃくちゃ楽しいので困ります。</p>
+    </Card>
+    <Card to={"https://hpprc.github.io/generativereact/#/works/7"}>
+        <img src={PhisicsGIF} alt='phisics experiments' />
+        <h2>phisics experiments</h2>
+        <p>react-three-fiberでCANNON.jsという物理演算ライブラリを使って遊んでみたやつです。これでゲームを作ってる方もいて可能性無限か？と思っています。</p>
+    </Card>
+</ul>
