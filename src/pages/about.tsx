@@ -1,9 +1,8 @@
 import React from 'react';
-import { Layout } from '../layouts';
 import { SEO } from '../components';
 import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
-import AboutMDX from "../mdx/about.mdx"
+import AboutMDX from '../mdx/about.mdx';
 
 const About: React.FCX = ({ className }) => (
   <div className={className}>
@@ -16,8 +15,8 @@ const StyledAbout = styled(About)`
 `;
 
 export default () => (
-  <Layout>
-    <SEO title='About' description='about page' pathname='/about' />
+  <>
+    <SEO title='About' pathname='/about' />
     <StyledAbout />
-  </Layout>
+  </>
 );
