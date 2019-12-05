@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../layouts';
+import Layout from '../layouts';
 import { SEO } from '../components';
 import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
