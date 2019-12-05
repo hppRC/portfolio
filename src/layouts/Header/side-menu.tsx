@@ -9,10 +9,7 @@ const SideMenu: React.FCX = ({ className }) => {
   const { open } = MenuContainer.useContainer();
   const props = useSpring({
     config: { mass: 1, friction: 15, tension: 75 },
-    from: {
-      o: 0,
-      opacity: 0
-    },
+    from: { o: 0, opacity: 0 },
     o: 1,
     opacity: open ? 1 : 0,
     width: open ? 200 : 0
