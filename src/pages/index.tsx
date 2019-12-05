@@ -14,9 +14,11 @@ const StyledIndex = styled(Index)`
   ${baseStyle};
 `;
 
-export default () => (
-  <Layout>
-    <SEO title='Top' description='top page' pathname='/' />
-    <StyledIndex />
-  </Layout>
-);
+export default () => {
+  return (
+    <Layout>
+      <SEO title='Top' description='top page' pathname='/' />
+      <StyledIndex />
+    </Layout>
+  );
+};

@@ -5,7 +5,6 @@ const config = {
   siteUrl: `https://gatsby-starter-hpp.netlify.com`,
   siteDescription: `simple gatsby starter with mdx, typescript, pwa`,
   siteLanguage: `en`,
-  siteImage: `/banner.png`, // real path -> https://gatsby-starter-hpp.netlify.com/icon.jpg
   author: `@osaremochi`, // twitter account id
   basePath: `/`
 };
@@ -20,6 +19,13 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`
+      }
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

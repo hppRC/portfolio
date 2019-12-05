@@ -19,7 +19,6 @@ export const useSiteMetadata = () => {
           siteUrl
           siteDescription
           siteLanguage
-          siteImage
           author
         }
       }
