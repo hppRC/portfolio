@@ -1,11 +1,11 @@
 const config = {
-  siteTitle: `Gatsby Starter hpp`,
-  siteTitleAlt: `Gatsby Starter hpp - @hppRC/gatsby-starter-hpp`,
-  siteHeadline: `Gatsby Starter hpp - Gatsby Starter from @hppRC`,
-  siteUrl: `https://gatsby-starter-hpp.netlify.com`,
-  siteDescription: `simple gatsby starter with mdx, typescript, pwa`,
-  siteLanguage: `en`,
-  author: `@osaremochi`, // twitter account id
+  siteTitle: `hpp Portfolio`,
+  siteTitleAlt: `hpp Portfolio`,
+  siteHeadline: `hppPortfolio - Awesome portfolio site made by gatsby from @hppRC`,
+  siteUrl: `https://hpprc.com`,
+  siteDescription: `hpp is a Japanese student, majoring in computer science and Informatics at Nagoya uni.`,
+  siteLanguage: `ja`,
+  author: `@osaremochi`,
   basePath: `/`
 };
 
@@ -76,10 +76,10 @@ module.exports = {
         description: config.siteDescription,
         Scope: `/`,
         start_url: `/?utm_source=homescreen`,
-        background_color: `#ffffff`,
-        theme_color: `#090909`,
+        background_color: `#09090f`,
+        theme_color: `#09090f`,
         display: `standalone`,
-        icon: `./static/icon.png`
+        icon: `./src/images/icon.png`
       }
     },
     `gatsby-plugin-offline`
