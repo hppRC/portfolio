@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Menu from './menu';
 
 const Header: React.FCX = ({ className }) => (
-  <header className={className}>header</header>
+  <header className={className}>
+    <Menu />
+  </header>
 );
 
 export const StyledHeader = styled(Header)``;
