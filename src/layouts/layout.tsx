@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResetCSS, GlobalCSS } from '../components';
-import Header from './header';
-import Footer from './footer';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 export const Layout: React.FC = ({ children }) => (
   <>

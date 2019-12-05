@@ -5,6 +5,6 @@ const Footer: React.FCX = ({ className }) => (
   <footer className={className}>footer</footer>
 );
 
-const StyledHeader = styled(Footer)``;
+export const StyledFooter = styled(Footer)``;
 
-export default StyledHeader;
+export default StyledFooter;

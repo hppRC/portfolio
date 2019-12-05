@@ -17,7 +17,7 @@ const StyledIndex = styled(Index)`
 export default () => {
   return (
     <Layout>
-      <SEO title='Top' description='top page' pathname='/' />
+      <SEO title='Top' pathname='/' />
       <StyledIndex />
     </Layout>
   );

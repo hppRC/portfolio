@@ -5,6 +5,6 @@ const Header: React.FCX = ({ className }) => (
   <header className={className}>header</header>
 );
 
-const StyledHeader = styled(Header)``;
+export const StyledHeader = styled(Header)``;
 
 export default StyledHeader;
