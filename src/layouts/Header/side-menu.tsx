@@ -6,10 +6,9 @@ import { StyledOuterNav as OuterNav } from './outer-nav';
 import { MenuContainer } from '../../store';
 
 const SideMenu: React.FCX = ({ className }) => {
-  const menuContainer = MenuContainer.useContainer();
-  const { open } = menuContainer;
+  const { open } = MenuContainer.useContainer();
   const props = useSpring({
-    config: { mass: 2, friction: 30 },
+    config: { mass: 1, friction: 15, tension: 75 },
     from: {
       o: 0,
       opacity: 0
