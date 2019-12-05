@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-//import SideMenu from './SideMenu';
+import React from 'react';
+import { StyledSideMenu as SideMenu } from './side-menu';
 //import MenuIcon from './MenuIcon';
-//import styled from '@emotion/styled';
+import styled from '@emotion/styled';
+import { MenuContainer } from '../../store';
 
-export const Menu = () => {
-  const [open, toggle] = useState(false);
-  console.log(toggle);
-  return <div>{open || 'yeah'}</div>;
+const Menu: React.FCX = ({ className }) => {
+  const menuContainer = MenuContainer.useContainer();
+  const { toggle } = menuContainer;
+  return (
+    <aside className={className}>
+      <button onClick={toggle}>toggle</button>
+      <SideMenu />
+    </aside>
+  );
 };
 
-export default Menu;
+export const StyledMenu = styled(Menu)``;
+
+export default StyledMenu;

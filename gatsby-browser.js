@@ -1,14 +1,11 @@
 import React from 'react';
-import { CounterContainer } from './src/store/ConterContainer';
+import { MenuContainer } from './src/store';
 import Layout from './src/layouts';
 
-const wrapWithProvider = ({ element }) => {
-  console.log(element);
-  return (
-    <CounterContainer.Provider>
-      <Layout>{element}</Layout>
-    </CounterContainer.Provider>
-  );
-};
+const wrapWithProvider = ({ element }) => (
+  <MenuContainer.Provider>
+    <Layout>{element}</Layout>
+  </MenuContainer.Provider>
+);
 
 export const wrapRootElement = wrapWithProvider;

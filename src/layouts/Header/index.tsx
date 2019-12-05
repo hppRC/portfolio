@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Menu from './menu';
+import { StyledMenu as Menu } from './menu';
 
 const Header: React.FCX = ({ className }) => (
   <header className={className}>
