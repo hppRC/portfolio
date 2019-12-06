@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createContainer } from 'unstated-next';
 
 const useMenuContainer = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const toggle = () => {
     setOpen(open => !open);
