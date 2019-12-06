@@ -18,7 +18,7 @@ const closedTransformationConfig = {
 };
 
 export const MenuButton: React.FCX = ({ className }) => {
-  const { toggle } = MenuContainer.useContainer();
+  const { open, toggle } = MenuContainer.useContainer();
   const { top, center, bottom, color }: { [key: string]: string } = useSpring({
     to: open ? closedTransformationConfig : openedTransformationConfig,
     config: { mass: 1, friction: 15, tension: 75 }
@@ -39,6 +39,10 @@ export const MenuButton: React.FCX = ({ className }) => {
   );
 };
 
-export const StyledMenuButton = styled(MenuButton)``;
+export const StyledMenuButton = styled(MenuButton)`
+  position: fixed;
+  top: 0;
+  right: 0;
+`;
 
-export default MenuButton;
+export default StyledMenuButton;

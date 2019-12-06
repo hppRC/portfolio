@@ -7,15 +7,14 @@ import { MenuContainer } from '../../store';
 
 const SideMenu: React.FCX = ({ className }) => {
   const { open } = MenuContainer.useContainer();
-  const props = useSpring({
+  const settings = useSpring({
     config: { mass: 1, friction: 15, tension: 75 },
-    from: { o: 0, opacity: 0 },
-    o: 1,
+    from: { opacity: 0 },
     opacity: open ? 1 : 0,
-    width: open ? 200 : 0
+    transform: open ? 'translate3d(0px, 0px, 0px)' : 'translate3d(200px, 0, 0)'
   });
   return (
-    <animated.nav className={className} style={{ ...props }}>
+    <animated.nav className={className} style={{ ...settings }}>
       <InnerNav />
       <OuterNav />
     </animated.nav>
@@ -25,11 +24,11 @@ const SideMenu: React.FCX = ({ className }) => {
 export const StyledSideMenu = styled(SideMenu)`
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
-  overflow: hidden;
+  width: 20vw;
 
   border: solid 1px #fff;
   background-color: #09090fb5;

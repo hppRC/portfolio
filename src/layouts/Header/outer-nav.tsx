@@ -5,6 +5,9 @@ import { animated } from 'react-spring';
 const OuterNav = () => (
   <ul>
     <animated.li>
+      <a href='https://blog.hpprc.com'>blog</a>
+    </animated.li>
+    <animated.li>
       <a href='https://github.com/hppRC'>github</a>
     </animated.li>
     <animated.li>

@@ -18,9 +18,6 @@ const InnerNav = () => (
       <Link to='/works'>works</Link>
     </animated.li>
     <animated.li>
-      <Link to='/posts'>posts</Link>
-    </animated.li>
-    <animated.li>
       <Link to='/contact'>contact</Link>
     </animated.li>
   </ul>

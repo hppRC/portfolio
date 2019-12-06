@@ -5,11 +5,13 @@ import styled from '@emotion/styled';
 
 const Menu: React.FCX = ({ className }) => (
   <aside className={className}>
-    <MenuButton />
     <SideMenu />
+    <MenuButton />
   </aside>
 );
 
-export const StyledMenu = styled(Menu)``;
+export const StyledMenu = styled(Menu)`
+  width: 100vw;
+`;
 
 export default StyledMenu;
