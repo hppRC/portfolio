@@ -4,9 +4,9 @@ import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
 
 const Contact: React.FCX = ({ className }) => (
-  <div className={className}>
+  <main className={className}>
     <h1>Contact</h1>
-  </div>
+  </main>
 );
 
 const StyledContact = styled(Contact)`
@@ -15,7 +15,7 @@ const StyledContact = styled(Contact)`
 
 export default () => (
   <>
-    <SEO title='Contact' pathname='/Contact' />
+    <SEO title='Contact' pathname='/contact' />
     <StyledContact />
   </>
 );

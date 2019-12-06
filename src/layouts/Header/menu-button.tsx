@@ -19,10 +19,12 @@ const closedTransformationConfig = {
 
 const MenuButton: React.FCX = ({ className }) => {
   const { open, toggle } = MenuContainer.useContainer();
+
   const { top, center, bottom, color }: { [key: string]: string } = useSpring({
     to: open ? closedTransformationConfig : openedTransformationConfig,
     config: { mass: 1, friction: 15, tension: 75 }
   });
+
   return (
     <animated.svg
       width='44'

@@ -1,12 +1,21 @@
 import React from 'react';
 import { SEO } from '../components';
 import styled from '@emotion/styled';
+import baseStyle from '../styles/base-style';
 
-export const NotFound = () => (
-  <>
-    <SEO title='Not Found' description='404 page' />
-    <h1>Not found</h1>
-  </>
+const NotFound: React.FCX = ({ className }) => (
+  <main className={className}>
+    <h1>Not Found</h1>
+  </main>
 );
 
-export default styled(NotFound)``;
+const StyledNotFound = styled(NotFound)`
+  ${baseStyle};
+`;
+
+export default () => (
+  <>
+    <SEO title='404 NotFound' />
+    <StyledNotFound />
+  </>
+);

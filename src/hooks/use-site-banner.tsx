@@ -9,6 +9,9 @@ type Props = {
   };
 };
 
+/**
+ * use site's default banner's fluid object
+ */
 export const useSiteBanner = () => {
   const data = useStaticQuery<Props>(graphql`
     query {

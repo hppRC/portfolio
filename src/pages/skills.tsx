@@ -4,9 +4,9 @@ import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
 
 const Skills: React.FCX = ({ className }) => (
-  <div className={className}>
+  <main className={className}>
     <h1>Skills</h1>
-  </div>
+  </main>
 );
 
 const StyledSkills = styled(Skills)`

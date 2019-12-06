@@ -2,12 +2,11 @@ import React from 'react';
 import { SEO } from '../components';
 import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
-import AboutMDX from '../mdx/about.mdx';
 
 const About: React.FCX = ({ className }) => (
-  <div className={className}>
-    <AboutMDX />
-  </div>
+  <main className={className}>
+    <h1>About</h1>
+  </main>
 );
 
 const StyledAbout = styled(About)`
