@@ -8,7 +8,7 @@ import { MenuContainer } from '../../store';
 const SideMenu: React.FCX = ({ className }) => {
   const { open } = MenuContainer.useContainer();
   const settings = useSpring({
-    config: { mass: 1, friction: 15, tension: 75 },
+    config: { mass: 0.7, friction: 20, tension: 100 },
     from: { opacity: 0 },
     opacity: open ? 1 : 0,
     transform: open ? 'translate3d(0px, 0, 0)' : 'translate3d(200px, 0, 0)'

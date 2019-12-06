@@ -55,7 +55,7 @@ const SkillsTable: React.FCX = ({ className }) => {
   // This will orchestrate the two animations above, comment the last arg and it creates a sequence
   useChain(open ? [springRef, transRef] : [transRef, springRef], [
     0,
-    open ? 0.1 : 1.51
+    open ? 0.1 : 1.5
   ]);
 
   return (
@@ -89,7 +89,7 @@ export const StyledSkillsTable = styled(SkillsTable)`
     grid-template-columns: repeat(1, 1fr);
   }
 
-  will-change: padding, grid-gap, height, width;
+  will-change: height, width;
 `;
 
 export default StyledSkillsTable;

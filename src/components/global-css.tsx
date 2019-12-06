@@ -18,6 +18,7 @@ export const GlobalCSS = () => (
           list-style-position: inside;
           overflow-x: hidden;
           overscroll-behavior-y: none;
+          box-sizing: border-box;
         }
       }
     `}
