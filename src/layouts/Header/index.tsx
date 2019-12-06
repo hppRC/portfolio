@@ -8,6 +8,11 @@ const Header: React.FCX = ({ className }) => (
   </header>
 );
 
-export const StyledHeader = styled(Header)``;
+export const StyledHeader = styled(Header)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+`;
 
 export default StyledHeader;
