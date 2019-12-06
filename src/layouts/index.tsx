@@ -8,7 +8,7 @@ export const Layout: React.FC = ({ children }) => (
     <ResetCSS />
     <GlobalCSS />
     <Header />
-    <main>{children}</main>
+    {children}
     <Footer />
   </>
 );

@@ -6,6 +6,9 @@ export const GlobalCSS = () => (
     styles={css`
       html {
         body {
+          position: absolute;
+          top: 0;
+          left: 0;
           background-color: #09090f;
           color: #fff;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { SEO } from '../components';
 import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
+import { StyledBackground as Background } from '../internal/index/background';
 
 const Index: React.FCX = ({ className }) => (
   <main className={className}>
@@ -16,6 +17,7 @@ const StyledIndex = styled(Index)`
 export default () => (
   <>
     <SEO title='Top' pathname='/' />
+    <Background />
     <StyledIndex />
   </>
 );
