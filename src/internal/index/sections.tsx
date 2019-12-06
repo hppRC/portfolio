@@ -1,11 +1,12 @@
 import React from 'react';
 import IntroMDX from './intro.mdx';
 import AboutMDX from './about.mdx';
-import SkillsMDX from './about.mdx';
-import WorksMDX from './about.mdx';
-import EventsMDX from './about.mdx';
+import SkillsMDX from './skills.mdx';
+import WorksMDX from './works.mdx';
+import EventsMDX from './events.mdx';
 import styled from '@emotion/styled';
 import indexBaseStyle from '../../styles/index-base-style';
+import { StyledSkillsTable as SkillsTable } from './skills-table';
 
 const Intro: React.FCX = ({ className }) => (
   <section className={className}>
@@ -28,10 +29,14 @@ export const StyledAbout = styled(About)`
 const Skills: React.FCX = ({ className }) => (
   <section className={className}>
     <SkillsMDX />
+    <SkillsTable />
   </section>
 );
 export const StyledSkills = styled(Skills)`
   ${indexBaseStyle}
+  > div:nth-of-type(1) {
+    padding-bottom: 4rem;
+  }
 `;
 
 const Works: React.FCX = ({ className }) => (
