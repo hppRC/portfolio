@@ -1,29 +1,17 @@
-# gatsby-starter-hpp
+# hpp Portfolio
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bbee222e-f232-452e-b6ba-d58f6c1af937/deploy-status)](https://app.netlify.com/sites/gatsby-starter-hpp/deploys)
+個人用ポートフォリオです
 
-simplest gatsby skelton.
+Gatsby.js + Netlify + Netlify CMSで作りました.
 
-## Recomendation
+以下使用技術
+- React.js
+- Gatsby.js
+- TypeScript
+- MDX
+- PWA
+- Netlify
+- Netlify CMS
+- unstated
 
-- node.js  
-    `version: 13.2.0`
-- yarn  
-    `version: 19.2.0`
-
-## Get Started
-
-1. install node modules
-```
-$ yarn
-```
-
-2. start development server
-```
-$ yarn start
-```
-
-thanks to:  
-[https://qiita.com/Takepepe](https://qiita.com/Takepepe/items/144209f860fbe4d5e9bb)  
-[https://www.lekoarts.de/](https://www.lekoarts.de/)  
-[LekoArts/gatsby-themes](https://github.com/LekoArts/gatsby-themes)  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f0c23915-d489-456c-af53-a865b98ac8ba/deploy-status)](https://app.netlify.com/sites/hpprc/deploys)
