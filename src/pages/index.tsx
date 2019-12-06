@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
 import { StyledBackground as Background } from '../internal/index/background';
 import { StyledTopMessage as TopMessage } from '../internal/index/top-message';
+import { StyledSkillsTable as SkillsTable } from '../internal/index/skills-table';
 
 const Index: React.FCX = ({ className }) => (
   <main className={className}>
@@ -20,6 +21,7 @@ export default () => (
     <SEO title='Top' pathname='/' />
     <Background />
     <TopMessage />
+    <SkillsTable />
     <StyledIndex />
   </>
 );

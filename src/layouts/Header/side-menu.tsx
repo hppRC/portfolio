@@ -34,6 +34,8 @@ export const StyledSideMenu = styled(SideMenu)`
 
   border: solid 1px #fff;
   background-color: #09090fb5;
+
+  will-change: transform;
 `;
 
 export default StyledSideMenu;
