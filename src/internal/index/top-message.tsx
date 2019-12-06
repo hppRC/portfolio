@@ -47,8 +47,10 @@ export const StyledTopMessage = styled(TopMessage)`
   flex-flow: column;
   width: 100vw;
   height: 100vh;
+
   padding: 5rem 10%;
   font-size: 3.5rem;
+
   @media screen and (max-width: 768px) {
     padding: 4rem 8%;
     font-size: 3.15rem;

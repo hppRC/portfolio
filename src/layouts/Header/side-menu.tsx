@@ -11,7 +11,7 @@ const SideMenu: React.FCX = ({ className }) => {
     config: { mass: 1, friction: 15, tension: 75 },
     from: { opacity: 0 },
     opacity: open ? 1 : 0,
-    transform: open ? 'translate3d(0px, 0, 0)' : 'translate3d(20vw, 0, 0)'
+    transform: open ? 'translate3d(0px, 0, 0)' : 'translate3d(200px, 0, 0)'
   });
   return (
     <animated.nav className={className} style={{ ...settings }}>
@@ -30,7 +30,7 @@ export const StyledSideMenu = styled(SideMenu)`
   right: 0;
 
   height: 100vh;
-  width: 20vw;
+  width: 200px;
 
   border: solid 1px #fff;
   background-color: #09090fb5;
