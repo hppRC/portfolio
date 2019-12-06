@@ -2,12 +2,24 @@ import React from 'react';
 import { SEO } from '../components';
 import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
-import { Background, TopMessage } from '../internal/index';
+import {
+  Background,
+  TopMessage,
+  Intro,
+  About,
+  Skills,
+  Works,
+  Events
+} from '../internal/index';
 
 const Index: React.FCX = ({ className }) => (
   <main className={className}>
     <TopMessage />
-    <h1>Gatsby Starter hpp</h1>
+    <Intro />
+    <About />
+    <Skills />
+    <Works />
+    <Events />
   </main>
 );
 
