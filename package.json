@@ -52,6 +52,7 @@
     "react-helmet": "^5.2.1",
     "react-spring": "^8.0.27",
     "react-three-fiber": "^3.0.15",
+    "three": "^0.111.0",
     "typescript": "^3.7.2",
     "unstated-next": "^1.1.0",
     "webpack": "^4.41.2"
