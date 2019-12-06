@@ -17,7 +17,7 @@ const closedTransformationConfig = {
   color: '#fff'
 };
 
-export const MenuButton: React.FCX = ({ className }) => {
+const MenuButton: React.FCX = ({ className }) => {
   const { open, toggle } = MenuContainer.useContainer();
   const { top, center, bottom, color }: { [key: string]: string } = useSpring({
     to: open ? closedTransformationConfig : openedTransformationConfig,

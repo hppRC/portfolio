@@ -1,25 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { animated } from 'react-spring';
 
-const InnerNav = () => (
-  <ul>
-    <animated.li>
-      <Link to='/'>top</Link>
-    </animated.li>
-    <animated.li>
-      <Link to='/about'>about</Link>
-    </animated.li>
-    <animated.li>
-      <Link to='/skills'>skills</Link>
-    </animated.li>
-    <animated.li>
-      <Link to='/works'>works</Link>
-    </animated.li>
-    <animated.li>
-      <Link to='/contact'>contact</Link>
-    </animated.li>
+type Props = {
+  to: string;
+};
+
+const Internal: React.FCX<Props> = ({ to, children }) => (
+  <li>
+    <Link to={to}>{children}</Link>
+  </li>
+);
+
+const InnerNav: React.FCX = ({ className }) => (
+  <ul className={className}>
+    <Internal to='/'>Top</Internal>
+    <Internal to='/about'>About</Internal>
+    <Internal to='/skills'>Skills</Internal>
+    <Internal to='/works'>Works</Internal>
+    <Internal to='/contact'>Contact</Internal>
   </ul>
 );
 

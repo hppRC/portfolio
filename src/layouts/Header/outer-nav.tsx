@@ -1,21 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { animated } from 'react-spring';
 
-const OuterNav = () => (
-  <ul>
-    <animated.li>
-      <a href='https://blog.hpprc.com'>blog</a>
-    </animated.li>
-    <animated.li>
-      <a href='https://github.com/hppRC'>github</a>
-    </animated.li>
-    <animated.li>
-      <a href={`https://twitter.com/osaremochi`}>twitter</a>
-    </animated.li>
-    <animated.li>
-      <a href={`https://qiita.com/hppRC`}>Qiita</a>
-    </animated.li>
+type Props = {
+  href: string;
+};
+
+const External: React.FCX<Props> = ({ href, children }) => (
+  <li>
+    <a href={href} target='_blank' rel='noopener norefferer'>
+      {children}
+    </a>
+  </li>
+);
+
+const OuterNav: React.FCX = ({ className }) => (
+  <ul className={className}>
+    <External href={'https://blog.hpprc.com'}>blog</External>
+    <External href={'https://github.com/hppRC'}>GitHub</External>
+    <External href={'https://twitter.com/osaremochi'}>Twitter</External>
+    <External href={'https://qiita.com/hppRC'}>Qiita</External>
   </ul>
 );
 
