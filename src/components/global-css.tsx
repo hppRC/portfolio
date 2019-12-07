@@ -6,19 +6,14 @@ export const GlobalCSS = () => (
     styles={css`
       html {
         body {
-          position: absolute;
-          top: 0;
-          left: 0;
           background-color: #09090f;
           color: #fff;
 
           font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
             Roboto, 'メイリオ', sans-serif;
 
-          list-style-position: inside;
           overflow-x: hidden;
           overscroll-behavior-y: none;
-          box-sizing: border-box;
         }
       }
     `}
