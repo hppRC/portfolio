@@ -10,15 +10,15 @@ import {
   About,
   Skills,
   Works,
-  Events,
-  Loading
+  Events
+  //  Loading
 } from '../internal/index';
 
 const Index: React.FCX = ({ className }) => {
-  const waiting = useDelay(1000);
+  //const waiting = useDelay(1000);
   return (
     <main className={className}>
-      {waiting ? <Loading /> : <TopMessage />}
+      <TopMessage />
       <Intro />
       <About />
       <Skills />
