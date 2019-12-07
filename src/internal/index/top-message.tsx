@@ -2,11 +2,11 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import styled from '@emotion/styled';
 import { StyledHppPortfolio as HppPortfolio } from './hpp-portfolio';
-import { isMobile } from 'react-device-detect';
+import { isMobileOnly } from 'react-device-detect';
 
 const config = {
   from: { opacity: 0, height: 0 },
-  enter: { opacity: 1, height: isMobile ? 40 : 60 },
+  enter: { opacity: 1, height: isMobileOnly ? 40 : 60 },
   leave: { opacity: 0, height: 0 }
 };
 

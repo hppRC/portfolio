@@ -2,19 +2,20 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { animated, useSpring } from 'react-spring';
 import { MenuContainer } from '../../store';
+import { isMobileOnly } from 'react-device-detect';
 
 const openedTransformationConfig = {
-  top: 'translate(2, 7) rotate(0)',
-  center: 'translate(2, 19) rotate(0)',
-  bottom: 'translate(2, 31) rotate(0)',
-  color: '#fff'
+  top: `translate(2, ${isMobileOnly ? 7 : 10.5}) rotate(0)`,
+  center: `translate(2, ${isMobileOnly ? 19 : 28.5}) rotate(0)`,
+  bottom: `translate(2, ${isMobileOnly ? 31 : 46.5}) rotate(0)`,
+  color: `#fff`
 };
 
 const closedTransformationConfig = {
-  top: 'translate(5, 32) rotate(-45)',
-  center: 'translate(10, 4) rotate(45)',
-  bottom: 'translate(5, 32) rotate(-45)',
-  color: '#fff'
+  top: `translate(5, ${isMobileOnly ? 32 : 48}) rotate(-45)`,
+  center: `translate(10, ${isMobileOnly ? 4 : 6}) rotate(45)`,
+  bottom: `translate(5, ${isMobileOnly ? 32 : 48}) rotate(-45)`,
+  color: `#fff`
 };
 
 const MenuButton: React.FCX = ({ className }) => {
@@ -27,16 +28,31 @@ const MenuButton: React.FCX = ({ className }) => {
 
   return (
     <animated.svg
-      width='44'
-      height='44'
-      viewBox='0 0 44 44'
+      width={isMobileOnly ? 44 : 66}
+      height={isMobileOnly ? 44 : 66}
+      viewBox={isMobileOnly ? '0 0 44 44' : '0 0 66 66'}
       fill={color}
       onClick={toggle}
       className={className}
     >
-      <animated.rect width='40' height='3' rx='2' transform={top} />
-      <animated.rect width='40' height='3' rx='2' transform={center} />
-      <animated.rect width='40' height='3' rx='2' transform={bottom} />
+      <animated.rect
+        width={isMobileOnly ? 40 : 60}
+        height={isMobileOnly ? 3 : 4}
+        rx='2'
+        transform={top}
+      />
+      <animated.rect
+        width={isMobileOnly ? 40 : 60}
+        height={isMobileOnly ? 3 : 4}
+        rx='3'
+        transform={center}
+      />
+      <animated.rect
+        width={isMobileOnly ? 40 : 60}
+        height={isMobileOnly ? 3 : 4}
+        rx='3'
+        transform={bottom}
+      />
     </animated.svg>
   );
 };

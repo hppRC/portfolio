@@ -11,7 +11,7 @@ export const baseStyle = css`
   padding: 5rem 5% 0 5%;
 
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     padding-bottom: 3rem;
   }
 
