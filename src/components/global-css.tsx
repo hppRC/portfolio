@@ -4,6 +4,7 @@ import { Global, css } from '@emotion/core';
 export const GlobalCSS = () => (
   <Global
     styles={css`
+      @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Lato&display=swap');
       html {
         font-size: 62.5%;
         body {
@@ -11,12 +12,10 @@ export const GlobalCSS = () => (
           color: #fff;
 
           font-size: 1.6em;
-
-          font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
-            Roboto, 'メイリオ', sans-serif;
-
           overflow-x: hidden;
           overscroll-behavior-y: none;
+
+          font-family: 'Lato', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
 
           @media screen and (max-width: 768px) {
             font-size: 1.4rem;
