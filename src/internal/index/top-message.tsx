@@ -49,14 +49,14 @@ export const StyledTopMessage = styled(TopMessage)`
   width: 100%;
   height: 100vh;
 
-  font-size: 3.5rem;
+  font-size: 6rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 3.15rem;
+    font-size: 4.5rem;
   }
 
   @media screen and (max-width: 480px) {
-    font-size: 2.85rem;
+    font-size: 3.5rem;
   }
 `;
 

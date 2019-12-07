@@ -8,13 +8,13 @@ export const baseStyle = css`
   min-height: 90vh;
 
   margin: 0 auto;
-  padding: 6rem 10%;
+  padding: 0 10%;
 
   @media screen and (max-width: 768px) {
-    padding: 6rem 7.5%;
+    padding: 0 7.5%;
   }
   @media screen and (max-width: 480px) {
-    padding: 6rem 5%;
+    padding: 0 5%;
   }
 `;
 

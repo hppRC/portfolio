@@ -2,6 +2,7 @@ import React from 'react';
 import { SEO } from '../components';
 import styled from '@emotion/styled';
 import baseStyle from '../styles/base-style';
+import { useDelay } from '../hooks';
 import {
   Background,
   TopMessage,
@@ -25,13 +26,15 @@ const Index: React.FCX = ({ className }) => (
 
 const StyledIndex = styled(Index)`
   ${baseStyle};
-  padding-top: 0;
 `;
 
-export default () => (
-  <>
-    <SEO title='Top' pathname='/' />
-    <Background />
-    <StyledIndex />
-  </>
-);
+export default () => {
+  const waiting = useDelay(1000);
+  return (
+    <>
+      <SEO title='Top' pathname='/' />
+      {!waiting && <Background />}
+      <StyledIndex />
+    </>
+  );
+};
