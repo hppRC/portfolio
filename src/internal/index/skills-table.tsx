@@ -86,7 +86,6 @@ export const StyledSkillsTable = styled(SkillsTable)`
   }
 
   @media screen and (max-width: 480px) {
-    grid-template-columns: repeat(1, 1fr);
   }
 
   will-change: height, width;

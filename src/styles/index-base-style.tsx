@@ -7,19 +7,22 @@ export const indexBaseStyle = css`
   min-height: 100vh;
   list-style-position: inside;
   padding: 5rem 0;
+
   > h1:first-of-type {
     margin: 0 auto;
     padding: 4rem 0;
-    font-size: 4rem;
+    font-size: 5rem;
   }
+
   @media screen and (max-width: 768px) {
     > h1:first-of-type {
-      font-size: 3.6rem;
+      font-size: 4rem;
     }
   }
+
   @media screen and (max-width: 480px) {
     > h1:first-of-type {
-      font-size: 2.4rem;
+      font-size: 3rem;
     }
   }
 `;

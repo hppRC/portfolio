@@ -22,6 +22,22 @@ const OuterNav: React.FCX = ({ className }) => (
   </ul>
 );
 
-export const StyledOuterNav = styled(OuterNav)``;
+export const StyledOuterNav = styled(OuterNav)`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  li {
+    padding: 0.3rem 0;
+    a {
+      font-size: 3rem;
+      text-decoration: none;
+      color: #fff;
+      transition: opacity 0.3s;
+      :hover {
+        opacity: 0.6;
+      }
+    }
+  }
+`;
 
 export default StyledOuterNav;

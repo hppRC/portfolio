@@ -5,7 +5,7 @@ import { StyledHppPortfolio as HppPortfolio } from './hpp-portfolio';
 
 const config = {
   from: { opacity: 0, height: 0 },
-  enter: { opacity: 1, height: 50 },
+  enter: { opacity: 1, height: 60 },
   leave: { opacity: 0, height: 0 }
 };
 
@@ -49,14 +49,14 @@ export const StyledTopMessage = styled(TopMessage)`
   width: 100%;
   height: 100vh;
 
-  font-size: 6rem;
+  font-size: 5rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   @media screen and (max-width: 480px) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 `;
 

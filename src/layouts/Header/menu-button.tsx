@@ -45,6 +45,7 @@ export const StyledMenuButton = styled(MenuButton)`
   position: fixed;
   top: 0;
   right: 0;
+  cursor: pointer;
 `;
 
 export default StyledMenuButton;

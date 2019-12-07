@@ -8,12 +8,14 @@ const Card: React.FCX<{ href: string }> = ({ href, className, children }) => (
 
 export const StyledCard = styled(Card)`
   position: relative;
+  background-color: #151519;
 
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
 
   transition: all 0.3s ease 0s;
   :hover {
-    box-shadow: 0 3px 6px 0 #000;
+    box-shadow: 0 10px 15px 0 #000;
     transform: translateY(-0.1875em);
 
     ::before {
@@ -26,7 +28,7 @@ export const StyledCard = styled(Card)`
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.05);
     }
   }
 
@@ -36,6 +38,12 @@ export const StyledCard = styled(Card)`
 
     img {
       width: 100%;
+    }
+    h2 {
+      padding: 2rem;
+    }
+    p {
+      padding: 2rem;
     }
   }
 

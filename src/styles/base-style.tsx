@@ -11,10 +11,8 @@ export const baseStyle = css`
   padding: 0 5%;
 
   @media screen and (max-width: 768px) {
-    padding: 0 4%;
   }
   @media screen and (max-width: 480px) {
-    padding: 0 2.5%;
   }
 `;
 
