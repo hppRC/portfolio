@@ -1,15 +1,23 @@
 import React from 'react';
-import { Layout } from '../layouts';
-import { Works } from '../internal/works';
+import { SEO } from '../components';
 import styled from '@emotion/styled';
-import { PageBaseTheme } from '../themes';
+import baseStyle from '../styles/base-style';
+import { StyledWorkCards as WorkCards } from '../internal/works/work-cards';
 
-const Theme = styled(PageBaseTheme)``;
+const Works: React.FCX = ({ className }) => (
+  <main className={className}>
+    <h1>Works</h1>
+    <WorkCards />
+  </main>
+);
+
+const StyledWorks = styled(Works)`
+  ${baseStyle};
+`;
 
 export default () => (
-    <Layout>
-        <Theme>
-            <Works />
-        </Theme>
-    </Layout>
+  <>
+    <SEO title='Works' pathname='/works' />
+    <StyledWorks />
+  </>
 );

@@ -1,15 +1,24 @@
 import React from 'react';
-import { Layout } from '../layouts';
-import { Contact } from '../internal/contact';
+import { SEO } from '../components';
 import styled from '@emotion/styled';
-import { PageBaseTheme } from '../themes';
+import baseStyle from '../styles/base-style';
+import { StyledForm as Form } from '../internal/contact/form';
 
-const Theme = styled(PageBaseTheme)``;
+const Contact: React.FCX = ({ className }) => (
+  <main className={className}>
+    <h1>Contact</h1>
+    <Form />
+  </main>
+);
+
+const StyledContact = styled(Contact)`
+  ${baseStyle};
+  padding-top: 5rem;
+`;
 
 export default () => (
-	<Layout>
-		<Theme>
-			<Contact />
-		</Theme>
-	</Layout>
+  <>
+    <SEO title='Contact' pathname='/contact' />
+    <StyledContact />
+  </>
 );

@@ -1,34 +1,40 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
 import { SEO } from '../components';
-import { IndexPage } from '../internal/index';
-import { IndexPageQuery } from '../../types/graphql-types.d';
+import styled from '@emotion/styled';
+import baseStyle from '../styles/base-style';
+import { useDelay } from '../hooks';
+import {
+  Background,
+  TopMessage,
+  Intro,
+  About,
+  Skills,
+  Works,
+  Events
+} from '../internal/index';
 
-export const Index = ({ data }: { data: IndexPageQuery }) => {
-	const fluid: any = data?.file?.childImageSharp?.fluid;
-	return (
-		<>
-			<SEO
-				title={'hppPortfolio'}
-				desc={'hpp portfolio site.'}
-				banner={fluid?.src}
-				pathname={`/`}
-			/>
-			<IndexPage />
-		</>
-	);
-};
+const Index: React.FCX = ({ className }) => (
+  <main className={className}>
+    <TopMessage />
+    <Intro />
+    <About />
+    <Skills />
+    <Works />
+    <Events />
+  </main>
+);
 
-export const query = graphql`
-	query IndexPage {
-		file(relativePath: { eq: "../images/icon.png" }) {
-			childImageSharp {
-				fluid(maxWidth: 1000, quality: 90) {
-					...GatsbyImageSharpFluid_withWebp_tracedSVG
-				}
-			}
-		}
-	}
+const StyledIndex = styled(Index)`
+  ${baseStyle};
 `;
 
-export default Index;
+export default () => {
+  const waiting = useDelay(1000);
+  return (
+    <>
+      <SEO title='Top' pathname='/' />
+      {!waiting && <Background />}
+      <StyledIndex />
+    </>
+  );
+};

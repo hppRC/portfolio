@@ -1,15 +1,26 @@
 import React from 'react';
-import { Layout } from '../layouts';
-import { About } from '../internal/about';
+import { SEO } from '../components';
 import styled from '@emotion/styled';
-import { PageBaseTheme } from '../themes';
+import baseStyle from '../styles/base-style';
+import { StyledIntroduction as Introduction } from '../internal/about';
 
-const Theme = styled(PageBaseTheme)``;
+const About: React.FCX = ({ className }) => (
+  <main className={className}>
+    <h1>About</h1>
+    <Introduction />
+  </main>
+);
+
+const StyledAbout = styled(About)`
+  ${baseStyle};
+  h1 {
+    padding-bottom: 0;
+  }
+`;
 
 export default () => (
-	<Layout>
-		<Theme>
-			<About />
-		</Theme>
-	</Layout>
+  <>
+    <SEO title='About' pathname='/about' />
+    <StyledAbout />
+  </>
 );

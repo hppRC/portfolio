@@ -1,12 +1,10 @@
-export { default as AboutMDX } from './documents/about.mdx';
-export { default as IntroMDX } from './documents/intro.mdx';
-export { default as EventsMDX } from './documents/events.mdx';
-export { default as SkillsMDX } from './documents/skills.mdx';
-export * from './components/BackgroundArt';
-export * from './components/About';
-export * from './components/Intro';
-export * from './components/Skills';
-export * from './components/Events';
-export * from './components/TopMessage';
-export * from './components/Background';
-export * from './components/IndexPage';
+export { default as Background } from './background';
+export { default as SkillsTable } from './skills-table';
+export { default as TopMessage } from './top-message';
+export {
+  StyledIntro as Intro,
+  StyledAbout as About,
+  StyledSkills as Skills,
+  StyledWorks as Works,
+  StyledEvents as Events
+} from './sections';

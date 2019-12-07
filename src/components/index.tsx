@@ -1,3 +1,3 @@
-export * from './AllPosts';
-export * from './AllTags';
-export * from './SEO';
+export * from './global-css';
+export * from './reset-css';
+export * from './seo';
