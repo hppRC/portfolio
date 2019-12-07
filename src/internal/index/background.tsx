@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
+import { isMobile } from 'react-device-detect';
 
 const vertexSource = `
 precision mediump float;
@@ -17,7 +18,7 @@ void main() {
 		(cos(time * .23 - position.x) + 1.) * position.y + position.y * (1. / time + sin(position.z + 0.5 * time) * position.y * cos(0.001*0.5 * time + position.z + sin(cos(sin(1. - sin(0.5 * time) * cos(0.5 * time)) + sin(0.5 * time)) + sin(cos(0.5 * time)) + 0.5 * time * sin(position.y))) * cos(position.x * cos(sin(0.23 * time)))),
 		position.z + position.z * (1. / abs(0.5 * time - 100.) + cos(0.0025*0.5 * time) * position.z + sin(sin(position.y * sin(cos(0.5 * time) + 0.5 * time * sin(position.y)) * cos(position.x * cos(sin(0.3218 * time - 2.2))))))
 		);
-	gl_PointSize = 1.0;
+	gl_PointSize = ${isMobile ? 0.75 : 1.0};
 	gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
 `;
@@ -50,7 +51,7 @@ const Thing = () => {
   const [positions, colors] = useMemo(() => {
     let positions = [];
     let colors = [];
-    const points = 50000;
+    const points = isMobile ? 25000 : 50000;
     for (let i = 0; i < points; i++) {
       positions.push(Math.random() * 2.0 - 1.0);
       positions.push(Math.random() * 2.0 - 1.0);

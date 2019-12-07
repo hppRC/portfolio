@@ -18,9 +18,11 @@ export const StyledItem = styled(Item)`
   fill: #fff;
   color: #fff;
 
+  font-size: 2rem;
+
   i svg {
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
   }
   will-change: transform, opacity, width, height;
 `;

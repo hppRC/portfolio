@@ -11,18 +11,18 @@ export const indexBaseStyle = css`
   > h1:first-of-type {
     margin: 0 auto;
     padding: 4rem 0;
-    font-size: 5rem;
+    font-size: 6rem;
   }
 
   @media screen and (max-width: 768px) {
     > h1:first-of-type {
-      font-size: 4rem;
+      font-size: 5rem;
     }
   }
 
   @media screen and (max-width: 480px) {
     > h1:first-of-type {
-      font-size: 3rem;
+      font-size: 4rem;
     }
   }
 `;
