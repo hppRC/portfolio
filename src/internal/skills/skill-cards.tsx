@@ -10,10 +10,10 @@ const SkillCards: React.FCX = ({ className }) => (
 
 export const StyledSkillCards = styled(SkillCards)`
   ul {
-    padding: 4rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 4rem;
+    padding: 4rem 0;
     width: 100%;
 
     li {
