@@ -22,13 +22,13 @@ export const StyledSkillCards = styled(SkillCards)`
     }
 
     @media screen and (max-width: 768px) {
-      grid-template-columns: repeat(1, 1fr);
       li {
         padding: 0.75rem 0;
       }
     }
 
     @media screen and (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr);
       li {
         padding: 0.5rem 0;
       }

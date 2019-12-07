@@ -6,12 +6,16 @@ import { StyledIntroduction as Introduction } from '../internal/about';
 
 const About: React.FCX = ({ className }) => (
   <main className={className}>
+    <h1>About</h1>
     <Introduction />
   </main>
 );
 
 const StyledAbout = styled(About)`
   ${baseStyle};
+  h1 {
+    padding-bottom: 0;
+  }
 `;
 
 export default () => (

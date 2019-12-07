@@ -6,6 +6,7 @@ import { StyledWorkCards as WorkCards } from '../internal/works/work-cards';
 
 const Works: React.FCX = ({ className }) => (
   <main className={className}>
+    <h1>Works</h1>
     <WorkCards />
   </main>
 );

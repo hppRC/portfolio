@@ -8,11 +8,6 @@ const WorkCards: React.FCX = ({ className }) => (
 );
 
 export const StyledWorkCards = styled(WorkCards)`
-  padding-top: 4rem;
-  h1 {
-    font-size: 5rem;
-    padding-top: 2rem;
-  }
   p {
     padding: 2rem 0 6rem 0;
   }

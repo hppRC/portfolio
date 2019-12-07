@@ -6,6 +6,7 @@ import { StyledSkillCards as SkillCards } from '../internal/skills/skill-cards';
 
 const Skills: React.FCX = ({ className }) => (
   <main className={className}>
+    <h1>Skills</h1>
     <SkillCards />
   </main>
 );

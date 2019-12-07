@@ -8,7 +8,12 @@ export const baseStyle = css`
   min-height: 90vh;
 
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 5rem 5% 0 5%;
+
+  h1 {
+    font-size: 5rem;
+    padding-bottom: 3rem;
+  }
 
   @media screen and (max-width: 768px) {
   }
