@@ -10,26 +10,31 @@ import {
   About,
   Skills,
   Works,
-  Events
+  Events,
+  Loading
 } from '../internal/index';
 
-const Index: React.FCX = ({ className }) => (
-  <main className={className}>
-    <TopMessage />
-    <Intro />
-    <About />
-    <Skills />
-    <Works />
-    <Events />
-  </main>
-);
+const Index: React.FCX = ({ className }) => {
+  const waiting = useDelay(1000);
+  return (
+    <main className={className}>
+      {waiting ? <Loading /> : <TopMessage />}
+      <Intro />
+      <About />
+      <Skills />
+      <Works />
+      <Events />
+    </main>
+  );
+};
 
 const StyledIndex = styled(Index)`
   ${baseStyle};
+  padding-top: 0;
 `;
 
 export default () => {
-  const waiting = useDelay(1000);
+  const waiting = useDelay(2000);
   return (
     <>
       <SEO title='Top' pathname='/' />

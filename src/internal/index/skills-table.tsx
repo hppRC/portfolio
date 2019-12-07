@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from '@emotion/styled';
-import { useTransition, useSpring, useChain, config } from 'react-spring';
+import { useTransition, useSpring, useChain } from 'react-spring';
 import { animated } from 'react-spring';
 import { Link } from 'gatsby';
 import { StyledItem as Item } from './skills-table-item';
@@ -13,18 +13,20 @@ const SkillsTable: React.FCX = ({ className }) => {
   const springRef: any = useRef();
   const { opacity, ...rest }: any = useSpring({
     ref: springRef,
-    config: config.stiff,
+    config: { mass: 0.1, frictoin: 25, tension: 150 },
     from: {
       width: '5%',
       opacity: 1,
       gridGap: '0vw',
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
+      cursor: 'pointer'
     },
     to: {
       width: open ? '100%' : '5%',
       opacity: open ? 0 : 1,
       gridGap: open ? '2vw' : '0vw',
-      backgroundColor: open ? '#ffffff00' : '#fff'
+      backgroundColor: open ? '#ffffff00' : '#fff',
+      cursor: open ? 'default' : 'pointer'
     }
   });
 
@@ -59,11 +61,7 @@ const SkillsTable: React.FCX = ({ className }) => {
   ]);
 
   return (
-    <animated.div
-      className={className}
-      style={{ ...rest, cursor: open ? 'default' : 'pointer' }}
-      onClick={toggle}
-    >
+    <animated.div className={className} style={{ ...rest }} onClick={toggle}>
       {transitions.map(({ item, key, props }) => (
         <Link key={key} to={`/skills#${item.id}`}>
           <Item icon={item.icon} name={item.name} style={{ ...props }} />
@@ -82,10 +80,11 @@ export const StyledSkillsTable = styled(SkillsTable)`
   margin: 0 auto;
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   will-change: height, width;

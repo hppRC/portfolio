@@ -8,3 +8,4 @@ export {
   StyledWorks as Works,
   StyledEvents as Events
 } from './sections';
+export { StyledLoading as Loading } from './loading';
