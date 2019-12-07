@@ -74,10 +74,15 @@ const SkillsTable: React.FCX = ({ className }) => {
 export const StyledSkillsTable = styled(SkillsTable)`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 2rem;
-  border: solid 1px #fff;
+  min-width: 5rem;
+  min-height: 5rem;
+
   border-radius: 5px;
   margin: 0 auto;
+
+  a {
+    text-decoration: none;
+  }
 
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
