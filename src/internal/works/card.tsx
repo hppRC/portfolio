@@ -9,9 +9,12 @@ const Card: React.FCX<{ href: string }> = ({ href, className, children }) => (
 export const StyledCard = styled(Card)`
   position: relative;
   background-color: #151519;
+  pointer-events: none;
 
   width: 100%;
   height: 100%;
+
+  border-radius: 5px;
 
   transition: all 0.3s ease 0s;
   :hover {
@@ -33,6 +36,11 @@ export const StyledCard = styled(Card)`
   }
 
   a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    pointer-events: auto;
     color: #fff;
     text-decoration: none;
 

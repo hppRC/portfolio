@@ -43,8 +43,8 @@ const MenuButton: React.FCX = ({ className }) => {
 
 export const StyledMenuButton = styled(MenuButton)`
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 1.5rem;
+  right: 1.5rem;
   cursor: pointer;
 `;
 
