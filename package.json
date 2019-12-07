@@ -58,5 +58,8 @@
     "unstated-next": "^1.1.0",
     "webpack": "^4.41.2"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "resolutions": {
+    "react-helmet/react-side-effect": "2.1.0"
+  }
 }

@@ -2,7 +2,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 import data from './skill-cards-data';
 
-const Card: React.FCX = ({ className, id, children }) => {
+type Props = {
+  id: string;
+};
+
+const Card: React.FCX<Props> = ({ className, id, children }) => {
   const { icon, title } = data[id];
   return (
     <div className={className} id={id}>

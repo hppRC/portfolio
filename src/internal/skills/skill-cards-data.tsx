@@ -14,7 +14,14 @@ import {
   DiNginx
 } from 'react-icons/di';
 
-export default {
+type Data = {
+  [key: string]: {
+    icon: JSX.Element | null;
+    title: string;
+  };
+};
+
+const data: Data = {
   python: { icon: <DiPython />, title: 'Python' },
   c: { icon: null, title: 'C/C++' },
   html: {
@@ -38,3 +45,5 @@ export default {
   docker: { icon: <DiDocker />, title: 'Docker' },
   nginx: { icon: <DiNginx />, title: 'Nginx' }
 };
+
+export default data;
