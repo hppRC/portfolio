@@ -15,7 +15,8 @@ export const GlobalCSS = () => (
           overflow-x: hidden;
           overscroll-behavior-y: none;
 
-          font-family: 'Lato', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+          font-family: -apple-system, 'Hiragino Kaku Gothic ProN', 'Lato',
+            'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
 
           @media screen and (max-width: 768px) {
             font-size: 1.4rem;
