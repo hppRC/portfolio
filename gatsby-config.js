@@ -67,6 +67,13 @@ module.exports = {
         openAnalyzer: false
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: `UA-149661454-1`
+      }
+    },
     // gatsby-plugin-manifest should be described before gatsby-plugin-offline
     {
       resolve: `gatsby-plugin-manifest`,
