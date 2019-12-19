@@ -59,6 +59,7 @@
     "three": "^0.111.0",
     "typescript": "^3.7.2",
     "unstated-next": "^1.1.0",
+    "use-is-in-viewport": "^1.0.7",
     "webpack": "^4.41.2"
   },
   "devDependencies": {},

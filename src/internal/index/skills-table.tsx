@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from '@emotion/styled';
-import { useTransition, useSpring, useChain } from 'react-spring';
-import { animated } from 'react-spring';
+import { useTransition, useSpring, useChain, animated } from 'react-spring';
 import { Link } from 'gatsby';
 import { StyledItem as Item } from './skills-table-item';
 import data from './skills-data';

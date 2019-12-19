@@ -22,7 +22,10 @@ const MenuButton: React.FCX = ({ className }) => {
 
   const { top, center, bottom, color }: { [key: string]: string } = useSpring({
     to: open ? closedTransformationConfig : openedTransformationConfig,
-    config: { mass: 1, friction: 15, tension: 75 }
+    config: { mass: 1, friction: 15, tension: 75 },
+    onStart: () => {
+      console.log('animation start!');
+    }
   });
 
   return (
