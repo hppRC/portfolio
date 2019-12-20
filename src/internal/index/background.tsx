@@ -52,7 +52,7 @@ const Thing = () => {
   const [positions, colors] = useMemo(() => {
     let positions = [];
     let colors = [];
-    const points = isMobile ? 25000 : 50000;
+    const points = isMobile ? 7500 : 50000;
     for (let i = 0; i < points; i++) {
       positions.push(Math.random() * 2.0 - 1.0);
       positions.push(Math.random() * 2.0 - 1.0);
