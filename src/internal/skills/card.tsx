@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from '@emotion/styled';
+
 import data from './skill-cards-data';
 
 type Props = {

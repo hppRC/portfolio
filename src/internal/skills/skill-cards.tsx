@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from '@emotion/styled';
+
 import SkillsMDX from './skills.mdx';
 
 const SkillCards: React.FCX = ({ className }) => (

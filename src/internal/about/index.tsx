@@ -1,6 +1,8 @@
 import React from 'react';
-import AboutMDX from './about.mdx';
+
 import styled from '@emotion/styled';
+
+import AboutMDX from './about.mdx';
 
 const Introduction: React.FCX = ({ className }) => (
   <section className={className}>

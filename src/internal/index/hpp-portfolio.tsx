@@ -1,5 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
+import React, { useEffect, useRef, useState } from 'react';
+import { animated, useTransition } from 'react-spring';
+
 import styled from '@emotion/styled';
 
 const config = {

@@ -1,5 +1,6 @@
-import WorksMDX from './works.mdx';
 import styled from '@emotion/styled';
+
+import WorksMDX from './works.mdx';
 
 const WorkCards: React.FCX = ({ className }) => (
   <section className={className}>

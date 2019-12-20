@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyledSideMenu as SideMenu } from './side-menu';
-import { StyledMenuButton as MenuButton } from './menu-button';
+
 import styled from '@emotion/styled';
+
+import { StyledMenuButton as MenuButton } from './menu-button';
+import { StyledSideMenu as SideMenu } from './side-menu';
 
 const Menu: React.FCX = ({ className }) => (
   <aside className={className}>

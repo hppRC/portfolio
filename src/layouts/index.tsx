@@ -1,7 +1,8 @@
 import React from 'react';
-import { ResetCSS, GlobalCSS } from '../components';
-import { StyledHeader as Header } from './Header';
+
+import { GlobalCSS, ResetCSS } from '../components';
 import { StyledFooter as Footer } from './Footer';
+import { StyledHeader as Header } from './Header';
 
 export const Layout: React.FC = ({ children }) => (
   <>

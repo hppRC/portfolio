@@ -1,17 +1,7 @@
 import React from 'react';
 import {
-  DiRust,
-  DiPython,
-  DiLaravel,
-  DiReact,
-  DiGo,
-  DiHaskell,
-  DiDocker,
-  DiGithubBadge,
-  DiHtml5,
-  DiCss3,
-  DiJavascript,
-  DiNginx
+    DiCss3, DiDocker, DiGithubBadge, DiGo, DiHaskell, DiHtml5, DiJavascript, DiLaravel, DiNginx,
+    DiPython, DiReact, DiRust
 } from 'react-icons/di';
 
 type Data = {

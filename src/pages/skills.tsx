@@ -1,8 +1,10 @@
 import React from 'react';
-import { SEO } from '../components';
+
 import styled from '@emotion/styled';
-import baseStyle from '../styles/base-style';
+
+import { SEO } from '../components';
 import { StyledSkillCards as SkillCards } from '../internal/skills/skill-cards';
+import baseStyle from '../styles/base-style';
 
 const Skills: React.FCX = ({ className }) => (
   <main className={className}>

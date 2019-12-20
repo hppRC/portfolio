@@ -1,15 +1,6 @@
 import {
-  DiRust,
-  DiPython,
-  DiLaravel,
-  DiReact,
-  DiGo,
-  DiHaskell,
-  DiDocker,
-  DiGithubBadge,
-  DiHtml5,
-  DiCss3,
-  DiJsBadge
+    DiCss3, DiDocker, DiGithubBadge, DiGo, DiHaskell, DiHtml5, DiJsBadge, DiLaravel, DiPython,
+    DiReact, DiRust
 } from 'react-icons/di';
 
 export default [

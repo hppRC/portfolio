@@ -1,18 +1,11 @@
 import React from 'react';
-import { SEO } from '../components';
+
 import styled from '@emotion/styled';
-import baseStyle from '../styles/base-style';
+
+import { SEO } from '../components';
 import { useDelay } from '../hooks';
-import {
-  Background,
-  TopMessage,
-  Intro,
-  About,
-  Skills,
-  Works,
-  Events
-  //  Loading
-} from '../internal/index';
+import { About, Background, Events, Intro, Skills, TopMessage, Works } from '../internal/index';
+import baseStyle from '../styles/base-style';
 
 const Index: React.FCX = ({ className }) => {
   //const waiting = useDelay(1000);

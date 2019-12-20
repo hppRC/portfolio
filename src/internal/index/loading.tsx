@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from '@emotion/styled';
+
 //import { animated, useSpring } from 'react-spring';
 
 const Loading: React.FCX = ({ className }) => {

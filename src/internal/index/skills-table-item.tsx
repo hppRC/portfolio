@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { animated } from 'react-spring';
+
+import styled from '@emotion/styled';
 
 const Item = ({ className, icon, name, style }: any) => (
   <animated.div style={style} className={className}>

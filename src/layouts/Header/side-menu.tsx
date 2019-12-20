@@ -1,9 +1,11 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { animated, useSpring } from 'react-spring';
+
+import styled from '@emotion/styled';
+
+import { MenuContainer } from '../../store';
 import { StyledInnerNav as InnerNav } from './inner-nav';
 import { StyledOuterNav as OuterNav } from './outer-nav';
-import { MenuContainer } from '../../store';
 
 const SideMenu: React.FCX = ({ className }) => {
   const { open } = MenuContainer.useContainer();

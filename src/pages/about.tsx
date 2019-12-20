@@ -1,8 +1,10 @@
 import React from 'react';
-import { SEO } from '../components';
+
 import styled from '@emotion/styled';
-import baseStyle from '../styles/base-style';
+
+import { SEO } from '../components';
 import { StyledIntroduction as Introduction } from '../internal/about';
+import baseStyle from '../styles/base-style';
 
 const About: React.FCX = ({ className }) => (
   <main className={className}>

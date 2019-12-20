@@ -1,13 +1,15 @@
 import React, { useRef } from 'react';
-import IntroMDX from './intro.mdx';
+import useIsInViewport from 'use-is-in-viewport';
+
+import styled from '@emotion/styled';
+
+import indexBaseStyle from '../../styles/index-base-style';
 import AboutMDX from './about.mdx';
+import EventsMDX from './events.mdx';
+import IntroMDX from './intro.mdx';
+import { StyledSkillsTable as SkillsTable } from './skills-table';
 import SkillsMDX from './skills.mdx';
 import WorksMDX from './works.mdx';
-import EventsMDX from './events.mdx';
-import styled from '@emotion/styled';
-import indexBaseStyle from '../../styles/index-base-style';
-import { StyledSkillsTable as SkillsTable } from './skills-table';
-import useIsInViewport from 'use-is-in-viewport';
 
 const Intro: React.FCX = ({ className }) => (
   <section className={className}>

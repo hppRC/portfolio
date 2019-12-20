@@ -1,8 +1,10 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
-import styled from '@emotion/styled';
-import { StyledHppPortfolio as HppPortfolio } from './hpp-portfolio';
+import React, { useEffect, useRef, useState } from 'react';
 import { isMobileOnly } from 'react-device-detect';
+import { animated, useTransition } from 'react-spring';
+
+import styled from '@emotion/styled';
+
+import { StyledHppPortfolio as HppPortfolio } from './hpp-portfolio';
 
 const config = {
   from: { opacity: 0, height: 0 },

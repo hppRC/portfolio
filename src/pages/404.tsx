@@ -1,6 +1,8 @@
 import React from 'react';
-import { SEO } from '../components';
+
 import styled from '@emotion/styled';
+
+import { SEO } from '../components';
 import baseStyle from '../styles/base-style';
 
 const NotFound: React.FCX = ({ className }) => (

@@ -1,9 +1,11 @@
-import React, { useState, useRef } from 'react';
-import styled from '@emotion/styled';
-import { useTransition, useSpring, useChain, animated } from 'react-spring';
 import { Link } from 'gatsby';
-import { StyledItem as Item } from './skills-table-item';
+import React, { useRef, useState } from 'react';
+import { animated, useChain, useSpring, useTransition } from 'react-spring';
+
+import styled from '@emotion/styled';
+
 import data from './skills-data';
+import { StyledItem as Item } from './skills-table-item';
 
 const SkillsTable: React.FCX = ({ className }) => {
   const [open, set] = useState(false);

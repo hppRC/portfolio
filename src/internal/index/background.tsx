@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from 'react-three-fiber';
+import React, { useMemo, useRef } from 'react';
 import { isMobile } from 'react-device-detect';
+import { Canvas, useFrame } from 'react-three-fiber';
+import {} from 'react-three-fiber/types';
+
+import styled from '@emotion/styled';
 
 const vertexSource = `
 precision mediump float;

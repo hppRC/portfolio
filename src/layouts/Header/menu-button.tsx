@@ -1,6 +1,8 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { animated, useSpring } from 'react-spring';
+
+import styled from '@emotion/styled';
+
 import { MenuContainer } from '../../store';
 
 const openedTransformationConfig = {
