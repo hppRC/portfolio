@@ -1,7 +1,6 @@
 import React, { useMemo, useRef } from 'react';
 import { isMobile } from 'react-device-detect';
 import { Canvas, useFrame } from 'react-three-fiber';
-import {} from 'react-three-fiber/types';
 
 import styled from '@emotion/styled';
 
