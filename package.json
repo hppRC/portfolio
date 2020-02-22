@@ -44,7 +44,7 @@
     "gatsby-plugin-typescript": "^2.1.20",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-images": "^3.1.35",
-    "gatsby-remark-relative-images": "^0.2.3",
+    "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "^2.3.6",
     "graphql": "^14.5.8",
