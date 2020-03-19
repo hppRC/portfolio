@@ -18,7 +18,7 @@ const OuterNav: React.FCX = ({ className }) => (
   <ul className={className}>
     <External href={'https://blog.hpprc.com'}>blog</External>
     <External href={'https://github.com/hppRC'}>GitHub</External>
-    <External href={'https://twitter.com/osaremochi'}>Twitter</External>
+    <External href={'https://twitter.com/hpp_ricecake'}>Twitter</External>
     <External href={'https://qiita.com/hppRC'}>Qiita</External>
   </ul>
 );
