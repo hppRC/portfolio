@@ -10,7 +10,6 @@
     "strict": true,
     "noEmit": true,
     "allowJs": true,
-    "sourceMap": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
