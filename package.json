@@ -54,7 +54,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.8.0",
     "react-spring": "^8.0.27",
-    "react-three-fiber": "3.0.17",
+    "react-three-fiber": "4.0.27",
     "serialize-javascript": "^2.1.1",
     "three": "^0.114.0",
     "typescript": "^3.7.2",
