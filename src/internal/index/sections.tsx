@@ -50,10 +50,8 @@ const Works: React.FCX = ({ className }) => {
 
   const test = () => {
     if (isInViewport) {
-      console.log('yay!');
       return 'in viewport';
     } else {
-      console.log('out of view port');
       return 'test';
     }
   };
