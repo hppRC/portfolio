@@ -56,7 +56,7 @@
     "react-spring": "^8.0.27",
     "react-three-fiber": "3.0.17",
     "serialize-javascript": "^3.0.0",
-    "three": "^0.114.0",
+    "three": "^0.116.0",
     "typescript": "^3.7.2",
     "unstated-next": "^1.1.0",
     "use-is-in-viewport": "^1.0.7",
