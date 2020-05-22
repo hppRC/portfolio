@@ -6,12 +6,12 @@ const config = {
   siteDescription: `hpp is a Japanese student, majoring in computer science and Informatics at Nagoya uni.`,
   siteLanguage: `ja`,
   author: `@osaremochi`,
-  basePath: `/`
+  basePath: `/`,
 };
 
 module.exports = {
   siteMetadata: {
-    ...config
+    ...config,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -23,8 +23,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
@@ -37,11 +37,11 @@ module.exports = {
             options: {
               maxWidth: 690,
               quality: 90,
-              linkImagesToOriginal: true
-            }
-          }
-        ]
-      }
+              linkImagesToOriginal: true,
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cache`,
@@ -49,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: config.siteUrl
-      }
+        siteUrl: config.siteUrl,
+      },
     },
     `gatsby-plugin-advanced-sitemap`,
     {
@@ -58,21 +58,21 @@ module.exports = {
       options: {
         host: config.siteUrl,
         sitemap: `${config.siteUrl}/sitemap.xml`,
-        policy: [{ userAgent: `*`, allow: `/` }]
-      }
+        policy: [{ userAgent: `*`, allow: `/` }],
+      },
     },
     {
       resolve: `gatsby-plugin-webpack-bundle-analyzer`,
       options: {
-        openAnalyzer: false
-      }
+        openAnalyzer: false,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: `UA-149661454-1`
-      }
+        trackingId: `UA-149661454-1`,
+      },
     },
     // gatsby-plugin-manifest should be described before gatsby-plugin-offline
     {
@@ -86,9 +86,9 @@ module.exports = {
         background_color: `#09090f`,
         theme_color: `#09090f`,
         display: `standalone`,
-        icon: `./src/images/icon.png`
-      }
+        icon: `./src/images/icon.png`,
+      },
     },
-    `gatsby-plugin-offline`
-  ]
+    `gatsby-plugin-offline`,
+  ],
 };

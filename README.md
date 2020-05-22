@@ -11,7 +11,9 @@ Gatsby.js + Netlify + Netlify CMSで作りました.
 - MDX
 - PWA
 - Netlify
-- Netlify CMS
+- emotion
+- WebGL
+- react-three-fiber
 - unstated
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f0c23915-d489-456c-af53-a865b98ac8ba/deploy-status)](https://app.netlify.com/sites/hpprc/deploys)

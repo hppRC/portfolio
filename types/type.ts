@@ -9,7 +9,7 @@ declare module 'react' {
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      bufferAttribute: any;
+      bufferAttribute: unknown;
     }
   }
 }
