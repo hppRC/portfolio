@@ -52,7 +52,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.8.0",
     "react-spring": "^8.0.27",
-    "react-three-fiber": "3.0.17",
+    "react-three-fiber": "5.1.4",
     "serialize-javascript": "^3.0.0",
     "three": "^0.116.0",
     "unstated-next": "^1.1.0",
