@@ -1,0 +1,9 @@
+[build]
+  publish = "out"
+  command = "yarn build && yarn export"
+
+[build.environment]
+  YARN_VERSION = "1.22.10"
+  NODE_VERSION = "15.0.1"
+  YARN_FLAGS = "--no-ignore-optional"
+  NODE_OPTIONS = "--max_old_space_size=4096"

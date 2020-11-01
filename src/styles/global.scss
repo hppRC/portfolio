@@ -1,0 +1,26 @@
+/* reffer to this article: https://qiita.com/RinoTsuka/items/b30e03ce10aa38ac2a10#_reference-aab4ed4b3d365dfead76 */
+html {
+  body {
+    overflow-x: hidden;
+
+    font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Helvetica, Arial, 'Yu Gothic', sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Sans Emoji';
+    // overscroll-behavior-y: none;
+    // transition: background-color 0.15s;
+
+    color: #011627;
+
+    a {
+      font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #005bf9;
+      transition: opacity 0.1s ease-in-out;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
