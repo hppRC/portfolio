@@ -1,16 +1,16 @@
-// const purgecss = [
-//   `@fullhuman/postcss-purgecss`,
-//   {
-//     content: [`src/**/*.ts`, `src/**/*.tsx`],
-//     defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-//   },
-// ];
+const purgecss = [
+  '@fullhuman/postcss-purgecss',
+  {
+    content: ['./src/**/*.html', './src/**/*.tsx', './src/**/*.jsx', './src/**/*.scss', './src/**/*.css'],
+    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+  },
+];
 
 module.exports = {
   plugins: [
     'postcss-import',
     'tailwindcss',
     'autoprefixer',
-    // ...(process.env.NODE_ENV === `production` ? [purgecss] : []),
+    purgecss,
   ],
 };
