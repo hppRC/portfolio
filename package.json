@@ -85,6 +85,6 @@
     "typescript": "^3.8.3"
   },
   "resolutions": {
-    "react-helmet/react-side-effect": "2.1.0"
+    "react-helmet/react-side-effect": "2.1.1"
   }
 }
