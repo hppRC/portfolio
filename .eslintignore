@@ -35,3 +35,5 @@ _next
 .github
 .git
 .vercel
+out
+public
