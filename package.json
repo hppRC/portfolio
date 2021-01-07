@@ -57,7 +57,7 @@
     "three": "^0.116.0",
     "unstated-next": "^1.1.0",
     "use-is-in-viewport": "^1.0.7",
-    "webpack": "^4.41.2"
+    "webpack": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^13.13.4",
