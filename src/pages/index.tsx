@@ -31,11 +31,13 @@ const Art = () => {
 };
 
 const Index = () => (
-  <Canvas camera={{ position: [0, 0, 1.5] }}>
-    <ambientLight />
-    <pointLight position={[10, 10, 10]} />
-    <Art />
-  </Canvas>
+  <div className="flex align-middle h-full w-full">
+    <Canvas className="h-full" camera={{ position: [0, 0, 1.5] }}>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <Art />
+    </Canvas>
+  </div>
 );
 
 export default Index;
