@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
 import fragmentShader from 'src/shader/index.frag';
 import vertexShader from 'src/shader/index.vert';
+import FluidAnimation from 'src/components/fluid';
 
 const Art = () => {
   const ref: any = useRef();
@@ -32,11 +33,12 @@ const Art = () => {
 
 const Index = () => (
   <div className="flex align-middle h-full w-full">
-    <Canvas className="h-full" camera={{ position: [0, 0, 1.5] }}>
+    <FluidAnimation styles={{ height: '100vh' }} />
+    {/* <Canvas className="h-full" camera={{ position: [0, 0, 1.5] }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Art />
-    </Canvas>
+    </Canvas> */}
   </div>
 );
 
