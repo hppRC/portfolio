@@ -16,11 +16,13 @@ class ReactFluidAnimation extends Component {
       width: PropTypes.number,
       height: PropTypes.number,
     }),
+    className: PropTypes.string,
   }
 
   static defaultProps = {
     config: defaultConfig,
     style: { },
+    className: '',
   }
 
   componentWillReceiveProps(props) {
@@ -55,19 +57,16 @@ class ReactFluidAnimation extends Component {
       animationRef,
       style,
       size,
+      className,
       ...rest
     } = this.props;
 
     return (
       <div
-        style={{
-          width: '100%',
-          height: '100%',
-          overflow: 'hidden',
-          ...style,
-        }}
+        style={{ ...style }}
         {...rest}
         ref={this._containerRef}
+        className={className}
       >
         <canvas
           ref={this._canvasRef}
@@ -77,10 +76,6 @@ class ReactFluidAnimation extends Component {
           onTouchStart={this._onTouchStart}
           onTouchMove={this._onTouchMove}
           onTouchEnd={this._onTouchEnd}
-          style={{
-            width: '100%',
-            height: '100%',
-          }}
         />
       </div>
     );

@@ -1,4 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 // eslint-disable-next-line max-classes-per-file
+import { WebGLRenderer } from 'three';
 import GLProgram from './gl-program';
 import getGLContext from './get-gl-context';
 
@@ -28,6 +30,22 @@ class Pointer {
 }
 
 export default class FluidAnimation {
+  private _gl: WebGLRenderingContext;
+
+  private _pointers: any;
+
+  private _ext: any;
+
+  private _programs: any;
+
+  private _canvas: { width: any; height: any; };
+
+  private _height: any;
+
+  private _width: any;
+
+  _splatStack: any;
+
   constructor(opts) {
     const {
       canvas,
@@ -174,6 +192,7 @@ export default class FluidAnimation {
     const gl = this._gl;
     const ext = this._ext;
 
+    // w, h のサイズでバッファーを作る
     function createFBO(texId, w, h, internalFormat, format, type, param) {
       gl.activeTexture(gl.TEXTURE0 + texId);
       const texture = gl.createTexture();
@@ -199,6 +218,7 @@ export default class FluidAnimation {
       return [texture, fbo, texId];
     }
 
+    // Buffer を交互に切り替えながら描写してる？
     function createDoubleFBO(texId, w, h, internalFormat, format, type, param) {
       let fbo1 = createFBO(texId, w, h, internalFormat, format, type, param);
       let fbo2 = createFBO(texId + 1, w, h, internalFormat, format, type, param);
@@ -288,9 +308,13 @@ export default class FluidAnimation {
     gl.enableVertexAttribArray(0);
   }
 
-  _blit = (destination) => {
+  // destination: frameBuffer
+  _blit = (destination: WebGLFramebuffer) => {
     const gl = this._gl;
+    // method of the WebGL API binds a given WebGLFramebuffer to a target.
+    // Collection buffer data storage of color, alpha, depth and stencil buffers used to render an image.
     gl.bindFramebuffer(gl.FRAMEBUFFER, destination);
+    // method of the WebGL API renders primitives from array data.
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
   }
 
@@ -360,13 +384,12 @@ export default class FluidAnimation {
 
     this._programs.advection.bind();
     gl.uniform2f(this._programs.advection.uniforms.texelSize, iW, iH);
+    // return [texture, fbo, texId];
     gl.uniform1i(this._programs.advection.uniforms.uVelocity, this._velocity.read[2]);
     gl.uniform1i(this._programs.advection.uniforms.uSource, this._velocity.read[2]);
     gl.uniform1f(this._programs.advection.uniforms.dt, dt);
-    gl.uniform1f(
-      this._programs.advection.uniforms.dissipation,
-      this._config.velocityDissipation,
-    );
+    gl.uniform1f(this._programs.advection.uniforms.dissipation, this._config.velocityDissipation);
+    // return [texture, fbo, texId];
     this._blit(this._velocity.write[1]);
     this._velocity.swap();
 

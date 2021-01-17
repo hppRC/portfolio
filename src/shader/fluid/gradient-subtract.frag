@@ -9,6 +9,7 @@ varying vec2 vB;
 uniform sampler2D uPressure;
 uniform sampler2D uVelocity;
 
+// `varying vec2` の意味？
 vec2 boundary (in vec2 uv) {
   uv = min(max(uv, 0.0), 1.0);
   return uv;

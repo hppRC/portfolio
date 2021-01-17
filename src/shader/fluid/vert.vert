@@ -2,11 +2,13 @@ precision highp float;
 precision mediump sampler2D;
 
 attribute vec2 aPosition;
+
 varying vec2 vUv;
 varying vec2 vL;
 varying vec2 vR;
 varying vec2 vT;
 varying vec2 vB;
+
 uniform vec2 texelSize;
 
 void main () {
