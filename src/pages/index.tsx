@@ -4,6 +4,8 @@ import fragmentShaderSource from 'src/shader/index.frag';
 import fragment2Shader from 'src/shader/index2.frag';
 import vertexShaderSource from 'src/shader/index.vert';
 import FluidAnimation from 'src/components/sample-fluid';
+import { validateNotNull } from 'src/utils/validateNotNull';
+import { FluidManager } from 'src/fluid/fluid-manager';
 
 const Art = () => {
   const ref: any = useRef();
@@ -34,9 +36,15 @@ const Art = () => {
 
 const Thing = () => {
   const ref = useRef<HTMLCanvasElement>(null);
+
   useEffect(() => {
-    const gl = ref.current?.getContext('webgl');
-    if (!gl) return;
+    const canvas = validateNotNull(ref.current);
+    const fluidManager = new FluidManager(canvas);
+    function animate() {
+      fluidManager.update();
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
   }, []);
   return (
     <canvas ref={ref} />
@@ -53,10 +61,7 @@ const Index = () => (
         <Art />
       </Canvas>
     </div> */}
-    {/* <FluidAnimation className="h-full w-full" />
-    <div className="absolute top-0 left-0 text-white text-xl pointer-events-none">
-      foooooooooooooo
-    </div> */}
+    {/* <FluidAnimation className="h-full w-full" /> */}
   </div>
 );
 
